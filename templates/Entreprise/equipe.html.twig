@@ -1,0 +1,78 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Tertio Informatique - Notre Équipe{% endblock title %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <style>
+        .member-img {
+            width: 400px;
+            height: 600px;
+            overflow: hidden;
+        }
+        .member-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center top;
+        }
+    </style>
+{% endblock %}
+
+{% block content %}
+    <section id="hero" class="hero d-flex align-items-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 d-flex flex-column justify-content-center">
+                    <h1>Notre Équipe</h1>
+                    <h2 data-aos="fade-up" data-aos-delay="400">Découvrez les talents qui font de Tertio Informatique une entreprise exceptionnelle.</h2>
+                    <div data-aos="fade-up" data-aos-delay="600">
+                        <div class="text-center text-lg-start">
+                            <a href="#team" class="btn-get-started scrollto d-inline-flex align-items-center justify-content-center align-self-center">
+                                <span>Voir l'équipe</span>
+                                <i class="bi bi-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 hero-img" data-aos="zoom-out" data-aos-delay="200">
+                    <img src="{{ asset('assets/img/team/team.jpg') }}" class="img-fluid" alt="Notre équipe">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <main id="main">
+        <section id="team" class="team">
+            <div class="container" data-aos="fade-up">
+                <header class="section-header">
+                    <h2>Notre Équipe</h2>
+                    <p>Des professionnels passionnés à votre service</p>
+                </header>
+
+                <div class="row gy-3">
+                    {% for member in team_members %}
+                        <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="{{ loop.index0 * 100 }}">
+                            <div class="member">
+                                <div class="member-img">
+                                    <img src="{{ asset('assets/img/team/' ~ member.image) }}" alt="{{ member.name }}">
+                                </div>
+                                <div class="member-info">
+                                    <h4>
+                                        {% set names = member.name|split(' ', 2) %}
+                                        {{ names[0] }}<br>
+                                        {% if names|length > 1 %}
+                                            {{ names[1] }}
+                                        {% endif %}
+                                    </h4>
+                                    <span>{{ member.position }}</span>
+                                    <p>{{ member.description }}</p>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </section>
+    </main>
+{% endblock content %}

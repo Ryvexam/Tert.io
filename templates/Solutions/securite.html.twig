@@ -1,0 +1,48 @@
+{% extends 'base.html.twig' %}
+{% block title %}Tertio Informatique{% endblock title %}
+{% block content %}
+    <section id="hero" class="hero d-flex align-items-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 d-flex flex-column justify-content-center">
+                    <h1>Nos Solutions Sécurité</h1>
+                    <h2 data-aos="fade-up" data-aos-delay="400">La sécurité informatique est essentielle pour protéger votre entreprise contre les menaces en ligne et garantir la confidentialité de vos données.<br> Chez Tertio Informatique, nous proposons une gamme complète de solutions de sécurité informatique pour répondre à vos besoins spécifiques.<br> Que vous soyez une petite entreprise ou une grande organisation, nous sommes là pour sécuriser votre infrastructure et protéger vos données sensibles.</h2>
+                    <div data-aos="fade-up" data-aos-delay="600">
+                        <div class="text-center text-lg-start">
+                            <a href="#details" class="btn-get-started scrollto d-inline-flex align-items-center justify-content-center align-self-center">
+                                <span>En Savoir Plus</span>
+                                <i class="bi bi-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 hero-img" data-aos="zoom-out" data-aos-delay="200">
+                    <img src="{{ asset('assets/img/Solutions/security-solutions.png') }}" class="img-fluid" alt="Solutions de Sécurité">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <main id="main">
+        <section id="details" class="about">
+            <div class="container" data-aos="fade-up">
+                <div class="row gx-0">
+                    <div class="col-lg-12 d-flex flex-column justify-content-center" data-aos="fade-up" data-aos-delay="200">
+                        <div class="content">
+                            <h2><strong>Solutions Antivirus Eset</strong></h2>
+                            <p>Les virus, les logiciels malveillants et autres menaces en ligne peuvent causer d'importants dommages à votre entreprise. C'est pourquoi nous offrons les solutions antivirus Eset, reconnues pour leur efficacité et leur fiabilité. Avec une protection en temps réel contre les virus, les ransomwares et autres logiciels malveillants, vous pouvez avoir l'esprit tranquille en sachant que votre entreprise est sécurisée.</p>
+
+                            <h2 class="mt-4"><strong>Sauvegardes</strong></h2>
+                            <p>La perte de données peut être catastrophique pour une entreprise. Nos solutions de sauvegarde vous permettent de protéger vos données critiques en les sauvegardant régulièrement et en les stockant de manière sécurisée. Que ce soit sur site ou dans le cloud, nous vous aidons à mettre en place des stratégies de sauvegarde fiables pour garantir la disponibilité de vos données en cas d'urgence.</p>
+
+                            <h2 class="mt-4"><strong>Protection</strong></h2>
+                            <p>En plus des antivirus et des sauvegardes, nous proposons une gamme de solutions de protection pour renforcer la sécurité de votre infrastructure. Cela inclut la protection des réseaux, des pare-feu, des outils de détection des intrusions et bien plus encore. Notre objectif est de créer une ligne de défense robuste pour empêcher les attaques et sécuriser vos systèmes contre les menaces en ligne.</p>
+
+                            <p>Avec nos solutions de sécurité informatique, vous pouvez être sûr que votre entreprise est entre de bonnes mains. Contactez-nous dès aujourd'hui pour découvrir comment nous pouvons vous aider à renforcer la sécurité de votre entreprise et à protéger vos données contre les menaces en ligne.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+{% endblock content %}

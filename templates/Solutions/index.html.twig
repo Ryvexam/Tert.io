@@ -1,0 +1,364 @@
+{% extends 'base.html.twig' %}
+{% block title %}Tertio Informatique{% endblock title %}
+{% block content %}
+
+    <section id="hero" class="hero d-flex align-items-center">
+
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 d-flex flex-column justify-content-center">
+                    <h1 data-aos="fade-up">Particulier ou professionnel, nous avons la solution adaptée à vos besoins informatiques</h1>
+                    <h2 data-aos="fade-up" data-aos-delay="400">Notre équipe de techniciens qualifiés sera prête à répondre à vos besoins</h2>
+                    <div data-aos="fade-up" data-aos-delay="600">
+                        <div class="text-center text-lg-start">
+                            <a href="../#about" class="btn-get-started scrollto d-inline-flex align-items-center justify-content-center align-self-center">
+                                <span>En Savoir Plus</span>
+                                <i class="bi bi-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 hero-img" data-aos="zoom-out" data-aos-delay="200">
+                    <img src="{{ asset("assets/img/main-pic-home.png") }}" class="img-fluid" alt="" >
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <main id="main">
+        <section id="about" class="about">
+
+            <div class="container" data-aos="fade-up">
+                <div class="row gx-0">
+
+                    <div class="col-lg-6 d-flex flex-column justify-content-center" data-aos="fade-up" data-aos-delay="200">
+                        <div class="content">
+                            <h3>Qui sommes-nous ?</h3>
+                            <h2>Situés à Moulins-sur-Allier, nous sommes votre partenaire de choix pour des solutions informatiques complètes, de la vente de matériel à la maintenance</h2>
+                                <p>
+                                    Fort de notre expérience, nous combinons expertise et dévouement pour répondre à chaque besoin spécifique
+                                </p>
+                            <div class="text-center text-lg-start">
+                                <a href="../#portfolio" class="btn-read-more d-inline-flex align-items-center justify-content-center align-self-center">
+                                    <span>Voir nos réalisations</span>
+                                    <i class="bi bi-arrow-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6 d-flex align-items-center" data-aos="zoom-out" data-aos-delay="200">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1596.7359573585645!2d3.3376803962107244!3d46.544102778559015!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47f11ea013d57177%3A0x1eec242237ab95eb!2sJoly%20Informatique%20-%20Tertiaire%20Formation%20Conseil!5e0!3m2!1sfr!2sfr!4v1694159514982!5m2!1sfr!2sfr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+
+                </div>
+            </div>
+
+        </section>
+        <section id="services" class="services">
+
+            <div class="container" data-aos="fade-up">
+
+                <header class="section-header">
+                    <h2>Nos Services</h2>
+                    <p>Différents types de services que nous proposons</p>
+                </header>
+
+                <div class="row gy-4">
+
+                    <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                        <div class="service-box blue">
+                            <i class="ri-discuss-line icon"></i>
+                            <h3>Installations à Domicile</h3>
+                            <p>Nous offrons des services d'installation à domicile pour tous vos besoins.</p>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                        <div class="service-box orange">
+                            <i class="ri-discuss-line icon"></i>
+                            <h3>Gestion d'infrastructure</h3>
+                            <p>Optimisez votre infrastructure IT avec nos solutions de gestion.</p>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
+                        <div class="service-box green">
+                            <i class="ri-discuss-line icon"></i>
+                            <h3>Configuration</h3>
+                            <p>Recevez votre ordinateur installé et configuré.</p>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="500">
+                        <div class="service-box red">
+                            <i class="ri-discuss-line icon"></i>
+                            <h3>Support à Distance</h3>
+                            <p>Obtenez de l'aide depuis chez vous avec notre support à distance.</p>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="600">
+                        <div class="service-box purple">
+                            <i class="ri-discuss-line icon"></i>
+                            <h3>Vente de Matériel</h3>
+                            <p>Découvrez notre gamme de matériel informatique pour répondre à tous vos besoins.</p>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="700">
+                        <div class="service-box pink">
+                            <i class="ri-discuss-line icon"></i>
+                            <h3>Logiciels métiers</h3>
+                            <p>Optimisez votre gestion avec des Logiciels tels que EBP et Sage.</p>
+                        </div>
+                    </div>
+
+
+                </div>
+
+        </section>
+        <section id="faq" class="faq">
+            <div class="container" data-aos="fade-up">
+                <header class="section-header">
+                    <h2>F.A.Q</h2>
+                    <p>Questions Fréquemment Posées</p>
+                </header>
+                <div class="row">
+                    <div class="col-lg-6">
+                        <!-- F.A.Q List 1-->
+                        <div class="accordion accordion-flush" id="faqlist1">
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-content-1">
+                                        Comment fonctionne votre service d'installation à domicile?
+                                    </button>
+                                </h2>
+                                <div id="faq-content-1" class="accordion-collapse collapse" data-bs-parent="#faqlist1">
+                                    <div class="accordion-body">
+                                        Notre équipe de technicien se déplace chez vous pour installer et configurer tous vos ordinateurs selon vos besoins.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-content-2">
+                                        Quels types d'infrastructures gérez-vous?
+                                    </button>
+                                </h2>
+                                <div id="faq-content-2" class="accordion-collapse collapse" data-bs-parent="#faqlist1">
+                                    <div class="accordion-body">
+                                        Nous gérons une variété d'infrastructures, allant des réseaux locaux à des entreprises multi-sites. Contactez-nous pour discuter de vos besoins spécifiques.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-content-3">
+                                        Comment fonctionne votre support à distance?
+                                    </button>
+                                </h2>
+                                <div id="faq-content-3" class="accordion-collapse collapse" data-bs-parent="#faqlist1">
+                                    <div class="accordion-body">
+                                        Nous utilisons des outils sécurisés tel que AnyDesk pour accéder à distance à votre appareil et résoudre les problèmes que vous pourriez rencontrer.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6">
+                        <div class="accordion accordion-flush" id="faqlist2">
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2-content-1">
+                                        Comment garantissez-vous la qualité de votre matériel?
+                                    </button>
+                                </h2>
+                                <div id="faq2-content-1" class="accordion-collapse collapse" data-bs-parent="#faqlist2">
+                                    <div class="accordion-body">
+                                        Nous travaillons avec des fournisseurs réputés tels que DELL,HP,ACER,... et tous nos produits sont vérifiés avant d'être vendus.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2-content-2">
+                                        Proposez-vous des logiciels personnalisés pour les entreprises?
+                                    </button>
+                                </h2>
+                                <div id="faq2-content-2" class="accordion-collapse collapse" data-bs-parent="#faqlist2">
+                                    <div class="accordion-body">
+                                        Oui, nous offrons des solutions logicielles tels que Sage et EBPP pour répondre aux besoins spécifiques de votre entreprise.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2-content-3">
+                                        Comment puis-je obtenir un devis pour vos services?
+                                    </button>
+                                </h2>
+                                <div id="faq2-content-3" class="accordion-collapse collapse" data-bs-parent="#faqlist2">
+                                    <div class="accordion-body">
+                                        Vous pouvez nous contacter directement par téléphone ou par mail pour discuter de vos besoins et obtenir un devis adapté.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        </div>
+
+            </div>
+
+        </section>
+
+        <section id="portfolio" class="portfolio">
+
+            <div class="container" data-aos="fade-up">
+
+                <header class="section-header">
+                    <h2>Nos Installations</h2>
+                    <p>Différentes réalisation faite par le passé</p>
+                </header>
+
+                <div class="row" data-aos="fade-up" data-aos-delay="100">
+                    <div class="col-lg-12 d-flex justify-content-center">
+                        <ul id="portfolio-flters">
+                            <li data-filter="*" class="filter-active">Toutes</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="row gy-4 portfolio-container" data-aos="fade-up" data-aos-delay="200">
+
+                    <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+                        <div class="portfolio-wrap">
+                            <img src="{{ asset("assets/img/portfolio/portfolio-1.jpg") }}"  class="img-fluid">
+                            <div class="portfolio-info">
+                                <h4>Laboratoire de langues</h4>
+                                <div class="portfolio-links">
+                                    <a href="{{ asset("assets/img/portfolio/portfolio-1.jpg") }} " data-gallery="portfolioGallery" class="portfokio-lightbox" title="Laboratoire de langues"><i class="bi bi-plus"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+                        <div class="portfolio-wrap">
+                            <img src="{{ asset("assets/img/portfolio/portfolio-2.jpg") }} " class="img-fluid" alt="">
+                            <div class="portfolio-info">
+                                <h4>Classe avec tableau numérique</h4>
+                                <div class="portfolio-links">
+                                    <a href="{{ asset("assets/img/portfolio/portfolio-2.jpg") }}" data-gallery="portfolioGallery" class="portfokio-lightbox" title="Classe avec tableau numérique"><i class="bi bi-plus"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+                        <div class="portfolio-wrap">
+                            <img src="{{ asset("assets/img/portfolio/portfolio-3.jpg") }} " class="img-fluid" alt="">
+                            <div class="portfolio-info">
+                                <h4>Salle de formation</h4>
+                                <div class="portfolio-links">
+                                    <a href="{{ asset("assets/img/portfolio/portfolio-3.jpg") }} " data-gallery="portfolioGallery" class="portfokio-lightbox" title="Salle de formation"><i class="bi bi-plus"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+        </section>
+
+        <section id="testimonials" class="testimonials">
+
+            <div class="container" data-aos="fade-up">
+                <div data-romw-token="8O81XeTqL9XVANQqKr2NSUTOTEAtSSaR6wS1ohF54QQzk6X4f2"></div>
+                <script src="https://reviewsonmywebsite.com/js/v2/embed.js?id=f80941fd7409d125707fcfa008e937a2" type="text/javascript"></script>
+            </div>
+
+        </section>
+        <section id="clients" class="clients">
+
+            <div class="container" data-aos="fade-up">
+
+                <header class="section-header">
+                    <h2>Nos Clients</h2>
+                    <p>Ils nous font confiance :</p>
+                </header>
+
+
+
+        </section>
+
+
+        <section id="contact" class="contact">
+
+            <div class="container" data-aos="fade-up">
+
+                <div class="col-lg-12 justify-content-center align-items-center">
+                    <p style="text-align: center;"><a href="https://get.anydesk.com/dp2GAtg1/Joly_Informatique.exe"><img src="https://get.anydesk.com/_static/dl-btn-wr-large.png" height="75px" alt="Download AnyDesk"></a></p>
+
+                </div>
+
+                <header class="section-header">
+                    <h2>Contact</h2>
+                    <p>Nos différents moyens de contact</p>
+                </header>
+
+
+                <div class="row gy-4">
+
+                    <div class="col-lg-12">
+
+                        <div class="row gy-4">
+                            <div class="col-md-6">
+                                <div class="info-box">
+                                    <i class="bi bi-geo-alt"></i>
+                                    <h3>Adresse</h3>
+                                    <p>Tertio Informatique<br>28 Rue des Champins<br>03000 Moulins</p>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="info-box">
+                                    <i class="bi bi-telephone"></i>
+                                    <h3>Appelez-Nous</h3>
+                                    <p>Téléphone : <a href="tel:0470201088">04 70 20 10 88</p>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="info-box">
+                                    <i class="bi bi-envelope"></i>
+                                    <h3>E-Mail</h3>
+                                    <p><a href="mailto:contacts@tert.io">contacts@joly-informatique.com</a>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="info-box">
+                                    <i class="bi bi-clock"></i>
+                                    <h3>Horaires d'ouverture</h3>
+                                    <p>Lundi au Jeudi <br>9h00-12h00 et 13h45-17h30</p>
+                                    <p>Vendredi <br>9h00-12h00 et 13h45-17h00</p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+
+                </div>
+
+            </div>
+    </main>
+{% endblock content %}

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>{% block title %}Tertio Informatique | 03000 Moulins{% endblock %}</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+    <link href="{{ asset("assets/img/tertio/logo_TERTIO_INFORMATIQUE_couleur_pastille.ico") }}" rel="icon">
+    <link href="{{ asset("assets/img/apple-touch-icon.png") }}" rel="apple-touch-icon">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+          rel="stylesheet">
+    {% block stylesheets %}
+        {% include("Default/Stylesheet/stylesheet.html.twig") %}
+    {% endblock %}
+</head>
+<header id="header" class="header fixed-top">
+    {% if 'cloud' in app.request.getRequestUri() %}
+        {% include("Default/Header/header.html.twig") with {"logo":'assets/img/tertio/variantes/tertio cloud.png'} %}
+    {% elseif 'formation' in app.request.getRequestUri() or 'ICDL' in app.request.getRequestUri() %}
+        {% include("Default/Header/header.html.twig") with {"logo":'assets/img/tertio/variantes/tertio formation.png'} %}
+    {% elseif 'audit' in app.request.getRequestUri() %}
+        {% include("Default/Header/header.html.twig") with {"logo":'assets/img/tertio/variantes/tertio audit.png'} %}
+    {% elseif 'securite' in app.request.getRequestUri() %}
+        {% include("Default/Header/header.html.twig") with {"logo":'assets/img/tertio/variantes/tertio securite.png'} %}
+    {% elseif 'solutions' in app.request.getRequestUri() %}
+        {% include("Default/Header/header.html.twig") with {"logo":'assets/img/tertio/variantes/tertio solutions.png'} %}
+    {% else %}
+        {% include("Default/Header/header.html.twig") with {"logo":'assets/img/tertio/variantes/tertio informatique.png'} %}
+    {% endif %}
+</header>
+<body>
+{% block content %}{% endblock %}
+</body>
+<footer>
+    {% include("Default/Footer/footer.html.twig") %}
+</footer>
+<a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+            class="bi bi-arrow-up-short"></i></a>
+</html>

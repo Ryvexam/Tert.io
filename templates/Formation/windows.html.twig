@@ -1,0 +1,64 @@
+{% extends 'base.html.twig' %}
+{% block title %}Tertio Informatique | 03000 Moulins{% endblock title %}
+{% block content %}
+    <section id="hero" class="hero d-flex align-items-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 d-flex flex-column justify-content-center">
+                    <h1 data-aos="fade-up">Formation Windows : Prise en main d’un micro-ordinateur</h1>
+                    <h2 data-aos="fade-up" data-aos-delay="400">Découverte de l’environnement Windows, de son fonctionnement et de ses possibilités</h2>
+                    <div data-aos="fade-up" data-aos-delay="600">
+                        <div class="text-center text-lg-start">
+                            <a href="#details" class="btn-get-started scrollto d-inline-flex align-items-center justify-content-center align-self-center">
+                                <span>En Savoir Plus</span>
+                                <i class="bi bi-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 hero-img" data-aos="zoom-out" data-aos-delay="200">
+                    <img src="{{ asset('assets/img/Formations/windows.png') }}" class="img-fluid" alt="Windows Training">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <main id="main">
+        <section id="details" class="about">
+            <div class="container" data-aos="fade-up">
+                <div class="row gx-0">
+                    <div class="col-lg-12 d-flex flex-column justify-content-center" data-aos="fade-up" data-aos-delay="200">
+                        <div class="content">
+                            <h2><strong>OBJECTIFS</strong></h2>
+                            <p><em>Prise en main d’un micro-ordinateur.<br>
+                                    Découverte de l’environnement Windows, de son fonctionnement et de ses possibilités.</em></p>
+                            <h2 class="mt-4"><strong>CONTENU</strong></h2>
+                            <p>
+                                • Présentation de l’environnement graphique (fenêtres, menus, commandes, affichages),<br>
+                                • Identification de la version du système d’exploitation,<br>
+                                • Spécificités de Windows (nouveautés, améliorations) en fonction des versions,<br>
+                                • Le panneau de configuration (réglage de l’affichage, de la souris, etc.),<br>
+                                • L’explorateur Windows :<br>
+                                – Organisation et hiérarchisation des informations,<br>
+                                – Gestion des répertoires ou dossiers : notion d’arborescence,<br>
+                                – Gestion des fichiers (suppression, copie, déplacement, changement de nom),<br>
+                                • Passage d’informations d’une application à l’autre : le presse-papier,<br>
+                                • Le gestionnaire d’impression : configuration, paramétrage, problèmes rencontrés,<br>
+                                • Personnalisation de l’interface graphique,<br>
+                                • Les accessoires (calculatrice, paint, etc.),<br>
+                                • Ajout/suppression des programmes,<br>
+                                • Identifier les tâches en cours,<br>
+                                • Que faire en cas de blocage,<br>
+                                • Les outils systèmes (nettoyage, défragmentation, sauvegarde).
+                            </p>
+                            <h2 class="mt-4"><strong>LOGICIEL</strong></h2>
+                            <p style="padding-left:30px;">Windows (versions 7 et 8)</p>
+                            <h2 class="mt-4"><strong>DURÉE</strong></h2>
+                            <p style="padding-left:30px;">1 journée</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+{% endblock content %}

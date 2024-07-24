@@ -1,0 +1,94 @@
+{% extends 'base.html.twig' %}
+{% block title %}Tertio Informatique - Solutions Logicielles{% endblock title %}
+{% block content %}
+    <section id="hero" class="hero d-flex align-items-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 d-flex flex-column justify-content-center">
+                    <h1>Nos Solutions Logicielles</h1>
+                    <h2 data-aos="fade-up" data-aos-delay="400">Que ce soit pour les outils bureautiques (Microsoft Office), graphiques (Adobe) ou les applications de comptabilité et de gestion (Sage, Ebp, …,)
+                        </h2>
+                    <h2 data-aos="fade-up" data-aos-delay="500">Tertio vous aide dans le choix et la mise en place directe de ces logiciels.</h2>
+                    <div data-aos="fade-up" data-aos-delay="600">
+                        <div class="text-center text-lg-start">
+                            <a href="#details" class="btn-get-started scrollto d-inline-flex align-items-center justify-content-center align-self-center">
+                                <span>En Savoir Plus</span>
+                                <i class="bi bi-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 hero-img" data-aos="zoom-out" data-aos-delay="200">
+                    <img src="{{ asset('assets/img/Solutions/logiciels.png') }}" class="img-fluid" alt="Solutions Logicielles">
+                </div>
+            </div>
+        </div>
+    </section>
+    <main id="main">
+        <section id="details" class="about">
+            <div class="container" data-aos="fade-up">
+                <div class="row gx-0">
+                    <div class="col-lg-12 d-flex flex-column justify-content-center" data-aos="fade-up" data-aos-delay="200">
+                        <div class="content">
+                            <p>Que ce soit pour les outils bureautiques (Microsoft Office), graphiques (Adobe) ou les applications de comptabilité et de gestion (Sage, Ebp, …,) Tertio vous aide dans le choix et la mise en place directe de ces logiciels.</p>
+                            <p>Si l'analyse de vos besoins nécessite une solution adaptée auprès d'un éditeur de logiciel spécifique, nous pouvons vous accompagner auprès de ce partenaire de la mise en relation jusqu'à l'installation technique.</p>
+
+                            <div class="row mt-4">
+                                {% for logo in ['microsoft', 'eset', 'adobe'] %}
+                                    <div class="col-md-4 mb-4">
+                                        <div class="card h-100">
+                                            <div style="height: 200px; display: flex; align-items: center; justify-content: center;">
+                                                <img src="{{ asset('assets/img/logos/' ~ logo ~ '.png') }}" class="card-img-top" alt="{{ logo|capitalize }} Logo" style="max-height: 100%; max-width: 100%; object-fit: contain;">
+                                            </div>
+                                            <div class="card-body">
+                                                <h5 class="card-title">{{ logo|capitalize }}</h5>
+                                                <p class="card-text">
+                                                    {% if logo == 'microsoft' %}
+                                                        Nous proposons et mettons en place vos solutions Microsoft : Office (Excel, Word, PowerPoint, Outlook et Access), Suite collaborative Microsoft 365, Système Windows pc et serveur.
+                                                    {% elseif logo == 'eset' %}
+                                                        Tertio recommande et installe les solutions ESET pour la protection et la sécurité de vos systèmes.
+                                                    {% elseif logo == 'adobe' %}
+                                                        Pour les applications graphiques et créative.
+                                                    {% endif %}
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                {% endfor %}
+                            </div>
+
+                            <div class="row mt-4">
+                                <div class="col-md-6 mb-4">
+                                    <div class="card h-100">
+                                        <div class="row g-0">
+                                            <div class="col-md-6" style="height: 200px; display: flex; align-items: center; justify-content: center; border-right: 1px solid #dee2e6;">
+                                                <img src="{{ asset('assets/img/logos/ebp.png') }}" class="img-fluid" alt="EBP Logo" style="max-height: 100%; max-width: 100%; object-fit: contain;">
+                                            </div>
+                                            <div class="col-md-6" style="height: 200px; display: flex; align-items: center; justify-content: center;">
+                                                <img src="{{ asset('assets/img/logos/sage.png') }}" class="img-fluid" alt="Sage Logo" style="max-height: 100%; max-width: 100%; object-fit: contain;">
+                                            </div>
+                                            <div class="col-md-12">
+                                                <div class="card-body">
+                                                    <h5 class="card-title">EBP et Sage</h5>
+                                                    <p class="card-text">En tant que revendeur de solution EBP et Sage 50, nous pouvons installer et paramétrer vos logiciels de comptabilité et de gestion, aussi bien pour des versions généralistes que spécifiques (Points de vente, bâtiment, …). Nous pouvons également vous accompagner dans la migration d'un système en votre possession vers de nouvelles solutions.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 mb-4">
+                                    <div class="card h-100">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Nos certifications</h5>
+                                            <p class="card-text"></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+{% endblock content %}

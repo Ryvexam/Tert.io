@@ -1,0 +1,75 @@
+{% extends 'base.html.twig' %}
+{% block title %}Tertio Informatique{% endblock title %}
+{% block content %}
+
+    <section id="hero" class="hero d-flex align-items-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 d-flex flex-column justify-content-center">
+                    <h1 data-aos="fade-up">Comment ça marche ?</h1>
+                    <h2 data-aos="fade-up" data-aos-delay="400">Découvrez le fonctionnement et le financement de la certification ICDL-PCIE</h2>
+                    <div data-aos="fade-up" data-aos-delay="600">
+                        <div class="text-center text-lg-start">
+                            <a href="#details" class="btn-get-started scrollto d-inline-flex align-items-center justify-content-center align-self-center">
+                                <span>En Savoir Plus</span>
+                                <i class="bi bi-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 hero-img" data-aos="zoom-out" data-aos-delay="200">
+                    <img src="{{ asset('assets/img/Formations/comment-ca-marche-le-certificat-icdl-pcie-1.png') }}" class="img-fluid" alt="Comment ça marche le certificat ICDL-PCIE">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <main id="main">
+        <section id="details" class="about">
+            <div class="container" data-aos="fade-up">
+                <div class="row gx-0">
+                    <div class="col-lg-12 d-flex flex-column justify-content-center" data-aos="fade-up" data-aos-delay="200">
+                        <div class="content">
+                            <h2><strong>Comment ça marche ?</strong></h2>
+                            <div class="wp-block-image">
+                                <figure class="aligncenter size-large">
+                                    <a href="{{ asset('assets/img/Formations/comment-ca-marche-le-certificat-icdl-pcie-1.png?w=1024') }}">
+                                        <img src="{{ asset('assets/img/Formations/comment-ca-marche-le-certificat-icdl-pcie-1.png') }}" style="width: 1024px" alt="Comment ça marche le certificat ICDL-PCIE">
+                                    </a>
+                                </figure>
+                            </div>
+                            <div style="height:19px;" aria-hidden="true" class="wp-block-spacer"></div>
+                            <h2 class="mt-4"><strong>Le financement de votre certification</strong></h2>
+                            <h3><strong>Financement via le CPF</strong></h3>
+                            <p>Le Compte Personnel de Formation (CPF) permet d’acquérir des heures de formation, tout au long de sa vie professionnelle. Ces heures sont ainsi reportées automatiquement dans le compte d’activité du CPF. L’ensemble des modules de l’ICDL-PCIE sont éligibles au CPF.</p>
+                            <h3><strong>Financement via les OPCO</strong></h3>
+                            <p>Ces opérateurs ont pour missions de financer l’apprentissage, d’aider les branches à construire les certifications professionnelles et d’accompagner les PME pour définir leurs besoins en formation. Ils proposent ainsi, des dispositifs de formation, incluant la certification ICDL en tant que certification de compétences mais aussi en tant qu’outil de mesure des besoins et des progressions de compétences des individus.</p>
+                            <div style="height:19px;" aria-hidden="true" class="wp-block-spacer"></div>
+                            <h2 class="mt-4"><strong>Pourquoi choisir Tertiaire Formation Conseil&nbsp;?</strong></h2>
+                            <p>La <a href="https://dominiquemaurel.wordpress.com/">SCOP</a> Tertiaire Formation Conseil est depuis 1996, une référence locale en termes de formation. De plus, TFC fut le premier centre de formation dans l’Allier à être habilité par le PCIE (aujourd’hui ICDL-PCIE). <br>Ainsi, forte de son expérience, notre coopérative accompagne de manière optimale les candidats dans l’obtention de la certification.</p>
+                            <h3 class="text-center"><strong>Témoignages</strong></h3>
+                            <div class="testimonials">
+                                <div class="testimonial-item" style="background-color: #f7f7f7; padding: 20px; margin: 10px 0; border-radius: 8px;">
+                                    <p class="text-center" style="background-color:#cc3333; color: white; padding: 10px; border-radius: 8px;"><strong>Géraldine B.</strong><br><em>Février – Mars 2021</em></p>
+                                    <p class="text-center"><strong>Certification ICDL-PCIE<br>4 modules</strong></p>
+                                    <p class="text-center">«&nbsp;<em>Excellent accueil, rapidité dans les premiers échanges. Les cours s’enchainent avec grande logique ce qui fait que nous apprenons avec facilité. </em><br><em>Très bonne ambiance dans la légèreté, sans stress mais avec beaucoup de rigueur. Absolument pas scolaire</em>.&nbsp;»</p>
+                                </div>
+                                <div class="testimonial-item" style="background-color: #f7f7f7; padding: 20px; margin: 10px 0; border-radius: 8px;">
+                                    <p class="text-center" style="background-color:#f28c03; color: white; padding: 10px; border-radius: 8px;"><strong>Jean-Philippe P.</strong><br><em>Janvier 2021</em></p>
+                                    <p class="text-center"><strong>Certification ICDL-PCIE<br>Module les essentiels du web</strong></p>
+                                    <p class="text-center">«&nbsp;<em>Support de travail complet, clair et évolutif. Une consultante attentive à nos besoins, disponible, avec des explications claires et pertinentes. </em><br><em>M’a permis d’énormément progresser</em>.&nbsp;»</p>
+                                </div>
+                                <div class="testimonial-item" style="background-color: #f7f7f7; padding: 20px; margin: 10px 0; border-radius: 8px;">
+                                    <p class="text-center" style="background-color:#cc3333; color: white; padding: 10px; border-radius: 8px;"><strong>Coline G.</strong><br><em>Janvier – Février 2021</em></p>
+                                    <p class="text-center"><strong>Certification ICDL-PCIE<br>3 modules</strong></p>
+                                    <p class="text-center">«&nbsp;<em>Le plus est d’avoir pu m’exercer sur des supports de mon entreprise. </em><br><em>Beaucoup de pédagogie et une grande adaptation au niveau du stagiaire</em>.&nbsp;»</p>
+                                </div>
+                            </div>
+                            <p></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+{% endblock content %}

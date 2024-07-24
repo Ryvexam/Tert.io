@@ -1,0 +1,71 @@
+{% extends 'base.html.twig' %}
+{% block title %}Tertio Informatique{% endblock title %}
+{% block content %}
+    <main id="main">
+        <div class="container initial-content-marge">
+            {% block contact_block %}
+            <section id="contact" class="contact">
+
+            <div class="container" data-aos="fade-up">
+
+
+                <header class="section-header">
+                    <h2>Contact</h2>
+                    <p>Nos différents moyens de contact</p>
+                </header>
+
+
+                <div class="row gy-4">
+
+                    <div class="col-lg-12">
+
+                        <div class="row gy-4">
+                            <div class="col-md-6">
+                                <div class="info-box">
+                                    <i class="bi bi-geo-alt"></i>
+                                    <h3>Adresse</h3>
+                                    <p>Tertio Informatique<br>28 Rue des Champins<br>03000 Moulins</p>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="info-box">
+                                    <i class="bi bi-telephone"></i>
+                                    <h3>Appelez-Nous</h3>
+                                    <p>Téléphone : <a href="tel:0470201088">04 70 20 10 88</a><br><br><br> </p>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="info-box">
+                                    <i class="bi bi-envelope"></i>
+                                    <h3>E-Mail</h3>
+                                    <p><a href="mailto:contact@tert.io">contact@tert.io<br><br></a>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="info-box">
+                                    <i class="bi bi-clock"></i>
+                                    <h3>Horaires d'ouverture</h3>
+                                    <p>Lundi au Jeudi : 9h00-12h00 et 13h45-17h30</p>
+                                    <p>Vendredi : 9h00-12h00 et 13h45-17h00</p>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+
+                    <div class="col-lg-12 text-center" id="anydesk">
+                        <header class="section-header">
+                            <p>Téléchargez notre solution AnyDesk</p>
+                        </header>
+                        <p><a href="https://get.anydesk.com/dp2GAtg1/Joly_Informatique.exe"><img src="https://get.anydesk.com/_static/dl-btn-wr-large.png" height="75px" alt="Download AnyDesk"></a></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+            {% endblock contact_block %}
+
+        </div>
+    </main>
+{% endblock content %}

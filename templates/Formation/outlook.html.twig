@@ -1,0 +1,73 @@
+{% extends 'base.html.twig' %}
+{% block title %}Tertio Informatique{% endblock title %}
+{% block content %}
+
+    <section id="hero" class="hero d-flex align-items-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 d-flex flex-column justify-content-center">
+                    <h1 data-aos="fade-up">Messagerie et gestion au quotidien de l’organisation de son travail</h1>
+                    <h2 data-aos="fade-up" data-aos-delay="400">Utiliser efficacement la messagerie, gérer son agenda et son carnet d’adresses, planifier et suivre des tâches.</h2>
+                    <div data-aos="fade-up" data-aos-delay="600">
+                        <div class="text-center text-lg-start">
+                            <a href="#details" class="btn-get-started scrollto d-inline-flex align-items-center justify-content-center align-self-center">
+                                <span>En Savoir Plus</span>
+                                <i class="bi bi-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 hero-img" data-aos="zoom-out" data-aos-delay="200">
+                    <img src="{{ asset('assets/img/Formations/outlook-logo.png') }}" class="img-fluid" alt="Outlook">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <main id="main">
+        <section id="details" class="about">
+            <div class="container" data-aos="fade-up">
+                <div class="row gx-0">
+                    <div class="col-lg-12 d-flex flex-column justify-content-center" data-aos="fade-up" data-aos-delay="200">
+                        <div class="content">
+                            <h2>Messagerie et gestion au quotidien de l’organisation de son travail</h2>
+
+                            <h3>OBJECTIFS</h3>
+                            <p><em>Utiliser efficacement la messagerie.<br>
+                                    Gérer son agenda et son carnet d’adresses<br>
+                                    Planifier et suivre des tâches.</em></p>
+
+                            <h3>CONTENU</h3>
+                            <p>• Messagerie :<br>
+                                – Rappel sur les différences entre l’utilisation d’un logiciel de messagerie et le Webmail,<br>
+                                – Paramétrage d’un compte de messagerie (pop, imap, smtp),<br>
+                                – Envoi et réception de messages,<br>
+                                – Les différentes options d’envoi de messages,<br>
+                                – Gestion des pièces jointes,<br>
+                                – Utilisation de signatures,<br>
+                                – Gestion des messages, organisation des dossiers,<br>
+                                – Règles de messagerie,<br>
+                                – Gestion des contacts et des listes de distribution,<br>
+                                • Agenda :<br>
+                                – Gérer son agenda avec Outlook,<br>
+                                – Partager son agenda,<br>
+                                – Planifier des rendez-vous, des réunions, des évènements,<br>
+                                • Tâches :<br>
+                                – Créer des tâches uniques ou périodiques,<br>
+                                – Assurer un suivi, être alerté,<br>
+                                • Synchronisation des données (clouds, smartphone),<br>
+                                • Sauvegardes : prendre en compte la sauvegarde de sa messagerie et de l’ensemble des données d’Outlook,<br>
+                                • Paramétrages d’affichage : optimiser l’apparence d’Outlook pour gagner en efficacité.</p>
+
+                            <h3>LOGICIEL</h3>
+                            <p style="padding-left:30px;">Outlook</p>
+
+                            <h3>DUREE</h3>
+                            <p style="padding-left:30px;">1 journée de formation</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+{% endblock content %}

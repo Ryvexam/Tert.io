@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+{% block title %}Tertio Informatique{% endblock title %}
+{% block content %}
+    <section id="hero" class="hero d-flex align-items-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 d-flex flex-column justify-content-center">
+                    <h1>Nos Solutions Audit et Conseil</h1>
+                    <h2 data-aos="fade-up" data-aos-delay="400">Chez Tertio, nous sommes convaincus de l’importance d'une stratégie informatique bien établie pour la réussite de votre entreprise. C'est pourquoi nous proposons des services d'audit et de conseil visant à évaluer votre infrastructure existante et à vous guider dans l'optimisation et les évolutions futures de vos systèmes informatiques.</h2>
+                    <div data-aos="fade-up" data-aos-delay="600">
+                        <div class="text-center text-lg-start">
+                            <a href="#details" class="btn-get-started scrollto d-inline-flex align-items-center justify-content-center align-self-center">
+                                <span>En Savoir Plus</span>
+                                <i class="bi bi-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 hero-img" data-aos="zoom-out" data-aos-delay="200">
+                    <img src="{{ asset('assets/img/Solutions/audit.png') }}" class="img-fluid" alt="Audit et Conseil">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <main id="main">
+        <section id="details" class="about">
+            <div class="container" data-aos="fade-up">
+                <div class="row gx-0">
+                    <div class="col-lg-12 d-flex flex-column justify-content-center" data-aos="fade-up" data-aos-delay="200">
+                        <div class="content">
+                            <h2><strong>Analyse de l'Existant</strong></h2>
+                            <p>Notre première étape consiste à mener une analyse approfondie de votre infrastructure informatique actuelle. Nous passons en revue votre réseau, vos systèmes, vos applications et vos processus pour identifier les points forts et les faiblesses de votre environnement informatique.</p>
+
+                            <h2 class="mt-4"><strong>Préconisations, Changements, Évolutions, Accompagnement Conseil</strong></h2>
+                            <p>Sur la base de notre analyse approfondie, nous formulons des recommandations personnalisées, des propositions et une feuille de route pour améliorer votre infrastructure informatique. Que ce soit en matière de matériels, de sécurité, de performances, de productivité ou de conformité, nous vous proposons des solutions adaptées à vos besoins spécifiques.</p>
+                            <p>Nous vous accompagnons ensuite dans la mise en œuvre de ces recommandations. Nous pouvons assurer le déploiement de nos solutions et/ou suivre étroitement les missions confiées à d’autres prestataires. Notre objectif est de vous aider à atteindre vos objectifs et à tirer le meilleur parti de vos investissements informatiques.</p>
+                            <p class="highlight">Avec nos solutions d'audit et de conseil, vous bénéficiez d'une feuille de route claire pour optimiser votre infrastructure informatique, vos investissements et vous renforcez la compétitivité de votre entreprise.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+{% endblock content %}

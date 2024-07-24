@@ -1,0 +1,51 @@
+{% extends 'base.html.twig' %}
+{% block title %}Tertio Informatique{% endblock title %}
+{% block content %}
+    <section id="hero" class="hero d-flex align-items-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 d-flex flex-column justify-content-center">
+                    <h1>Nos Solutions Cloud et Hybrides</h1>
+                    <h2 data-aos="fade-up" data-aos-delay="400">Que vous recherchiez une solution entièrement basée sur le cloud ou une infrastructure hybride combinant le meilleur des deux mondes, nous sommes là pour vous accompagner dans votre transition vers un environnement informatique moderne et évolutif avec une réponse adaptée à vos besoins informatiques.</h2>
+                    <div data-aos="fade-up" data-aos-delay="600">
+                        <div class="text-center text-lg-start">
+                            <a href="#details" class="btn-get-started scrollto d-inline-flex align-items-center justify-content-center align-self-center">
+                                <span>En Savoir Plus</span>
+                                <i class="bi bi-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 hero-img" data-aos="zoom-out" data-aos-delay="200">
+                    <img src="{{ asset('assets/img/Solutions/cloud.png') }}" class="img-fluid" alt="Solutions Cloud et Hybrides">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <main id="main">
+        <section id="details" class="about">
+            <div class="container" data-aos="fade-up">
+                <div class="row gx-0">
+                    <div class="col-lg-12 d-flex flex-column justify-content-center" data-aos="fade-up" data-aos-delay="200">
+                        <div class="content">
+                            <h2><strong>Serveurs Dédiés</strong></h2>
+                            <p>Nos serveurs dédiés fournissent une puissance de traitement et une capacité de stockage optimales pour répondre aux besoins spécifiques de votre entreprise. Que vous souhaitiez héberger des applications critiques, des sites web à fort trafic ou des bases de données volumineuses, nos serveurs dédiés offrent les performances et la sécurité nécessaires pour garantir le bon fonctionnement de votre entreprise.</p>
+
+                            <h2 class="mt-4"><strong>Sauvegardes</strong></h2>
+                            <p>La sauvegarde de données est essentielle pour assurer la continuité des activités et la protection contre la perte de données. Nos solutions de sauvegarde cloud vous permettent de sauvegarder vos données de manière sécurisée et fiable, que ce soit localement ou dans le cloud. Avec des options de sauvegarde automatisée et une redondance intégrée, vous pouvez avoir l'esprit tranquille en sachant que vos données sont protégées en cas de sinistre.</p>
+
+                            <h2 class="mt-4"><strong>Messagerie</strong></h2>
+                            <p>La messagerie électronique est un élément clé de la communication d'entreprise. Nos solutions de messagerie cloud offrent une plateforme sécurisée et fiable pour la gestion de vos e-mails professionnels. Avec des fonctionnalités avancées telles que la synchronisation des calendriers, la collaboration en temps réel et la protection contre les menaces en ligne, vous pouvez améliorer la productivité de votre équipe tout en assurant la sécurité de vos communications.</p>
+
+                            <h2 class="mt-4"><strong>Infrastructure Hybride</strong></h2>
+                            <p>L'infrastructure hybride combine le meilleur des deux mondes en intégrant des solutions sur site et cloud pour répondre aux besoins évolutifs de votre entreprise. Que vous souhaitiez étendre votre infrastructure existante vers le cloud, déployer des applications hybrides ou mettre en place une stratégie de reprise après sinistre, l’équipe de Tertio est là pour vous aider à concevoir et à mettre en œuvre une infrastructure hybride adaptée à vos besoins spécifiques.</p>
+
+                            <p class="highlight">Avec nos solutions cloud et hybrides, vous bénéficiez de la flexibilité, de la sécurité et de la performance nécessaires pour faire évoluer votre entreprise dans un environnement numérique en constante évolution. Contactez-nous dès aujourd'hui pour découvrir comment nous pouvons vous aider à tirer le meilleur parti de votre infrastructure informatique.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+{% endblock content %}

@@ -1,0 +1,51 @@
+{% extends 'base.html.twig' %}
+{% block title %}Tertio Informatique{% endblock title %}
+{% block content %}
+
+    <section id="hero" class="hero d-flex align-items-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 d-flex flex-column justify-content-center">
+                    <h1 data-aos="fade-up">Le taux de réussite à la certification ICDL-PCIE</h1>
+                    <h2 data-aos="fade-up" data-aos-delay="400">Découvrez le taux de réussite des candidats de Tertiaire Formation Conseil</h2>
+                    <div data-aos="fade-up" data-aos-delay="600">
+                        <div class="text-center text-lg-start">
+                            <a href="#details" class="btn-get-started scrollto d-inline-flex align-items-center justify-content-center align-self-center">
+                                <span>En Savoir Plus</span>
+                                <i class="bi bi-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 hero-img" data-aos="zoom-out" data-aos-delay="200">
+                    <img src="{{ asset('assets/img/Formations/taux-reussite-icdl-pcie-2022.jpg') }}"  class="img-fluid" alt="Taux de réussite ICDL-PCIE 2022">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <main id="main">
+        <section id="details" class="about">
+            <div class="container" data-aos="fade-up">
+                <div class="row gx-0">
+                    <div class="col-lg-12 d-flex flex-column justify-content-center" data-aos="fade-up" data-aos-delay="200">
+                        <div class="content">
+                            <p>La certification ICDL-PCIE est une certification modulaire. En conséquence, aucun des différents modules n’est obligatoire. Le participant choisit le ou les modules qu’il souhaite passer. La certification est obtenue dès le premier module validé.</p>
+                            <p>Tertiaire Formation Conseil est un centre habilité ICDL (anciennement PCIE) depuis 2010.</p>
+                            <h2 class="wp-block-heading">Le taux de réussite à la certification ICDL-PCIE</h2>
+                            <div class="wp-block-image">
+                                <figure class="aligncenter size-large">
+                                    <a href="{{ asset('assets/img/Formations/taux-reussite-icdl-pcie-2022.jpg') }}">
+                                        <img src="{{ asset('assets/img/Formations/taux-reussite-icdl-pcie-2022.jpg') }}" style="width: 512px" alt="Taux de réussite ICDL-PCIE 2022">
+                                    </a>
+                                </figure>
+                            </div>
+                            <p>Le taux de réussite des candidats de Tertiaire Formation Conseil est de <strong>68 %</strong>.</p>
+                            <p>A noter qu’un test échoué peut être repassé en respectant un <strong>délai de 3 jours</strong> entre les passations du test (7 tentatives possibles par module). Dans la grande majorité des parcours de formation réalisé par TFC, un participant prépare plusieurs modules du ICDL-PCIE. Il s’agit principalement des modules concernant la suite Microsoft Office (Word, Excel, Powerpoint, Outlook).</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+{% endblock content %}

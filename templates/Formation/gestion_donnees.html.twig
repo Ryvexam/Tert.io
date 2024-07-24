@@ -1,0 +1,69 @@
+{% extends 'base.html.twig' %}
+{% block title %}Tertio Informatique{% endblock title %}
+{% block content %}
+
+    <section id="hero" class="hero d-flex align-items-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 d-flex flex-column justify-content-center">
+                    <h1 data-aos="fade-up">Formation Bonnes Pratiques du Classement Informatique</h1>
+                    <h2 data-aos="fade-up" data-aos-delay="400">Acquérir les bonnes pratiques pour un classement informatique efficace</h2>
+                    <div data-aos="fade-up" data-aos-delay="600">
+                        <div class="text-center text-lg-start">
+                            <a href="#details" class="btn-get-started scrollto d-inline-flex align-items-center justify-content-center align-self-center">
+                                <span>En Savoir Plus</span>
+                                <i class="bi bi-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 hero-img" data-aos="zoom-out" data-aos-delay="200">
+                    <img src="{{ asset('assets/img/Formations/explorer.png') }}" class="img-fluid" alt="Classement Informatique">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <main id="main">
+        <section id="details" class="about">
+            <div class="container" data-aos="fade-up">
+                <div class="row gx-0">
+                    <div class="col-lg-12 d-flex flex-column justify-content-center" data-aos="fade-up" data-aos-delay="200">
+                        <div class="content">
+                            <h2><strong>OBJECTIFS</strong></h2>
+                            <p><em>Acquérir les bonnes pratiques du classement informatique afin d’harmoniser les plans de classement de différents postes si besoin, de gagner en efficacité dans leur utilisation et d’être en capacité de les faire évoluer.<br>
+                                    Sensibiliser à l’importance des sauvegardes.</em></p>
+                            <h2 class="mt-4"><strong>CONTENU</strong></h2>
+                            <p>
+                                Identification des documents informatiques :<br>
+                                • Termes directeurs, mots clés et thésaurus : définitions et exercice de mise en application,<br>
+                                • Traçabilité d’un document – notion de démarche qualité.
+                            </p>
+                            <p>
+                                Définir un plan de classement :<br>
+                                • Les principaux ordres de classement et leurs champs d’application,<br>
+                                • Combiner les ordres de classement,<br>
+                                • Adapter le plan de classement à la mission de la structure et en prévoir l’évolution,<br>
+                                • Déterminer les premiers niveaux de classement,<br>
+                                • Les règles à respecter pour déterminer les niveaux secondaires,<br>
+                                • Mise en application : Analyse de la situation existante : identification des différents types de documents (nature du document, auteur, utilisateurs, mises à jour, diffusion), identification des regroupements possibles en dossiers / sous-dossiers, choix d’une arborescence.
+                            </p>
+                            <p>
+                                L’explorateur Windows :<br>
+                                • Organisation et hiérarchisation des informations,<br>
+                                • Les différents modes d’affichage de l’explorateur,<br>
+                                • Gestion des répertoires ou dossiers, création de l’arborescence,<br>
+                                • Gestion des fichiers (suppression, copie, déplacement, changement de nom).<br>
+                                • Les sauvegardes.
+                            </p>
+                            <h2 class="mt-4"><strong>DURÉE</strong></h2>
+                            <p style="padding-left:30px;">1 journée</p>
+                            <h2 class="mt-4"><strong>PRÉ-REQUIS</strong></h2>
+                            <p style="padding-left:30px;">Initiation informatique ou bureautique</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+{% endblock content %}

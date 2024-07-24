@@ -1,0 +1,69 @@
+{% extends 'base.html.twig' %}
+{% block title %}Tertio Informatique{% endblock title %}
+{% block content %}
+
+    <section id="hero" class="hero d-flex align-items-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 d-flex flex-column justify-content-center">
+                    <h1 data-aos="fade-up">Créer des documents de présentation</h1>
+                    <h2 data-aos="fade-up" data-aos-delay="400">Préparer et réaliser efficacement des diaporamas</h2>
+                    <div data-aos="fade-up" data-aos-delay="600">
+                        <div class="text-center text-lg-start">
+                            <a href="#details" class="btn-get-started scrollto d-inline-flex align-items-center justify-content-center align-self-center">
+                                <span>En Savoir Plus</span>
+                                <i class="bi bi-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 hero-img" data-aos="zoom-out" data-aos-delay="200">
+                    <img src="{{ asset('assets/img/Formations/powerpoint-logo.png') }}" class="img-fluid" alt="PowerPoint">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <main id="main">
+        <section id="details" class="about">
+            <div class="container" data-aos="fade-up">
+                <div class="row gx-0">
+                    <div class="col-lg-12 d-flex flex-column justify-content-center" data-aos="fade-up" data-aos-delay="200">
+                        <div class="content">
+                            <h2>Créer des documents de présentation</h2>
+
+                            <h3><strong>OBJECTIFS</strong></h3>
+                            <p><em>Être capable de préparer et réaliser efficacement des diaporamas.</em></p>
+
+                            <h3><strong>CONTENU</strong></h3>
+                            <p>• Présentation des concepts de base,<br>
+                                • Création de diapositives à partir des modèles proposés,<br>
+                                • Travail sur les différents éléments composant une diapositive :<br>
+                                – Textes,<br>
+                                – Tableaux,<br>
+                                – Dessins,<br>
+                                – Images,<br>
+                                • Les différentes possibilités d’affichage et les modes « Masque »,<br>
+                                • Incorporation d’objets en provenance d’autres logiciels,<br>
+                                • Gestion de l’arrière-plan et des jeux de couleurs,<br>
+                                • Gestion des effets d’animations,<br>
+                                • Mise en œuvre de transitions entre les diapositives,<br>
+                                • Liaisons avec d’autres logiciels (Ex : Word, Excel),<br>
+                                • Utilisation des liens vers des documents externes,<br>
+                                • Utilisation des liens hypertextes dans un diaporama,<br>
+                                • Les paramètres et les différentes possibilités d’impression,<br>
+                                • La visionneuse,<br>
+                                • Outils d’aide à la présentation.</p>
+
+                            <h3><strong>LOGICIEL</strong></h3>
+                            <p style="padding-left:30px;">PowerPoint (versions 2007, 2010, 2013, 2016)</p>
+
+                            <h3><strong>DUREE</strong></h3>
+                            <p style="padding-left:30px;">2 journées de formation</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+{% endblock content %}
