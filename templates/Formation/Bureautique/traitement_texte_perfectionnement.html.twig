@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+{% block title %}Tertio Informatique - Traitement de texte : Perfectionnement {% endblock title %}
+{% block content %}
+    <section id="pdf-viewer" class="hero pdf-viewer d-flex align-items-center justify-content-center" style="padding-top: 150px;">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h1 class="text-center mb-4">Traitement de texte : Perfectionnement</h1>
+                    <div class="pdf-container" data-aos="fade-up">
+                        <object data="{{ asset("assets/pdf/formations/bureautique/Fiche formation 2024-Traitement de texte-Perfectionnement.pdf") }}" type="application/pdf" width="100%" height="1000px">
+                            <img src="{{ asset("assets/img/formations/bureautique/Fiche formation 2024-Traitement de texte-Perfectionnement-1.png") }}" alt="Traitement de texte : Perfectionnement" width="100%">
+                        </object>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock content %}

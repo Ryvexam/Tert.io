@@ -1,90 +1,140 @@
 {% extends 'base.html.twig' %}
 {% block title %}Tertio Informatique{% endblock title %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <style>
+        .service-card {
+            transition: all 0.3s ease;
+            height: 100%;
+        }
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+        .card-body {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        .card-text {
+            flex-grow: 1;
+        }
+    </style>
+{% endblock %}
+
 {% block content %}
-    <section id="hero" class="hero d-flex align-items-center">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6 d-flex flex-column justify-content-center">
-                    <h1>Nos Solutions sur Mesure</h1>
-                    <h2 data-aos="fade-up" data-aos-delay="400">Chez Tertio, nous comprenons que chaque entreprise a des besoins uniques. C'est pourquoi nous proposons des solutions sur mesure pour répondre à vos attentes spécifiques en matière de technologies de l'information. Nos solutions personnalisées sont conçues pour améliorer votre productivité, renforcer votre sécurité et favoriser la croissance de votre entreprise.</h2>
-                    <div data-aos="fade-up" data-aos-delay="600">
-                        <div class="text-center text-lg-start">
-                            <a href="#details" class="btn-get-started scrollto d-inline-flex align-items-center justify-content-center align-self-center">
-                                <span>En Savoir Plus</span>
-                                <i class="bi bi-arrow-right"></i>
-                            </a>
-                        </div>
+<section id="hero" class="hero d-flex align-items-center">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 d-flex flex-column justify-content-center">
+                <h1>Nos Solutions sur Mesure</h1>
+                <h2 data-aos="fade-up" data-aos-delay="400">Chez Tertio, nous créons des solutions informatiques sur mesure pour répondre à vos besoins spécifiques. Découvrez comment nous pouvons optimiser votre environnement IT avec nos solutions cloud, hybrides et dédiées.</h2>
+                <div data-aos="fade-up" data-aos-delay="600">
+                    <div class="text-center text-lg-start">
+                        <a href="#details" class="btn-get-started scrollto d-inline-flex align-items-center justify-content-center align-self-center">
+                            <span>En Savoir Plus</span>
+                            <i class="bi bi-arrow-right"></i>
+                        </a>
                     </div>
                 </div>
-                <div class="col-lg-6 hero-img" data-aos="zoom-out" data-aos-delay="200">
-                    <img src="{{ asset('assets/img/Solutions/sur-mesure.png') }}" class="img-fluid" alt="Solutions sur Mesure">
-                </div>
+            </div>
+            <div class="col-lg-6 hero-img" data-aos="zoom-out" data-aos-delay="200">
+                <img src="{{ asset('assets/img/Solutions/sur-mesure.png') }}" class="img-fluid" alt="Solutions sur Mesure">
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
     <main id="main">
         <section id="details" class="about">
             <div class="container" data-aos="fade-up">
-                <div class="row gx-0">
-                    <div class="col-lg-12 d-flex flex-column justify-content-center" data-aos="fade-up" data-aos-delay="200">
-                        <div class="content">
-                            <h2><strong>Liaisons Intersites</strong></h2>
-                            <p>Facilitez la communication entre vos différents sites avec nos solutions de liaisons intersites. Nous mettons en place des réseaux fiables et sécurisés pour garantir un échange fluide d'informations entre vos locaux, quel que soit leur emplacement géographique.</p>
+                <div class="row g-4">
+                    <div class="col-lg-12 mb-4">
+                        <h2 class="text-center">NOS SERVICES</h2>
+                    </div>
 
-                            <h2 class="mt-4"><strong>Salle de Réunions, de Formation</strong></h2>
-                            <p>Optimisez vos espaces de réunions et de formation avec nos solutions technologiques. Des équipements audiovisuels de pointe aux outils de visioconférence, nous vous aidons à créer des environnements collaboratifs et interactifs pour des réunions et des formations efficaces.</p>
+                    <div class="col-lg-12 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                        <div class="card service-card h-100">
+                            <div class="card-body">
+                                <h3 class="card-title">LIAISONS INTERSITES</h3>
+                                <p class="card-text">Facilitez la communication interne entre vos différents sites avec nos solutions de liaisons intersites. Nous mettons en place des réseaux fiables et sécurisés pour garantir un échange fluide d'informations entre vos locaux, quel que soit leur emplacement géographique. Ces liaisons sont essentielles pour la transformation numérique de votre entreprise, permettant une connectivité homogène et une collaboration efficace entre vos équipes.</p>
+                            </div>
+                        </div>
+                    </div>
 
-                            <section id="portfolio" class="portfolio">
-                                <div class="container" data-aos="fade-up">
-                                    <div class="row gy-4 portfolio-container" data-aos="fade-up" data-aos-delay="200">
-                                        <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-                                            <div class="portfolio-wrap">
-                                                <img src="{{ asset('assets/img/portfolio/portfolio-1.jpg') }}" class="img-fluid" alt="Laboratoire de langues">
-                                                <div class="portfolio-info">
-                                                    <h4>Laboratoire de langues</h4>
-                                                    <div class="portfolio-links">
-                                                        <a href="{{ asset('assets/img/portfolio/portfolio-1.jpg') }}" data-gallery="portfolioGallery" class="portfokio-lightbox" title="Laboratoire de langues"><i class="bi bi-plus"></i></a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-                                            <div class="portfolio-wrap">
-                                                <img src="{{ asset('assets/img/portfolio/portfolio-2.jpg') }}" class="img-fluid" alt="Classe avec tableau numérique">
-                                                <div class="portfolio-info">
-                                                    <h4>Classe avec tableau numérique</h4>
-                                                    <div class="portfolio-links">
-                                                        <a href="{{ asset('assets/img/portfolio/portfolio-2.jpg') }}" data-gallery="portfolioGallery" class="portfokio-lightbox" title="Classe avec tableau numérique"><i class="bi bi-plus"></i></a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-                                            <div class="portfolio-wrap">
-                                                <img src="{{ asset('assets/img/portfolio/portfolio-3.jpg') }}" class="img-fluid" alt="Salle de formation">
-                                                <div class="portfolio-info">
-                                                    <h4>Salle de formation</h4>
-                                                    <div class="portfolio-links">
-                                                        <a href="{{ asset('assets/img/portfolio/portfolio-3.jpg') }}" data-gallery="portfolioGallery" class="portfokio-lightbox" title="Salle de formation"><i class="bi bi-plus"></i></a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </section>
+                    <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                        <div class="card service-card h-100">
+                            <div class="card-body">
+                                <h3 class="card-title">SALLE DE RÉUNIONS ET DE FORMATION</h3>
+                                <p class="card-text">Optimisez vos espaces de réunions et de formation avec nos solutions technologiques. Des équipements audiovisuels de pointe aux outils de visioconférence, nous vous aidons à créer des environnements collaboratifs et interactifs pour des réunions et des formations efficaces. Nos solutions permettent également l'intégration d'affichage dynamique et de contenu interactif, ce qui améliore l'engagement et l'efficacité de vos sessions.</p>
+                            </div>
+                        </div>
+                    </div>
 
-                            <h2 class="mt-4"><strong>Gestion de Messagerie</strong></h2>
-                            <p>Simplifiez la gestion de votre messagerie avec nos solutions adaptées à vos besoins. Que vous optiez pour une solution sur site ou dans le cloud, nous vous proposons des outils de messagerie sécurisés et évolutifs pour une communication efficace au sein de votre entreprise.</p>
+                    <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
+                        <div class="card service-card h-100">
+                            <div class="card-body">
+                                <h3 class="card-title">GESTION DE MESSAGERIE</h3>
+                                <p class="card-text">Simplifiez la gestion de votre messagerie avec nos solutions adaptées à vos besoins. Que vous optiez pour une solution sur site ou dans le cloud, nous vous proposons des outils de messagerie sécurisés et évolutifs pour une communication efficace au sein de votre entreprise. Nos solutions incluent également des fonctionnalités avancées pour améliorer la communication interne et la collaboration.</p>
+                            </div>
+                        </div>
+                    </div>
 
-                            <h2 class="mt-4"><strong>Solutions Wifi</strong></h2>
-                            <p>Offrez à vos collaborateurs et à vos visiteurs un accès internet rapide et sécurisé grâce à nos solutions Wifi performantes. Nous concevons et déployons des réseaux Wifi unifiés pour garantir une connectivité optimale dans tous vos locaux.</p>
+                    <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="500">
+                        <div class="card service-card h-100">
+                            <div class="card-body">
+                                <h3 class="card-title">SOLUTIONS WIFI</h3>
+                                <p class="card-text">Offrez à vos collaborateurs et à vos visiteurs un accès internet rapide et sécurisé grâce à nos solutions Wifi performantes. Nous concevons et déployons des réseaux Wifi sécurisés pour garantir une connectivité optimale dans tous vos locaux. Un Wifi sécurisé est crucial pour protéger vos données et assurer la continuité des activités dans un environnement connecté.</p>
+                            </div>
+                        </div>
+                    </div>
 
-                            <h2 class="mt-4"><strong>Affichage Dynamique</strong></h2>
-                            <p>Communiquez efficacement avec vos clients et vos collaborateurs grâce à nos solutions d'affichage dynamique. Créez et diffusez du contenu interactif et personnalisé pour informer, divertir et engager votre audience, que ce soit pour de la communication interne ou externe.</p>
+                    <div class="col-lg-12 col-md-6" data-aos="fade-up" data-aos-delay="600">
+                        <div class="card service-card h-100">
+                            <div class="card-body">
+                                <h3 class="card-title">AFFICHAGE DYNAMIQUE</h3>
+                                <p class="card-text">Communiquez efficacement avec vos clients et vos collaborateurs grâce à nos solutions d'affichage dynamique. Créez et diffusez du contenu interactif et personnalisé pour informer, divertir et engager votre audience cible, que ce soit pour de la communication interne ou externe.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-                            <p class="highlight">Chez Tertio, nous sommes déterminés à vous fournir des solutions sur mesure qui répondent à vos besoins spécifiques et qui vous aident à atteindre vos objectifs commerciaux. Contactez-nous dès aujourd'hui pour découvrir comment nous pouvons vous proposer une solution adaptée.</p>
+        <section id="realizations" class="portfolio">
+            <div class="container" data-aos="fade-up">
+                <header class="section-header">
+                    <h2>Nos Réalisations</h2>
+                    <p>Exemples de nos installations</p>
+                </header>
+                <div class="row gy-4 portfolio-container">
+                    <div class="col-lg-6 col-md-6 portfolio-item">
+                        <div class="portfolio-wrap">
+                            <img src="{{ asset('assets/img/portfolio/portfolio-1.jpg') }}" class="img-fluid" alt="Classe avec tableau numérique">
+                            <div class="portfolio-info">
+                                <h4>Classe avec tableau numérique</h4>
+                                <p>Installation moderne pour une expérience d'apprentissage interactive</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6 portfolio-item">
+                        <div class="portfolio-wrap">
+                            <img src="{{ asset('assets/img/portfolio/portfolio-2.jpg') }}" class="img-fluid" alt="Salle de formation">
+                            <div class="portfolio-info">
+                                <h4>Salle de formation</h4>
+                                <p>Espace optimisé pour des sessions de formation efficaces</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6 col-md-6 portfolio-item">
+                        <div class="portfolio-wrap">
+                            <img src="{{ asset('assets/img/portfolio/portfolio-3.jpg') }}" class="img-fluid" alt="Salle de formation">
+                            <div class="portfolio-info">
+                                <h4>Salle de formation</h4>
+                                <p>Espace optimisé pour des sessions de formation efficaces</p>
+                            </div>
                         </div>
                     </div>
                 </div>
