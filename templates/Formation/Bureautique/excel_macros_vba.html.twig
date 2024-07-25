@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+{% block title %}Tertio Informatique - Excel : Macros et Programmation VBA {% endblock title %}
+{% block content %}
+    <section id="pdf-viewer" class="pdf-viewer d-flex align-items-center justify-content-center" style="padding-top: 150px;">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 hero">
+                    <h1 class="text-center mb-4">Excel : Macros et Programmation VBA</h1>
+                    <div class="pdf-container" data-aos="fade-up">
+                        <object data="{{ asset("assets/pdf/formations/bureautique/Fiche formation 2024-Excel-Macros et Programmation VBA.pdf") }}" type="application/pdf" width="100%" height="1000px">
+                            <img src="{{ asset("assets/img/formations/bureautique/Fiche formation 2024-Excel-Macros et Programmation VBA-1.png") }}" alt="Excel : Macros et Programmation VBA" width="100%">
+                        </object>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock content %}
