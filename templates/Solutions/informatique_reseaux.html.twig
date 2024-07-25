@@ -1,0 +1,111 @@
+{% extends 'base.html.twig' %}
+{% block title %}Tertio Informatique{% endblock title %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <style>
+        .service-card {
+            transition: all 0.3s ease;
+            height: 100%;
+        }
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+        .card-body {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        .card-text {
+            flex-grow: 1;
+        }
+    </style>
+{% endblock %}
+
+{% block content %}
+    <section id="hero" class="hero d-flex align-items-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 d-flex flex-column justify-content-center">
+                    <h1>Nos Solutions Informatiques et Réseaux</h1>
+                    <h2 data-aos="fade-up" data-aos-delay="400">Chez Tertio informatique, nous sommes déterminés à être votre partenaire de confiance pour toutes vos solutions informatiques et de réseaux. Contactez-nous dès aujourd'hui pour découvrir comment nous pouvons aider votre entreprise à prospérer dans un monde numérique en constante évolution.</h2>
+                    <div data-aos="fade-up" data-aos-delay="600">
+                        <div class="text-center text-lg-start">
+                            <a href="#details" class="btn-get-started scrollto d-inline-flex align-items-center justify-content-center align-self-center">
+                                <span>En Savoir Plus</span>
+                                <i class="bi bi-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 hero-img" data-aos="zoom-out" data-aos-delay="200">
+                    <img src="{{ asset('assets/img/Solutions/infrastructure-network.png') }}" class="img-fluid" alt="Infrastructures et Réseaux">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <main id="main">
+        <section id="details" class="about">
+            <div class="container" data-aos="fade-up">
+                <div class="row g-4">
+                    <div class="col-lg-12 mb-4">
+                        <h2 class="text-center"><strong>NOS SERVICES</strong></h2>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                        <div class="card service-card h-100">
+                            <div class="card-body">
+                                <h3 class="card-title"><strong>NOS SOLUTIONS</strong></h3>
+                                <p class="card-text">Que vous soyez une PME, une petite entreprise en pleine croissance ou une organisation établie, artisans, professions libérales, notre équipe dispose des compétences et de l'expertise nécessaires pour créer, déployer et maintenir des systèmes informatiques adaptés, fiables et performants.</p>
+                                <p class="card-text">Nous vous offrons une solution moderne et claire : une infrastructure réseau efficace, stable, sécurisée et performante. Notre approche vise à répondre à vos besoins spécifiques tout en assurant une connectivité sans faille et une protection de vos données à tout moment.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                        <div class="card service-card h-100">
+                            <div class="card-body">
+                                <h3 class="card-title"><strong>MATÉRIELS ET SERVICES</strong></h3>
+                                <p class="card-text">Nous proposons une large gamme d'équipements informatiques, allant des PC et serveurs aux périphériques divers tels que les NAS, ainsi que des solutions de réseau et de Wifi performantes. Nos services incluent également des services d'installation informatique, assurant une mise en place optimale de vos nouveaux équipements.</p>
+                                <p class="card-text">Nous pouvons également travailler en partenariat avec d'autres acteurs du secteur pour vous offrir des services d'assistance informatique complets, incluant la maintenance réseau et la gestion des infrastructures de télécommunication.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
+                        <div class="card service-card h-100">
+                            <div class="card-body">
+                                <h3 class="card-title"><strong>INFOGÉRANCE</strong></h3>
+                                <p class="card-text">Tertio vous propose ses services d'infogérance complets pour prendre en charge la surveillance, la maintenance et l'optimisation de vos systèmes informatiques. Nos équipes techniques qualifiées veillent à ce que vos infrastructures restent opérationnelles et sécurisées en tout temps.</p>
+                                <p class="card-text">En plus de l'infogérance, nous offrons des solutions de virtualisation pour améliorer la flexibilité et l'efficacité de vos systèmes informatiques, ainsi que des services de migration de données pour assurer une transition fluide et sécurisée de vos informations critiques.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6 col-md-6" data-aos="fade-up" data-aos-delay="500">
+                        <div class="card service-card h-100">
+                            <div class="card-body">
+                                <h3 class="card-title"><strong>CONTRAT DE MAINTENANCE</strong></h3>
+                                <p class="card-text">Avec nos contrats de maintenance informatique flexibles, vous bénéficiez d'un support technique dédié et de services de maintenance préventive. Nos prestations comprennent les interventions en télémaintenance, les dépannages sur site, et une assistance téléphonique réactive.</p>
+                                <p class="card-text">Notre service de maintenance réseau prend en charge tant les logiciels que le matériel actif. Nous pouvons également jouer le rôle d'interface avec d'autres prestataires pour faciliter la résolution de problèmes.</p>
+                                <p class="card-text">Tertio Informatique peut prendre en charge la gestion de vos connexions internet, de votre messagerie et de la sécurité de votre système, vous offrant une tranquillité d'esprit totale.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6 col-md-6" data-aos="fade-up" data-aos-delay="600">
+                        <div class="card service-card h-100">
+                            <div class="card-body">
+                                <h3 class="card-title"><strong>PRESTATIONS</strong></h3>
+                                <p class="card-text">En plus de nos services d'infrastructure et de réseau, nous proposons une gamme étendue de prestations pour répondre à vos besoins informatiques spécifiques. Que vous ayez besoin d'une installation sur site, d'une migration de données, de services de virtualisation ou de toute autre demande, nos équipes sont prêtes à fournir des solutions sur mesure qui répondent à vos exigences les plus élevées.</p>
+                                <p class="card-text">Notre objectif est de vous offrir un service complet et personnalisé, adapté à la taille et aux besoins spécifiques de votre entreprise, vous permettant ainsi de vous concentrer sur votre cœur de métier en toute sérénité.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+{% endblock content %}
