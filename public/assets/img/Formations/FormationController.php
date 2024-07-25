@@ -110,37 +110,37 @@ class FormationController extends AbstractController
     #[Route("/gestion-donnees/excel-tcd", name: "app_gestion_donnees_excel_tcd")]
     function excelTcd()
     {
-        return $this->render("Formation/GestionDonnees/excel_tcd.html.twig");
+        return $this->render("Formation/GestionDeDonnees/excel_tcd.html.twig");
     }
 
     #[Route("/gestion-donnees/excel-power-query1", name: "app_gestion_donnees_excel_power_query1")]
     function excelPowerQuery1()
     {
-        return $this->render("Formation/GestionDonnees/excel_power_query1.html.twig");
+        return $this->render("Formation/GestionDeDonnees/excel_power_query1.html.twig");
     }
 
     #[Route("/gestion-donnees/excel-power-pivot", name: "app_gestion_donnees_excel_power_pivot")]
     function excelPowerPivot()
     {
-        return $this->render("Formation/GestionDonnees/excel_power_pivot.html.twig");
+        return $this->render("Formation/GestionDeDonnees/excel_power_pivot.html.twig");
     }
 
     #[Route("/gestion-donnees/powerbi", name: "app_gestion_donnees_powerbi")]
     function powerBi()
     {
-        return $this->render("Formation/GestionDonnees/powerbi.html.twig");
+        return $this->render("Formation/GestionDeDonnees/powerbi.html.twig");
     }
 
     #[Route("/gestion-donnees/access-base", name: "app_gestion_donnees_access_base")]
     function accessBase()
     {
-        return $this->render("Formation/GestionDonnees/access_base.html.twig");
+        return $this->render("Formation/GestionDeDonnees/access_base.html.twig");
     }
 
     #[Route("/gestion-donnees/access-perfectionnement", name: "app_gestion_donnees_access_perfectionnement")]
     function accessPerfectionnement()
     {
-        return $this->render("Formation/GestionDonnees/access_perfectionnement.html.twig");
+        return $this->render("Formation/GestionDeDonnees/access_perfectionnement.html.twig");
     }
 
     // Logiciels
