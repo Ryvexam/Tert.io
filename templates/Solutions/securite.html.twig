@@ -1,12 +1,35 @@
 {% extends 'base.html.twig' %}
-{% block title %}Tertio Informatique{% endblock title %}
+{% block title %}Tertio Informatique - Solutions de Sécurité{% endblock title %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <style>
+        .service-card {
+            transition: all 0.3s ease;
+            height: 100%;
+        }
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+        .card-body {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        .card-text {
+            flex-grow: 1;
+        }
+    </style>
+{% endblock %}
+
 {% block content %}
     <section id="hero" class="hero d-flex align-items-center">
         <div class="container">
             <div class="row">
                 <div class="col-lg-6 d-flex flex-column justify-content-center">
                     <h1>Nos Solutions Sécurité</h1>
-                    <h2 data-aos="fade-up" data-aos-delay="400">La sécurité informatique est essentielle pour protéger votre entreprise contre les menaces en ligne et garantir la confidentialité de vos données.<br> Chez Tertio Informatique, nous proposons une gamme complète de solutions de sécurité informatique pour répondre à vos besoins spécifiques.<br> Que vous soyez une petite entreprise ou une grande organisation, nous sommes là pour sécuriser votre infrastructure et protéger vos données sensibles.</h2>
+                    <h2 data-aos="fade-up" data-aos-delay="400">Avec nos solutions de sécurité informatique, vous pouvez être sûr que votre entreprise est entre de bonnes mains. Contactez-nous dès aujourd'hui pour découvrir comment nous pouvons vous aider à renforcer la sécurité de votre entreprise et à protéger vos données contre les menaces en ligne.</h2>
                     <div data-aos="fade-up" data-aos-delay="600">
                         <div class="text-center text-lg-start">
                             <a href="#details" class="btn-get-started scrollto d-inline-flex align-items-center justify-content-center align-self-center">
@@ -26,19 +49,53 @@
     <main id="main">
         <section id="details" class="about">
             <div class="container" data-aos="fade-up">
-                <div class="row gx-0">
-                    <div class="col-lg-12 d-flex flex-column justify-content-center" data-aos="fade-up" data-aos-delay="200">
-                        <div class="content">
-                            <h2><strong>Solutions Antivirus Eset</strong></h2>
-                            <p>Les virus, les logiciels malveillants et autres menaces en ligne peuvent causer d'importants dommages à votre entreprise. C'est pourquoi nous offrons les solutions antivirus Eset, reconnues pour leur efficacité et leur fiabilité. Avec une protection en temps réel contre les virus, les ransomwares et autres logiciels malveillants, vous pouvez avoir l'esprit tranquille en sachant que votre entreprise est sécurisée.</p>
+                <div class="row g-4">
+                    <div class="col-lg-12 mb-4">
+                        <h2 class="text-center"><strong>NOS SOLUTIONS DE SÉCURITÉ</strong></h2>
+                    </div>
 
-                            <h2 class="mt-4"><strong>Sauvegardes</strong></h2>
-                            <p>La perte de données peut être catastrophique pour une entreprise. Nos solutions de sauvegarde vous permettent de protéger vos données critiques en les sauvegardant régulièrement et en les stockant de manière sécurisée. Que ce soit sur site ou dans le cloud, nous vous aidons à mettre en place des stratégies de sauvegarde fiables pour garantir la disponibilité de vos données en cas d'urgence.</p>
+                    <div class="col-lg-12" data-aos="fade-up" data-aos-delay="200">
+                        <div class="card service-card h-100">
+                            <div class="card-body">
+                                <h3 class="card-title"><strong>SÉCURITÉ INFORMATIQUE</strong></h3>
+                                <p class="card-text">La sécurité informatique est essentielle pour protéger votre entreprise contre les menaces en ligne et garantir la confidentialité de vos données. Chez Tertio, nous proposons une gamme complète de solutions de sécurité informatique pour répondre à vos besoins spécifiques. Quelle que soit la taille de votre organisation, nous sommes là pour sécuriser votre infrastructure et protéger vos données sensibles.</p>
+                            </div>
+                        </div>
+                    </div>
 
-                            <h2 class="mt-4"><strong>Protection</strong></h2>
-                            <p>En plus des antivirus et des sauvegardes, nous proposons une gamme de solutions de protection pour renforcer la sécurité de votre infrastructure. Cela inclut la protection des réseaux, des pare-feu, des outils de détection des intrusions et bien plus encore. Notre objectif est de créer une ligne de défense robuste pour empêcher les attaques et sécuriser vos systèmes contre les menaces en ligne.</p>
+                    <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                        <div class="card service-card h-100">
+                            <div class="card-body">
+                                <h3 class="card-title"><strong>SOLUTIONS ANTIVIRUS ESET</strong></h3>
+                                <p class="card-text">Les virus, les logiciels malveillants et autres menaces en ligne peuvent causer d'importants dommages à votre entreprise. C'est pourquoi nous offrons les solutions antivirus Eset, reconnues pour leur efficacité et leur fiabilité. Avec une protection en temps réel contre les virus, les ransomwares et autres logiciels malveillants, vous pouvez avoir l'esprit tranquille en sachant que votre entreprise est sécurisée.</p>
+                            </div>
+                        </div>
+                    </div>
 
-                            <p>Avec nos solutions de sécurité informatique, vous pouvez être sûr que votre entreprise est entre de bonnes mains. Contactez-nous dès aujourd'hui pour découvrir comment nous pouvons vous aider à renforcer la sécurité de votre entreprise et à protéger vos données contre les menaces en ligne.</p>
+                    <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
+                        <div class="card service-card h-100">
+                            <div class="card-body">
+                                <h3 class="card-title"><strong>SAUVEGARDES</strong></h3>
+                                <p class="card-text">La perte de données peut être catastrophique pour une entreprise. Nos solutions de sauvegarde vous permettent de protéger vos données critiques en les sauvegardant régulièrement et en les stockant de manière sécurisée. Que ce soit sur site ou dans le cloud, nous vous aidons à mettre en place des stratégies de sauvegarde fiables pour garantir la disponibilité de vos données en cas d'urgence. Nous assurons également la protection contre la perte de données pour que vous puissiez récupérer vos informations rapidement en cas de besoin.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="500">
+                        <div class="card service-card h-100">
+                            <div class="card-body">
+                                <h3 class="card-title"><strong>PROTECTION</strong></h3>
+                                <p class="card-text">En plus des antivirus et des sauvegardes, nous proposons une gamme de solutions de protection pour renforcer la sécurité de votre infrastructure. Cela inclut la sécurité des réseaux, des pare-feu informatiques, des outils de détection des intrusions et bien plus encore. Notre objectif est de créer une ligne de défense robuste pour empêcher les attaques et sécuriser vos systèmes contre les menaces en ligne. Nous mettons également en place une stratégie de reprise après sinistre pour garantir la continuité de vos activités en cas d'incident majeur.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-12" data-aos="fade-up" data-aos-delay="600">
+                        <div class="card service-card h-100">
+                            <div class="card-body">
+                                <h3 class="card-title"><strong>GESTION DES E-MAILS PROFESSIONNELS ET COLLABORATION EN TEMPS RÉEL</strong></h3>
+                                <p class="card-text">Nous proposons des solutions complètes pour la gestion des e-mails professionnels, assurant une communication sécurisée et efficace au sein de votre entreprise. De plus, nos outils de collaboration en temps réel permettent à vos équipes de travailler ensemble de manière fluide et productive, tout en maintenant un haut niveau de sécurité.</p>
+                            </div>
                         </div>
                     </div>
                 </div>
