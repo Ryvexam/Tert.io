@@ -1,18 +1,55 @@
 {% extends 'base.html.twig' %}
-{% block title %}Tertio Informatique{% endblock title %}
-{% block content %}
+{% block title %}Tertio Informatique - Nos Formations{% endblock title %}
 
+{% block stylesheets %}
+    {{ parent() }}
+    <style>
+        .service-card {
+            transition: all 0.3s ease;
+            height: 100%;
+        }
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+        .card-body {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        .card-text {
+            flex-grow: 1;
+        }
+        .colored-card {
+            background-color: rgba(0, 123, 255, 0.1);
+        }
+
+        .btn-get-started {
+            margin-top: 30px;
+            line-height: 0;
+            padding: 15px 40px;
+            border-radius: 4px;
+            transition: 0.5s;
+            color: #fff;
+            background: #c85c11;
+            box-shadow: 0px 5px 30px #c85c11;
+        }
+
+    </style>
+{% endblock %}
+
+{% block content %}
     <section id="hero" class="hero d-flex align-items-center">
         <div class="container">
             <div class="row">
                 <div class="col-lg-6 d-flex flex-column justify-content-center">
-                    <h1 data-aos="fade-up">Découvrez nos formations</h1>
-                    <h2 data-aos="fade-up" data-aos-delay="400">Tertiaire Formation Conseil propose 9 modules de certification ICDL-PCIE</h2>
+                    <h1>Découvrez nos formations</h1>
+                    <h2 data-aos="fade-up" data-aos-delay="400">Tertiaire Formation Conseil propose 10 modules de certification ICDL-PCIE</h2>
                     <div data-aos="fade-up" data-aos-delay="600">
                         <div class="text-center text-lg-start">
-                            <a href="#details" class="btn btn-primary btn-lg d-inline-flex align-items-center justify-content-center align-self-center">
+                            <a href="#details" class="btn-get-started scrollto d-inline-flex align-items-center justify-content-center align-self-center">
                                 <span>En Savoir Plus</span>
-                                <i class="bi bi-arrow-right ms-2"></i>
+                                <i class="bi bi-arrow-right"></i>
                             </a>
                         </div>
                     </div>
@@ -23,56 +60,57 @@
             </div>
         </div>
     </section>
-    
-        <main id="main">
-            <section id="details" class="about py-5">
-                <div class="container" data-aos="fade-up">
-                    <div class="row gx-0">
-                        <div class="col-lg-12 d-flex flex-column justify-content-center" data-aos="fade-up" data-aos-delay="200">
-                            <div class="content">
-                                <h2 class="text-center mb-4"><strong>Comment ça marche ?</strong></h2>
-                                <p class="text-center mb-5">La certification ICDL proposée par TFC comporte 9 modules définis par un référentiel international. Ce référentiel tient compte des évolutions des logiciels et des connaissances. Il est ainsi mis à jour tous les trois ans avec la plus grande rigueur pour assurer continuité et suivi des progrès dans ces domaines.</p>
 
-                                <div class="row row-cols-1 row-cols-md-2 g-4">
-                                    {% for module in [
-                                        {title: "Les essentiels de l'ordinateur", image: "essentiel-ordinateur-2.jpg", pdf: "icdl-pcie-les-essentiels-ordinateur.pdf", description: "Ce module traite des connaissances et des compétences de base dans les fonctions principales de l'ordinateur, du système d'exploitation et des caractéristiques générales."},
-                                        {title: "Les essentiels du web", image: "les-essentiels-du-web.jpg", pdf: "icdl-pcie-les-essentiels-du-web.pdf", description: "Ce module porte à la fois sur l'Information (Internet) et la Communication (courrier électronique)."},
-                                        {title: "Traitement de texte*", image: "traitement-de-texte.jpg", pdf: "icdl-pcie-traitement-de-texte.pdf", description: "Il s'agit ici d'acquérir ou de valider les connaissances pratiques du candidat dans l'élaboration d'un document texte (création de texte, introduction d'objet simple, publipostage…)"},
-                                        {title: "Tableurs*", image: "tableur-excel.png", pdf: "icdl-pcie-excel-niv-1.pdf", description: "L'objectif de ce module est d'acquérir ou de valider, la compréhension des opérations courantes de la création des tableaux, l'utilisation des formules de calculs simples, la mise en forme et la création des graphiques."},
-                                        {title: "Base de données*", image: "base-de-donnees.jpg", pdf: "icdl-pcie-gestion-de-bases-de-donnees.pdf", description: "Il s'agit ici d'acquérir ou de valider les connaissances de base dans la création, la modification et l'utilisation d'une base de données simple."},
-                                        {title: "Présentations*", image: "presentation.jpg", pdf: "icdl-pcie-presentation-assistee-par-ordinateur.pdf", description: "Ce module aborde les connaissances de base dans la création et la mise en forme d'une présentation de diapositives (connaissance de l'application, mise en forme, création d'objet, diaporama…)"},
-                                        {title: "Edition de site web", image: "website.jpg", pdf: null, description: "Présentation des concepts essentiels dans l'édition de site web. Ce module permet également de développer les compétences relatives à la capacité de compréhension des concepts essentiels liés à la publication web, ainsi qu'à la capacité de créer et compléter un site internet."},
-                                        {title: "Travail collaboratif en ligne", image: "travail-en-ligne.jpg", pdf: "icdl-pcie-travail-collaboratif.pdf", description: "Ce module expose les concepts essentiels et les techniques à maitrises pour paramétrer et utiliser les outils de collaboration en ligne (stockage, calendriers, visio-conférence…)"},
-                                        {title: "Sécurité des TI (à venir)", image: "securite-des-ti-bientot-dispo-.png", pdf: null, description: "Comprendre les principaux éléments qui assurent une sécurité dans l'utilisation des TIC : Technologies de l'Information et de la Communication."}
-                                    ] %}
-                                        <div class="col">
-                                            <div class="card h-100 shadow-sm">
-                                                <div class="row g-0 h-100">
-                                                    <div class="col-md-4">
-                                                        <img src="{{ asset('assets/img/Formations/' ~ module.image) }}" class="img-fluid rounded-start h-100 object-fit-cover" alt="{{ module.title }}">
-                                                    </div>
-                                                    <div class="col-md-8 d-flex flex-column">
-                                                        <div class="card-body flex-grow-1">
-                                                            <h5 class="card-title">{{ module.title }}</h5>
-                                                            <p class="card-text">{{ module.description }}</p>
-                                                        </div>
-                                                        {% if module.pdf %}
-                                                            <div class="card-footer bg-transparent border-0 mt-auto">
-                                                                <a href="{{ asset('assets/img/Formations/' ~ module.pdf) }}" class="btn btn-primary" target="_blank" rel="noreferrer noopener">En savoir plus</a>
-                                                            </div>
-                                                        {% endif %}
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    {% endfor %}
+    <main id="main">
+        <section id="details" class="about">
+            <div class="container" data-aos="fade-up">
+                <div class="row g-4">
+                    <div class="col-lg-12 mb-4">
+                        <h2 class="text-center"><strong>NOS MODULES DE FORMATION ICDL-PCIE</strong></h2>
+                    </div>
+
+                    <div class="col-lg-12 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                        <div class="card service-card h-100">
+                            <div class="card-body">
+                                <h3 class="card-title"><strong>PRÉSENTATION DES MODULES</strong></h3>
+                                <p class="card-text">La certification ICDL proposée par TFC comporte 10 modules définis par un référentiel international. Ce référentiel tient compte des évolutions des logiciels et des connaissances. Il est ainsi mis à jour tous les trois ans avec la plus grande rigueur pour assurer continuité et suivi des progrès dans ces domaines.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    {% for module in [
+                        {title: "LES ESSENTIELS DE L'ORDINATEUR", description: "Ce module traite des connaissances et des compétences de base dans les fonctions principales de l'ordinateur, du système d'exploitation et des caractéristiques générales.", link: "https://www.icdlfrance.org/lessentiel-de-lordinateur/", colored: true},
+                        {title: "DIGITAL CITIZEN", description: "Développé pour les débutants, ce module permet d'acquérir les compétences de base pour l'utilisation du numérique.", link: "https://www.icdlfrance.org/digital-citizen/", colored: false},
+                        {title: "LES ESSENTIELS DU WEB", description: "Ce module porte à la fois sur l'Information (Internet) et la Communication (courrier électronique).", link: "https://www.icdlfrance.org/essentiels-du-web/", colored: true},
+                        {title: "TRAITEMENT DE TEXTE*", description: "Il s'agit ici d'acquérir ou de valider les connaissances pratiques du candidat dans l'élaboration d'un document texte (création de texte, introduction d'objet simple, publipostage…)", link: "https://www.icdlfrance.org/traitement-de-texte/", colored: false},
+                        {title: "TABLEURS*", description: "L'objectif de ce module est d'acquérir ou de valider, la compréhension des opérations courantes de la création des tableaux, l'utilisation des formules de calculs simples, la mise en forme et la création des graphiques.", link: "https://www.icdlfrance.org/tableurs/", colored: true},
+                        {title: "BASE DE DONNÉES*", description: "Il s'agit ici d'acquérir ou de valider les connaissances de base dans la création, la modification et l'utilisation d'une base de données simple.", link: "https://www.icdlfrance.org/base-de-donnees/", colored: false},
+                        {title: "PRÉSENTATIONS*", description: "Ce module aborde les connaissances de base dans la création et la mise en forme d'une présentation de diapositives (connaissance de l'application, mise en forme, création d'objet, diaporama…)", link: "https://www.icdlfrance.org/publication-assistee-par-ordinateur-pao/", colored: true},
+                        {title: "TRAVAIL COLLABORATIF EN LIGNE", description: "Ce module expose les concepts essentiels et les techniques à maitrises pour paramétrer et utiliser les outils de collaboration en ligne (stockage, calendriers, visio-conférence…)", link: "https://www.icdlfrance.org/outils-collaboratifs/", colored: false},
+                        {title: "SÉCURITÉ DES TI", description: "Comprendre les principaux éléments qui assurent une sécurité dans l'utilisation des TIC : Technologies de l'Information et de la Communication.", link: "https://www.icdlfrance.org/cybersecurite/", colored: true}
+                    ] %}
+                        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="{{ 300 + loop.index0 * 100 }}">
+                            <div class="card service-card h-100 {% if module.colored %}colored-card{% endif %}">
+                                <div class="card-body">
+                                    <h3 class="card-title"><strong>{{ module.title }}</strong></h3>
+                                    <p class="card-text">{{ module.description }}</p>
+                                    <a href="{{ module.link }}" class="btn-get-started scrollto d-inline-flex align-items-center justify-content-center align-self-center" target="_blank" rel="noreferrer noopener">En savoir plus</a>
                                 </div>
+                            </div>
+                        </div>
+                    {% endfor %}
 
-                                <p class="text-center mt-5">*disponibles en niveaux avancés</p>
+                    <div class="col-lg-12 col-md-6" data-aos="fade-up" data-aos-delay="1200">
+                        <div class="card service-card h-100 colored-card">
+                            <div class="card-body">
+                                <h3 class="card-title"><strong>INFORMATIONS COMPLÉMENTAIRES</strong></h3>
+                                <p class="card-text">*Les modules Traitement de texte, Tableurs, Base de données et Présentations sont disponibles en niveaux avancés.</p>
+                                <p class="card-text">Chez Tertiaire Formation Conseil, nous sommes déterminés à être votre partenaire de confiance pour toutes vos formations en informatique. Contactez-nous dès aujourd'hui pour découvrir comment nous pouvons vous aider à développer vos compétences numériques.</p>
                             </div>
                         </div>
                     </div>
                 </div>
-            </section>
-        </main>
+            </div>
+        </section>
+    </main>
 {% endblock content %}

@@ -11,73 +11,87 @@
                     <li><a class="nav-link scroll active" href="{{ path("app_home") }}">Accueil</a></li>
                     <li class="dropdown"><a class="nav-link" href="#"><span>L'entreprise</span> <i class="bi bi-chevron-down"></i></a>
                         <ul>
-                            <li><a href="{{path("app_historique")}}">Historique</a></li>
+                            <li><a href="{{path("app_historique")}}">Notre Histoire</a></li>
                             <li><a href="{{path("app_equipe")}}">L'Équipe</a></li>
                         </ul>
                     </li>
 
                     <li class="dropdown"><a class="nav-link" href="#"><span>Nos Solutions</span> <i class="bi bi-chevron-down"></i></a>
                         <ul>
-                            <li><a href="{{path("app_informatique_reseaux")}}">Informatiques et Réseaux</a></li>
+                            <li><a href="{{path("app_informatique_reseaux")}}">Informatique et Réseaux</a></li>
                             <li><a href="{{path("app_securite")}}">Sécurité</a></li>
-                            <li><a href="{{path("app_cloud_hybride")}}">Cloud et hybrides</a></li>
-                            <li><a href="{{path("app_sur_mesure")}}">Sur mesure</a></li>
+                            <li><a href="{{path("app_cloud_hybride")}}">Cloud et hybride</a></li>
+                            <li><a href="{{path("app_sur_mesure")}}">Solutions sur mesure</a></li>
                             <li><a href="{{path("app_audit_conseil")}}">Audit et conseil</a></li>
-                            <li><a href="{{path("app_logicielles")}}">Logicielles</a></li>
+                            <li><a href="{{path("app_logicielles")}}">Logiciel</a></li>
                         </ul>
                     </li>
 
-                    <li class="dropdown"><a class="nav-link" href="{{ path("app_formations") }}"><span>Nos Formations</span> <i class="bi bi-chevron-down"></i></a>
+                    <li class="dropdown"><a class="nav-link" href="{{ path('app_formations') }}"><span>Nos Formations</span> <i class="bi bi-chevron-down"></i></a>
                         <ul>
-                            <li class="dropdown"><a href="#"><span>ICDL-PCIE</span> <i class="bi bi-chevron-right"></i></a>
-                                <ul>
-                                    <li><a href="{{path("app_icdl_presentation")}}">Présentation</a></li>
-                                    <li><a href="{{path("app_icdl_modules")}}">Nos Modules</a></li>
-                                    <li><a href="{{path("app_icdl_inscriptions")}}">Inscriptions</a></li>
-                                    <li><a href="{{path("app_icdl_resultats")}}">Nos résultats</a></li>
-                                </ul>
-                            </li>
+                            <li><a href="{{ path('app_organisme_formations') }}">L'organisme de formation</a></li>
+                            <li><a href="https://www.calameo.com/read/007631253ccce9914fba6">Catalogue des formations</a></li>
+                            <li><a href="{{ path('app_moyensetmethodes') }}">Moyens et Méthodes</a></li>
+                            <li><a href="#">Certification Qualiopi</a></li>
 
-                            <li><a target="_blank" href="https://www.calameo.com/read/007631253ccce9914fba6">Catalogue des Formations</a></li>
-                            <li class="dropdown"><a href="#"><span>Bureautiques</span> <i class="bi bi-chevron-right"></i></a>
+                            <li class="dropdown"><a href="#"><span>Les formations</span> <i class="bi bi-chevron-right"></i></a>
                                 <ul>
-                                    <li><a href="{{path("app_bureautiques_traitement_texte_base")}}">Traitement de texte : Notions de base</a></li>
-                                    <li><a href="{{path("app_bureautiques_traitement_texte_perfectionnement")}}">Traitement de texte : Perfectionnement</a></li>
-                                    <li><a href="{{path("app_bureautiques_traitement_texte_fusion_publipostage")}}">Traitement de texte : Fusion et Publipostage</a></li>
-                                    <li><a href="{{path("app_bureautiques_powerpoint")}}">PowerPoint</a></li>
-                                    <li><a href="{{path("app_bureautiques_navigation_internet_messagerie")}}">Navigation Internet et Messagerie</a></li>
-                                    <li><a href="{{path("app_bureautiques_outlook")}}">Messagerie Outlook</a></li>
-                                    <li><a href="{{path("app_bureautiques_microsoft_365")}}">Outils collaboratifs : Microsoft 365</a></li>
-                                    <li><a href="{{path("app_bureautiques_teams")}}">Outils collaboratifs : Teams</a></li>
-                                    <li><a href="{{path("app_bureautiques_excel_base")}}">Excel : Notions de base</a></li>
-                                    <li><a href="{{path("app_bureautiques_excel_perfectionnement")}}">Excel : Perfectionnement</a></li>
-                                    <li><a href="{{path("app_bureautiques_excel_expert")}}">Excel : Niveau expert</a></li>
-                                    <li><a href="{{path("app_bureautiques_excel_macros_vba")}}">Excel : Macros et programmation VBA</a></li>
+                                    <li class="dropdown"><a href="#"><span>Certifiantes</span> <i class="bi bi-chevron-right"></i></a>
+                                        <ul>
+                                            <li><a href="{{ path('app_icdl_presentation') }}">Présentation ICDL</a></li>
+                                            <li><a href="{{ path('app_icdl_modules') }}">Les modules</a></li>
+                                            <li><a href="{{ path('app_icdl_inscriptions') }}">Inscription</a></li>
+                                            <li><a href="{{ path('app_icdl_resultats') }}">Résultats certifications</a></li>
+                                        </ul>
+                                    </li>
+
+                                    <li class="dropdown"><a href="#"><span>Bureautique</span> <i class="bi bi-chevron-right"></i></a>
+                                        <ul>
+                                            <li><a href="{{ path('app_bureautiques_traitement_texte_base') }}">Traitement de texte : Notions de base</a></li>
+                                            <li><a href="{{ path('app_bureautiques_traitement_texte_perfectionnement') }}">Traitement de texte : Perfectionnement</a></li>
+                                            <li><a href="{{ path('app_bureautiques_traitement_texte_fusion_publipostage') }}">Traitement de texte : Fusion et Publipostage</a></li>
+                                            <li><a href="{{ path('app_bureautiques_powerpoint') }}">PowerPoint</a></li>
+                                            <li><a href="{{ path('app_bureautiques_navigation_internet_messagerie') }}">Navigation Internet et Messagerie</a></li>
+                                            <li><a href="{{ path('app_bureautiques_outlook') }}">Messagerie Outlook</a></li>
+                                            <li><a href="{{ path('app_bureautiques_microsoft_365') }}">Outils collaboratifs : Microsoft 365</a></li>
+                                            <li><a href="{{ path('app_bureautiques_teams') }}">Outils collaboratifs : Teams</a></li>
+                                            <li><a href="{{ path('app_bureautiques_excel_base') }}">Excel : Notions de base</a></li>
+                                            <li><a href="{{ path('app_bureautiques_excel_perfectionnement') }}">Excel : Perfectionnement</a></li>
+                                            <li><a href="{{ path('app_bureautiques_excel_expert') }}">Excel : Niveau expert</a></li>
+                                            <li><a href="{{ path('app_bureautiques_excel_macros_vba') }}">Excel : Macros et programmation VBA</a></li>
+                                        </ul>
+                                    </li>
+
+                                    <li class="dropdown"><a href="#"><span>Débutants</span> <i class="bi bi-chevron-right"></i></a>
+                                        <ul>
+                                            <li><a href="{{ path('app_debutants_windows') }}">Environnement Windows 10 ou 11</a></li>
+                                            <li><a href="{{ path('app_debutants_digital_citizen') }}">Digital Citizen</a></li>
+                                        </ul>
+                                    </li>
+
+                                    <li class="dropdown"><a href="#"><span>Gestion de données</span> <i class="bi bi-chevron-right"></i></a>
+                                        <ul>
+                                            <li><a href="{{ path('app_gestion_donnees_excel_tcd') }}">Excel : Maîtriser ses TCD</a></li>
+                                            <li><a href="{{ path('app_gestion_donnees_excel_power_query1') }}">Excel : Power-Query Niveau 1</a></li>
+                                            <li><a href="{{ path('app_gestion_donnees_excel_power_pivot') }}">Excel : Power Pivot</a></li>
+                                            <li><a href="{{ path('app_gestion_donnees_powerbi') }}">Power BI Desktop</a></li>
+                                            <li><a href="{{ path('app_gestion_donnees_access_base') }}">Access : Notion de base</a></li>
+                                            <li><a href="{{ path('app_gestion_donnees_access_perfectionnement') }}">Access : Perfectionnement</a></li>
+                                        </ul>
+                                    </li>
+
+                                    <li class="dropdown"><a href="#"><span>Logiciels</span> <i class="bi bi-chevron-right"></i></a>
+                                        <ul>
+                                            <li><a href="{{ path('app_logiciels_gestion_commerciale') }}">Gestion commerciale : EBP – Sage 50 C</a></li>
+                                            <li><a href="{{ path('app_logiciels_comptabilite') }}">Comptabilité : EBP – Sage 50 C</a></li>
+                                        </ul>
+                                    </li>
                                 </ul>
                             </li>
-                            <li class="dropdown"><a href="#"><span>Débutants</span> <i class="bi bi-chevron-right"></i></a>
-                                <ul>
-                                    <li><a href="{{path("app_debutants_windows")}}">Environnement Windows 10 ou 11</a></li>
-                                    <li><a href="{{path("app_debutants_digital_citizen")}}">Digital Citizen</a></li>
-                                </ul>
-                            </li>
-                            <li class="dropdown"><a href="#"><span>Gestion de données</span> <i class="bi bi-chevron-right"></i></a>
-                                <ul>
-                                    <li><a href="{{path("app_gestion_donnees_excel_tcd")}}">Excel : Maîtriser ses TCD</a></li>
-                                    <li><a href="{{path("app_gestion_donnees_excel_power_query1")}}">Excel : Power-Query Niveau 1</a></li>
-                                    <li><a href="{{path("app_gestion_donnees_excel_power_pivot")}}">Excel : Power Pivot</a></li>
-                                    <li><a href="{{path("app_gestion_donnees_powerbi")}}">Power BI Desktop</a></li>
-                                    <li><a href="{{path("app_gestion_donnees_access_base")}}">Access : Notion de base</a></li>
-                                    <li><a href="{{path("app_gestion_donnees_access_perfectionnement")}}">Access : Perfectionnement</a></li>
-                                </ul>
-                            </li>
-                            <li class="dropdown"><a href="#"><span>Logiciels</span> <i class="bi bi-chevron-right"></i></a>
-                                <ul>
-                                    <li><a href="{{path("app_logiciels_gestion_commerciale")}}">Gestion commerciale : EBP – Sage 50 C</a></li>
-                                    <li><a href="{{path("app_logiciels_comptabilite")}}">Comptabilité : EBP – Sage 50 C</a></li>
-                                </ul>
-                            </li>
+                            <li><a class="nav-link" href="{{ path("app_contact") }}">Nos résultats</a></li>
+
                         </ul>
+
                     </li>
                     <li><a class="nav-link" href="{{ path("app_contact") }}#">Contact</a></li>
                     <li><a class="nav-link-sav scrollto getstarted" href="{{ path("app_contact") }}#anydesk">SAV</a></li>

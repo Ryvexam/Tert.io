@@ -1,15 +1,41 @@
 {% extends 'base.html.twig' %}
-{% block title %}Tertio Informatique{% endblock title %}
-{% block content %}
+{% block title %}Tertio Informatique - Certification ICDL-PCIE{% endblock title %}
 
+{% block stylesheets %}
+    {{ parent() }}
+    <style>
+        .service-card {
+            transition: all 0.3s ease;
+            height: 100%;
+        }
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+        .card-body {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        .card-text {
+            flex-grow: 1;
+        }
+        .colored-card {
+            background-color: rgba(0, 123, 255, 0.1); /* Couleur bleue avec 10% d'opacité */
+        }
+    </style>
+{% endblock %}
+
+{% block content %}
     <section id="hero" class="hero d-flex align-items-center">
         <div class="container">
             <div class="row">
                 <div class="col-lg-6 d-flex flex-column justify-content-center">
-                    <h1 data-aos="fade-up">Évaluez, améliorez et validez vos compétences en bureautique et en informatique avec la certification ICDL-PCIE !</h1>
+                    <h1>Avec la formation ICDL PCIE</h1>
+                    <h2 data-aos="fade-up" data-aos-delay="400">Évaluez, améliorez et validez vos compétences en bureautique et en informatique.</h2>
                     <div data-aos="fade-up" data-aos-delay="600">
                         <div class="text-center text-lg-start">
-                            <a href="#about" class="btn-get-started scrollto d-inline-flex align-items-center justify-content-center align-self-center">
+                            <a href="#details" class="btn-get-started scrollto d-inline-flex align-items-center justify-content-center align-self-center">
                                 <span>En Savoir Plus</span>
                                 <i class="bi bi-arrow-right"></i>
                             </a>
@@ -24,40 +50,76 @@
     </section>
 
     <main id="main">
-        <section id="about" class="about">
+        <section id="details" class="about">
             <div class="container" data-aos="fade-up">
-                <div class="row gx-0">
-                    <div class="col-lg-12 d-flex flex-column justify-content-center" data-aos="fade-up" data-aos-delay="200">
-                        <div class="content">
-                            <h2><strong>Qu’est-ce que la certification ICDL-PCIE&nbsp;?</strong></h2>
-                            <p>
-                                Créée en 1996, <a href="https://www.icdlfrance.org/"><strong>la certification ICDL</strong></a> (International Computer Driving License) est la référence internationale de la certification des compétences numériques. Anciennement connue sous le nom de <em>PCIE</em>, Passeport de Compétences Informatique Européen, la certification ICDL permet de <strong>développer</strong>, de <strong>valider</strong> et de <strong>certifier ses compétences numériques.</strong>
-                            </p>
-                            <p>La certification ICDL-PCIE représente plus de 16 millions de candidats à travers le monde. Il existe plus de 24 000 centres de tests habilités dans le monde, dont 800 en France.</p>
-                            <h2 class="mt-4"><strong>A qui s’adresse cette certification&nbsp;?</strong></h2>
-                            <p>La certification ICDL-PCIE est mondialement reconnue et <strong>s’adresse à tous les profils</strong>&nbsp;:</p>
-                            <ul>
-                                <li>Salariés&nbsp;;</li>
-                                <li>Demandeurs d’emploi&nbsp;;</li>
-                                <li>Étudiants…</li>
-                            </ul>
-                            <p>La certification est accessible à tous, quel que soit son niveau initial.</p>
-                            <h2 class="mt-4"><strong>Pourquoi choisir la certification ICDL-PCIE&nbsp;?</strong></h2>
-                            <p>Les avantages du ICDL sont nombreux, aussi bien pour les candidats, les entreprises que les organisations.</p>
-                            <h3 class="mt-3">Évaluer les acquis</h3>
-                            <p>La certification ICDL-PCIE permet de <strong>faire le point sur les connaissances du candidat</strong>, et de faire reconnaitre ses compétences. Par ailleurs, avec l’ICDL, les entreprises et les organisations ont la garantie que leurs collaborateurs possèdent un bon niveau de maîtrise des outils bureautiques (web, traitement de texte, tableurs…)</p>
-                            <h3 class="mt-3">Améliorer ses compétences</h3>
-                            <p>La certification couvre les connaissances et les compétences de base, qui incluent les bonnes pratiques et les règles de productivité permettant d’être <strong>responsable et efficace dans son travail sur ordinateur</strong>.</p>
-                            <h3 class="mt-3">Une référence internationale</h3>
-                            <p>Avec plus de <strong>16 millions de candidats, dans plus de 100 pays</strong>, la certification ICDL est devenue en l’espace de 20 ans une référence mondiale de la certification numérique.</p>
-                            <h3 class="mt-3">Flexibilité</h3>
-                            <p>Grâce à un <strong>système modulaire</strong>, la certification ICDL peut être adaptée selon les besoins du candidat.</p>
-                            <h3 class="mt-3">Booster l’employabilité</h3>
-                            <p>L’obtention de la certification ICDL permet de <strong>valoriser les compétences acquises en bureautique et en informatique</strong>. Elle est très appréciée par les recruteurs, et ce, au niveau international.</p>
-                            <p class="text-right mt-3">
-                                <a title="BROCHURE - Présentation de la certification ICDL 2020" href="{{ asset('assets/img/Formations/brochure-pree295a0usentation-de-la-certification-icdl-2020.pdf') }}" target="_blank" rel="noopener">➡ Consultez la brochure officielle de la certification ICDL</a>
-                            </p>
+                <div class="row g-4">
+                    <div class="col-lg-12 mb-4">
+                        <h2 class="text-center"><strong>LA CERTIFICATION ICDL-PCIE</strong></h2>
+                    </div>
+
+                    <div class="col-lg-12" data-aos="fade-up" data-aos-delay="200">
+                        <div class="card service-card h-100">
+                            <div class="card-body">
+                                <h3 class="card-title"><strong>Qu'est-ce que la certification ICDL-PCIE ?</strong></h3>
+                                <p class="card-text">Créée en 1996, la certification ICDL (International Computer Driving License), anciennement connue sous le nom de PCIE (Passeport de Compétences Informatique Européen), est la référence internationale de la certification des compétences numériques. Elle permet de développer, de valider et de certifier ses compétences numériques.</p>
+                                <p class="card-text">La certification ICDL-PCIE représente plus de 16 millions de candidats à travers le monde. Il existe plus de 24 000 centres de tests habilités dans le monde, dont 800 en France.</p>
+                            </div>
                         </div>
+                    </div>
+
+                    <div class="col-lg-6" data-aos="fade-up" data-aos-delay="300">
+                        <div class="card service-card h-100 colored-card">
+                            <div class="card-body">
+                                <h3 class="card-title"><strong>A qui s'adresse cette certification ?</strong></h3>
+                                <p class="card-text">La certification ICDL-PCIE est mondialement reconnue et s'adresse à tous les profils :</p>
+                                <ul>
+                                    <li>Salariés ;</li>
+                                    <li>Demandeurs d'emploi ;</li>
+                                    <li>Étudiants…</li>
+                                </ul>
+                                <p class="card-text">La certification est accessible à tous, quel que soit son niveau initial.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6" data-aos="fade-up" data-aos-delay="400">
+                        <div class="card service-card h-100">
+                            <div class="card-body">
+                                <h3 class="card-title"><strong>Évaluer les acquis</strong></h3>
+                                <p class="card-text">La certification ICDL-PCIE permet de faire le point sur les connaissances du candidat, et de faire reconnaitre ses compétences. Par ailleurs, avec l'ICDL, les entreprises et les organisations ont la garantie que leurs collaborateurs possèdent un bon niveau de maîtrise des outils bureautiques (web, traitement de texte, tableurs…)</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4" data-aos="fade-up" data-aos-delay="500">
+                        <div class="card service-card h-100 colored-card">
+                            <div class="card-body">
+                                <h3 class="card-title"><strong>Améliorer ses compétences</strong></h3>
+                                <p class="card-text">La certification couvre les connaissances et les compétences de base, qui incluent les bonnes pratiques et les règles de productivité permettant d'être responsable et efficace dans son travail sur ordinateur.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4" data-aos="fade-up" data-aos-delay="600">
+                        <div class="card service-card h-100">
+                            <div class="card-body">
+                                <h3 class="card-title"><strong>Une référence internationale</strong></h3>
+                                <p class="card-text">Avec plus de 16 millions de candidats, dans plus de 100 pays, la certification ICDL est devenue en l'espace de 20 ans une référence mondiale de la certification numérique.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4" data-aos="fade-up" data-aos-delay="700">
+                        <div class="card service-card h-100 colored-card">
+                            <div class="card-body">
+                                <h3 class="card-title"><strong>Flexibilité et employabilité</strong></h3>
+                                <p class="card-text">Grâce à un système modulaire, la certification ICDL peut être adaptée selon les besoins du candidat. L'obtention de la certification ICDL permet de valoriser les compétences acquises en bureautique et en informatique. Elle est très appréciée par les recruteurs, et ce, au niveau international.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-12 mt-4 text-center ">
+                        <a title="BROCHURE - Présentation de la certification ICDL 2020" href="{{ asset('assets/img/Formations/brochure-pree295a0usentation-de-la-certification-icdl-2020.pdf') }}" target="_blank" rel="noopener" class="">Consultez la brochure officielle de la certification ICDL</a>
                     </div>
                 </div>
             </div>

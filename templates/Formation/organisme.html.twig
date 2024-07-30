@@ -1,0 +1,111 @@
+{% extends 'base.html.twig' %}
+{% block title %}Tertio Informatique - L'Organisme de Formation{% endblock title %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <style>
+        .service-card {
+            transition: all 0.3s ease;
+            height: 100%;
+        }
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+        .card-body {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        .card-text {
+            flex-grow: 1;
+        }
+        .colored-card {
+            background-color: rgba(0, 123, 255, 0.1); /* Couleur bleue avec 10% d'opacité */
+        }
+    </style>
+{% endblock %}
+
+{% block content %}
+    <section id="hero" class="hero d-flex align-items-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 d-flex flex-column justify-content-center">
+                    <h1>L'Organisme de Formation</h1>
+                    <h2 data-aos="fade-up" data-aos-delay="400">Créé en 1996 sous le nom de TERTIAIRE 03, l'organisme de formation devenu la SARL SCOP TERTIAIRE FORMATION CONSEIL en 2002, et Tertio (nouvelle identité) en 2024 dispense des formations dans le domaine de l'informatique, de la bureautique, des logiciels de comptabilité et de gestion.</h2>
+                    <div data-aos="fade-up" data-aos-delay="600">
+                        <div class="text-center text-lg-start">
+                            <a href="#details" class="btn-get-started scrollto d-inline-flex align-items-center justify-content-center align-self-center">
+                                <span>En Savoir Plus</span>
+                                <i class="bi bi-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 hero-img" data-aos="zoom-out" data-aos-delay="200">
+                    <img src="{{ asset('assets/img/Formation/organisme-formation.png') }}" class="img-fluid" alt="L'Organisme de Formation">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <main id="main">
+        <section id="details" class="about">
+            <div class="container" data-aos="fade-up">
+                <div class="row g-4">
+                    <div class="col-lg-12 mb-4">
+                        <h2 class="text-center"><strong>L'ORGANISME DE FORMATION</strong></h2>
+                    </div>
+
+                    <div class="col-lg-12" data-aos="fade-up" data-aos-delay="200">
+                        <div class="card service-card colored-card">
+                            <div class="card-body">
+                                <h3 class="card-title"><strong>Notre Équipe</strong></h3>
+                                <p class="card-text">Tertio emploie une équipe de formateurs et de conseillers, tous spécialistes dans leurs domaines et fait appel à un réseau de consultants hautement qualifiés.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-12" data-aos="fade-up" data-aos-delay="300">
+                        <div class="card service-card">
+                            <div class="card-body">
+                                <h3 class="card-title"><strong>Notre Approche</strong></h3>
+                                <p class="card-text">Innovation, adaptation, individualisation, proximité et suivi !
+                                    Tertio a toujours fait preuve d'innovation en portant des concepts pédagogiques tels que l'entreprise d'entraînement pédagogique ou la certification ICDL.</p>
+                                <p class="card-text">Nos contenus pédagogiques sont adaptables et nous proposons régulièrement des plans de formation personnalisés en fonction à la fois des objectifs fixés par l'entreprise et du niveau initial des participants. Cela peut passer par une phase de positionnement, notamment pour les formations informatiques et bureautiques. Nous disposons pour cela d'outils adaptés.</p>
+                                <p class="card-text">Nous avons développé des outils et des méthodes pédagogiques permettant de gérer l'individualisation sur les parcours de formations informatiques et bureautiques.</p>
+                                <p class="card-text">Nous avons su établir des liens privilégiés avec la plupart de nos clients à la fois grâce à la prise en charge de leurs demandes, mais surtout en leur proposant un suivi systématique post formation.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-12" data-aos="fade-up" data-aos-delay="400">
+                        <div class="card service-card colored-card">
+                            <div class="card-body">
+                                <h3 class="card-title"><strong>Nos Atouts</strong></h3>
+                                <ul class="card-text">
+                                    <li>27 années d'expériences ;</li>
+                                    <li>Une vision pragmatique, concrète et efficace de la formation ;</li>
+                                    <li>Une offre spécialisée et adaptable ;</li>
+                                    <li>Une approche créative et une recherche continue d'innovation ;</li>
+                                    <li>Une capacité à accompagner entreprises et salariés durant toutes les phases du processus de formation et au-delà si nécessaire ;</li>
+                                    <li>De nombreuses références locales et régionales.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-12" data-aos="fade-up" data-aos-delay="500">
+                        <div class="card service-card">
+                            <div class="card-body">
+                                <h3 class="card-title"><strong>Accessibilité</strong></h3>
+                                <p class="card-text">Notre bâtiment est conforme aux normes d'accessibilité.</p>
+                                <p class="card-text">Au-delà des problématiques d'accessibilité, si votre situation de handicap nécessite des aménagements et/ou des adaptations, vous pouvez contacter Isabelle Dodat qui vous renseignera et vous accompagnera dans la recherche d'une solution pour votre formation. Elle pourra si besoin contacter les acteurs professionnels locaux œuvrant dans le secteur du handicap (Agefiph, Cap Emploi,) ainsi que des entreprises ou des associations clientes de Tertio Informatique, mobilisables pour des conseils ou de la mise en relation.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+{% endblock content %}

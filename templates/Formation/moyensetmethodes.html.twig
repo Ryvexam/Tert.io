@@ -1,0 +1,95 @@
+{% extends 'base.html.twig' %}
+{% block title %}Tertio Informatique - Moyens et Méthodes{% endblock title %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <style>
+        .service-card {
+            transition: all 0.3s ease;
+            height: 100%;
+        }
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+        .card-body {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        .card-text {
+            flex-grow: 1;
+        }
+        .colored-card {
+            background-color: rgba(0, 123, 255, 0.1);
+        }
+    </style>
+{% endblock %}
+
+{% block content %}
+    <section id="hero" class="hero d-flex align-items-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 d-flex flex-column justify-content-center">
+                    <h1>Moyens et Méthodes</h1>
+                    <h2 data-aos="fade-up" data-aos-delay="400">Découvrez nos moyens pédagogiques, humains et techniques, ainsi que les conditions et le déroulement de nos formations.</h2>
+                    <div data-aos="fade-up" data-aos-delay="600">
+                        <div class="text-center text-lg-start">
+                            <a href="#details" class="btn-get-started scrollto d-inline-flex align-items-center justify-content-center align-self-center">
+                                <span>En Savoir Plus</span>
+                                <i class="bi bi-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 hero-img" data-aos="zoom-out" data-aos-delay="200">
+                    <img src="{{ asset('assets/img/Formation/moyens-methodes.png') }}" class="img-fluid" alt="Moyens et Méthodes">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <main id="main">
+        <section id="details" class="about">
+            <div class="container" data-aos="fade-up">
+                <div class="row g-4">
+                    <div class="col-lg-12 mb-4">
+                        <h2 class="text-center"><strong>MOYENS ET MÉTHODES</strong></h2>
+                    </div>
+
+                    <div class="col-lg-12" data-aos="fade-up" data-aos-delay="200">
+                        <div class="card service-card colored-card">
+                            <div class="card-body">
+                                <h3 class="card-title"><strong>Moyens pédagogiques, humains et techniques</strong></h3>
+                                <ul class="card-text">
+                                    <li>Salle de formation équipée. Postes informatiques en réseau. Vidéoprojecteur. Accès internet, imprimante.</li>
+                                    <li>Mise à disposition d'un ordinateur par participant.</li>
+                                    <li>Supports de cours papier et fiches de travail fournis avec possibilité de récupérer les fichiers de travail sur clé USB en fin de session.</li>
+                                    <li>1 Livret aide-mémoire d'environ 140 pages.</li>
+                                    <li>Accès espace commun des locaux (toilettes, machine à café, documentation).</li>
+                                    <li>Des intervenants qualifiés et expérimentés.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-12" data-aos="fade-up" data-aos-delay="300">
+                        <div class="card service-card">
+                            <div class="card-body">
+                                <h3 class="card-title"><strong>Condition et déroulement de la formation</strong></h3>
+                                <ul class="card-text">
+                                    <li>Prise en compte du niveau initial et des objectifs : plan de formation personnalisé.</li>
+                                    <li>Adaptation du contenu de la formation et des travaux d'applications aux besoins personnels et spécifiques des participants.</li>
+                                    <li>Contrôle des connaissances acquises lors de la formation (validation sur la grille de suivi en lien avec le plan de formation, le processus pédagogique et les supports pédagogiques adaptés).</li>
+                                    <li>Émargement sur feuille des participants et de l'intervenant par demi-journée.</li>
+                                    <li>Remise d'une attestation de fin de formation détaillée reprenant le contenu et les résultats obtenus.</li>
+                                    <li>Suivi post formation (le formateur et le centre de formation restent à la disposition des participants pour répondre à toute question en lien avec le module de formation suivi).</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+{% endblock content %}

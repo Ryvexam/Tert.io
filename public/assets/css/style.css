@@ -30,7 +30,7 @@ a {
 }
 
 a:hover {
-  color: #2495fa;
+  color: #ffffff;
   text-decoration: none;
 }
 
@@ -244,14 +244,14 @@ section {
   font-family: "Nunito", sans-serif;
   font-size: 16px;
   font-weight: 700;
-  color: #024886;
+  color: #0e385e;
   white-space: nowrap;
   transition: 0.3s;
 }
 
 .navbar a i,
 .navbar a:focus i {
-  font-size: 12px;
+  font-size: 15px;
   line-height: 0;
   margin-left: 5px;
 }
@@ -260,36 +260,11 @@ section {
 .navbar .active,
 .navbar .active:focus,
 .navbar li:hover>a {
-  color: #0e385e;
+  color: #000d1a;
+  border: #0a3622;
 }
 
-.navbar-formation a,
-.navbar-formation a:focus {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 10px 0 10px 30px;
-  font-family: "Nunito", sans-serif;
-  font-size: 16px;
-  font-weight: 700;
-  color: var(--main-yellow);
-  white-space: nowrap;
-  transition: 0.3s;
-}
 
-.navbar-formation a i,
-.navbar-formation a:focus i {
-  font-size: 12px;
-  line-height: 0;
-  margin-left: 5px;
-}
-
-.navbar-formation a:hover,
-.navbar-formation .active,
-.navbar-formation .active:focus,
-.navbar-formation li:hover>a {
-  color: #ebba41;
-}
 
 .navbar .getstarted,
 .navbar .getstarted:focus {
@@ -332,7 +307,7 @@ section {
   padding: 10px 20px;
   font-size: 15px;
   text-transform: none;
-  font-weight: 600;
+  font-weight: 500;
 }
 
 .navbar .dropdown ul a i {
@@ -368,13 +343,13 @@ section {
 
 .navbar .megamenu ul li a,
 .navbar .megamenu ul li:hover>a {
-  color: #024886;
+  color: #001423;
 }
 
 .navbar .megamenu ul li a:hover,
 .navbar .megamenu ul li .active,
 .navbar .megamenu ul li .active:hover {
-  color: #0e385e;
+  color: #001423;
 }
 
 .navbar .dropdown .dropdown ul {
@@ -880,6 +855,8 @@ section {
   text-align: center;
   transition: 0.3s;
   border-radius: 5px;
+
+
 }
 
 .services .service-box .icon {
@@ -915,6 +892,7 @@ section {
 
 .services .service-box.informatique {
   border-bottom: 3px solid #C85C1F;
+  border-right: 3px solid #C85C1F;
 }
 
 .services .service-box.informatique .icon {
@@ -927,11 +905,13 @@ section {
 }
 
 .services .service-box.informatique:hover {
-  background: #C85C1F;
+  background: #C85C1F69;
 }
 
 .services .service-box.formation {
   border-bottom: 3px solid #85c1ce;
+  border-right: 3px solid #85c1ce;
+  box-shadow:;
 }
 
 .services .service-box.formation .icon {
@@ -944,11 +924,12 @@ section {
 }
 
 .services .service-box.formation:hover {
-  background: #85c1ce;
+  background: #85c1ce69;
 }
 
 .services .service-box.audit {
   border-bottom: 3px solid #cc5075;
+  box-shadow: 3px 3px 3px #cc5075;
 }
 
 .services .service-box.audit .icon {
@@ -961,11 +942,11 @@ section {
 }
 
 .services .service-box.audit:hover {
-  background: #cc5075;
+  background: #cc507569;
 }
 
 .services .service-box.cloud {
-  border-bottom: 3px solid #ebba41;
+  border: 3px solid #ebba41;
 }
 
 .services .service-box.cloud .icon {
@@ -978,7 +959,7 @@ section {
 }
 
 .services .service-box.cloud:hover {
-  background: #ebba41;
+  background: #ebba4169;
 }
 
 .services .service-box.purple {
@@ -995,7 +976,7 @@ section {
 }
 
 .services .service-box.purple:hover {
-  background: #b50edf;
+  background: #b50edf69;
 }
 
 .services .service-box.pink {
@@ -1012,7 +993,7 @@ section {
 }
 
 .services .service-box.pink:hover {
-  background: #f51f9c;
+  background: #f51f9c69;
 }
 
 .services .service-box:hover h3,

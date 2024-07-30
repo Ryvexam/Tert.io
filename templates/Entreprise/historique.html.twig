@@ -1,105 +1,172 @@
 {% extends 'base.html.twig' %}
-{% block title %}Tertio Informatique{% endblock title %}
-{% block content %}
+{% block title %}Tertio Informatique - Notre Histoire{% endblock title %}
 
-    <section id="about" class="hero about">
+{% block stylesheets %}
+    {{ parent() }}
+    <style>
+        .service-card {
+            transition: all 0.3s ease;
+            height: 100%;
+        }
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+        .card-body {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        .card-text {
+            flex-grow: 1;
+        }
+        .colored-card {
+            background-color: rgba(0, 123, 255, 0.1);
+        }
+        .fusion-recap {
+            background-color: #f8f9fa;
+            padding: 50px 0;
+            margin-top: 50px;
+        }
+        .fusion-logo {
+            max-width: 200px;
+            margin-bottom: 20px;
+        }
+    </style>
+{% endblock %}
+
+{% block content %}
+    <section id="hero" class="hero d-flex align-items-center">
         <div class="container">
             <div class="row">
-                <div class="col-lg-12 py-5">
-                    <h2 class="text-center mb-4">Notre Histoire</h2>
-                    <p>
-                        Tertio Informatique incarne une histoire dynamique, façonnée par des transformations
-                        continues, un engagement indéfectible et des partenariats durables.
-                    </p>
-
-                    <h3 class="mt-4">Notre Évolution</h3>
-                    <p>
-                        Fondée en 1996 sous le nom de TERTIAIRE 03, notre entreprise a évolué pour devenir la
-                        SARL SCOP TERTIAIRE FORMATION CONSEIL en 2002. Tout au long de notre parcours,
-                        nous avons mis l'accent sur l'excellence, l'adaptabilité et l'engagement envers nos clients.
-                        En 2020, l'acquisition de Joly Informatique a marqué le début d'une nouvelle ère pour notre
-                        entreprise, confortant notre champ d'action pour offrir à nos clients une double expertise en
-                        solutions informatiques et en formation.
-                    </p>
-
-                    <h3 class="mt-4">Notre Nouvelle Identité</h3>
-                    <p>
-                        En 2024, nous franchissons une étape majeure en adoptant une nouvelle identité : Tertio. Ce
-                        changement illustre notre engagement envers l'avenir, tout en honorant notre héritage et les
-                        valeurs fondamentales qui nous définissent : fiabilité, confiance, efficacité et proximité.
-                    </p>
-
-                    <h3 class="mt-4">Notre Engagement</h3>
-                    <p>
-                        Ce troisième chapitre s'ouvre sur des fondations solides, forgées par les deux précédents.
-                        Notre slogan, "La preuve par trois", reflète notre engagement à fournir des solutions qui
-                        dépassent les attentes, en mettant en avant trois piliers essentiels : qualité, engagement et
-                        résultats. À chaque interaction, nous nous efforçons de démontrer notre valeur à nos clients
-                        en leur offrant un service basé sur ces principes fondamentaux.
-                    </p>
-
-                    <h3 class="mt-4">Notre Promesse</h3>
-                    <p>
-                        Ainsi, avec Tertio, vous bénéficiez non seulement d'une expertise technique de premier
-                        ordre, mais également d'un partenariat basé sur la confiance et la fiabilité. Nous sommes là
-                        pour vous accompagner à chaque étape de votre développement, en vous offrant des
-                        solutions efficaces et personnalisées qui répondent à vos besoins spécifiques.
-                    </p>
+                <div class="col-lg-6 d-flex flex-column justify-content-center">
+                    <h1>Notre Histoire</h1>
+                    <h2 data-aos="fade-up" data-aos-delay="400">Découvrez l'évolution de Tertio Informatique, de ses débuts en 1996 à aujourd'hui</h2>
+                    <div data-aos="fade-up" data-aos-delay="600">
+                        <div class="text-center text-lg-start">
+                            <a href="#details" class="btn-get-started scrollto d-inline-flex align-items-center justify-content-center align-self-center">
+                                <span>En Savoir Plus</span>
+                                <i class="bi bi-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 hero-img" data-aos="zoom-out" data-aos-delay="200">
+                    <img src="{{ asset('assets/img/About/notre-histoire.jpg') }}" class="img-fluid" alt="Notre Histoire">
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="timeline" class="py-5">
-        <div class="container">
-            <h2 class="text-center mb-5">Notre Parcours</h2>
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="row g-5">
-                        <div class="col-md-6 col-lg-3">
-                            <div class="card h-100" style="border: 2px solid #0e385e;">
-                                <div class="card-header text-white" style="background-color: #0e385e;">1996</div>
-                                <div class="card-body">
-                                    <h5 class="card-title">TERTIAIRE 03</h5>
-                                    <p class="card-text">Fondation et Début de l'aventure</p>
-                                    <p class="card-text">Organisme de formations</p>
-                                </div>
+    <main id="main">
+        <section id="details" class="about">
+            <div class="container" data-aos="fade-up">
+                <div class="row g-4">
+                    <div class="col-lg-12 mb-4">
+                        <h2 class="text-center"><strong>NOTRE PARCOURS</strong></h2>
+                    </div>
+
+                    <div class="col-lg-12 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                        <div class="card service-card h-100">
+                            <div class="card-body">
+                                <h3 class="card-title"><strong>Notre Évolution</strong></h3>
+                                <p class="card-text">Fondée en 1996 sous le nom de TERTIAIRE 03, notre entreprise a évolué pour devenir la SARL SCOP TERTIAIRE FORMATION CONSEIL en 2002. Tout au long de notre parcours, nous avons mis l'accent sur l'excellence, l'adaptabilité et l'engagement envers nos clients. En 2020, l'acquisition de Joly Informatique a marqué le début d'une nouvelle ère pour notre entreprise, confortant notre champ d'action pour offrir à nos clients une double expertise en solutions informatiques et en formation.</p>
                             </div>
                         </div>
-                        <div class="col-md-6 col-lg-3">
-                            <div class="card h-100" style="border: 2px solid #cc5075;">
-                                <div class="card-header text-white" style="background-color: #cc5075;">2002</div>
-                                <div class="card-body">
-                                    <h5 class="card-title">TERTIAIRE FORMATION CONSEIL</h5>
-                                    <p class="card-text">Evolution de l'offre d</p>
-                                    <p class="card-text">Organisme de formations et Services Informatique</p>
-                                </div>
+                    </div>
+
+                    <div class="col-lg-6 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                        <div class="card service-card h-100 colored-card">
+                            <div class="card-body">
+                                <h3 class="card-title"><strong>Notre Nouvelle Identité</strong></h3>
+                                <p class="card-text">En 2024, nous franchissons une étape majeure en adoptant une nouvelle identité : Tertio. Ce changement illustre notre engagement envers l'avenir, tout en honorant notre héritage et les valeurs fondamentales qui nous définissent : fiabilité, confiance, efficacité et proximité.</p>
                             </div>
                         </div>
-                        <div class="col-md-6 col-lg-3">
-                            <div class="card h-100" style="border: 2px solid #c85c15;">
-                                <div class="card-header text-white" style="background-color: #c85c15;">2020</div>
-                                <div class="card-body">
-                                    <h5 class="card-title">JOLY INFORMATIQUE</h5>
-                                    <p class="card-text">Reprise</p>
-                                    <p class="card-text">SS2I et Formation</p>
-                                </div>
+                    </div>
+
+                    <div class="col-lg-6 col-md-6" data-aos="fade-up" data-aos-delay="400">
+                        <div class="card service-card h-100">
+                            <div class="card-body">
+                                <h3 class="card-title"><strong>Notre Engagement</strong></h3>
+                                <p class="card-text">Ce troisième chapitre s'ouvre sur des fondations solides, forgées par les deux précédents. Notre slogan, "La preuve par trois", reflète notre engagement à fournir des solutions qui dépassent les attentes, en mettant en avant trois piliers essentiels : qualité, engagement et résultats. À chaque interaction, nous nous efforçons de démontrer notre valeur à nos clients en leur offrant un service basé sur ces principes fondamentaux.</p>
                             </div>
                         </div>
-                        <div class="col-md-6 col-lg-3">
-                            <div class="card h-100" style="border: 2px solid #ebba41;">
-                                <div class="card-header text-white" style="background-color: #ebba41;">2024</div>
-                                <div class="card-body">
-                                    <h5 class="card-title">TERTIO</h5>
-                                    <p class="card-text">Fusion</p>
-                                    <p class="card-text">SS2I et Formation</p>
-                                </div>
+                    </div>
+
+                    <div class="col-lg-12 col-md-6" data-aos="fade-up" data-aos-delay="500">
+                        <div class="card service-card h-100 colored-card">
+                            <div class="card-body">
+                                <h3 class="card-title"><strong>Notre Promesse</strong></h3>
+                                <p class="card-text">Ainsi, avec Tertio, vous bénéficiez non seulement d'une expertise technique de premier ordre, mais également d'un partenariat basé sur la confiance et la fiabilité. Nous sommes là pour vous accompagner à chaque étape de votre développement, en vous offrant des solutions efficaces et personnalisées qui répondent à vos besoins spécifiques.</p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
+        <section id="timeline" class="py-5">
+            <div class="container" data-aos="fade-up">
+                <h2 class="text-center mb-5"><strong>NOTRE PARCOURS EN DATES</strong></h2>
+                <div class="row g-4">
+                    <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="200">
+                        <div class="card h-100" style="border: 2px solid #0e385e;">
+                            <div class="card-header text-white" style="background-color: #0e385e;">1996</div>
+                            <div class="card-body">
+                                <h5 class="card-title">TERTIAIRE 03</h5>
+                                <p class="card-text">Fondation et Début de l'aventure</p>
+                                <p class="card-text">Organisme de formations</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="300">
+                        <div class="card h-100" style="border: 2px solid #cc5075;">
+                            <div class="card-header text-white" style="background-color: #cc5075;">2002</div>
+                            <div class="card-body">
+                                <h5 class="card-title">TERTIAIRE FORMATION CONSEIL</h5>
+                                <p class="card-text">Evolution de l'offre</p>
+                                <p class="card-text">Organisme de formations et Services Informatique</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="400">
+                        <div class="card h-100" style="border: 2px solid #c85c15;">
+                            <div class="card-header text-white" style="background-color: #c85c15;">2020</div>
+                            <div class="card-body">
+                                <h5 class="card-title">JOLY INFORMATIQUE</h5>
+                                <p class="card-text">Reprise</p>
+                                <p class="card-text">SS2I et Formation</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="500">
+                        <div class="card h-100" style="border: 2px solid #ebba41;">
+                            <div class="card-header text-white" style="background-color: #ebba41;">2024</div>
+                            <div class="card-body">
+                                <h5 class="card-title">TERTIO</h5>
+                                <p class="card-text">Fusion</p>
+                                <p class="card-text">SS2I et Formation</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="fusion-recap">
+            <div class="container" data-aos="fade-up">
+                <div class="row align-items-center">
+                    <div class="col-lg-6 text-center">
+                        <img src="{{ asset('assets/img/tertio/tertio slogan.png') }}" alt="Logo Tertio" class="fusion-logo">
+                    </div>
+                    <div class="col-lg-6">
+                        <h2 class="mb-4"><strong>La Fusion : Un Nouveau Chapitre</strong></h2>
+                        <p>En 2024, Tertiaire Formation Conseil et Joly Informatique fusionnent pour donner Tertio.</p>
+                        <h3 class="mt-4 mb-3">"La preuve par trois"</h3>
+                        <p>Notre nouveau slogan incarne notre engagement envers l'excellence :</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
 {% endblock content %}

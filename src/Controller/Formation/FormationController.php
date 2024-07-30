@@ -14,6 +14,16 @@ class FormationController extends AbstractController
     {
         return $this->render("Formation/formations.html.twig");
     }
+    #[Route("/organisme-formations", name: "app_organisme_formations")]
+    function orgaformations()
+    {
+        return $this->render("Formation/organisme.html.twig");
+    }
+    #[Route("/moyens-et-methode", name: "app_moyensetmethodes")]
+    function moyensetmethode()
+    {
+        return $this->render("Formation/moyensetmethodes.html.twig");
+    }
 
 
     // Bureautique

@@ -1,57 +1,108 @@
 {% extends 'base.html.twig' %}
-{% block title %}Tertio Informatique{% endblock title %}
-{% block content %}
+{% block title %}Tertio Informatique - Notre Expertise en Formation{% endblock title %}
 
+{% block stylesheets %}
+    {{ parent() }}
+    <style>
+        .service-card {
+            transition: all 0.3s ease;
+            height: 100%;
+        }
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+        .card-body {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        .card-text {
+            flex-grow: 1;
+        }
+        .colored-card {
+            background-color: rgba(0, 123, 255, 0.1); /* Couleur bleue avec 10% d'opacité */
+        }
+    </style>
+{% endblock %}
+
+{% block content %}
     <section id="hero" class="hero d-flex align-items-center">
         <div class="container">
             <div class="row">
                 <div class="col-lg-6 d-flex flex-column justify-content-center">
-                    <h1 data-aos="fade-up">Formations informatiques sur mesure pour particuliers et professionnels</h1>
-                    <h2 data-aos="fade-up" data-aos-delay="400">27 ans d'expertise à votre service</h2>
+                    <h1>Notre Expertise en Formation</h1>
+                    <h2 data-aos="fade-up" data-aos-delay="400">Avec 27 années d'expérience en tant qu'organisme de formation (Tertiaire 03 et Tertiaire Formation Conseil) et certifié Qualiopi, Tertio propose des formations spécialisées en informatique, bureautique, et sur les logiciels de gestion.</h2>
+                    <div data-aos="fade-up" data-aos-delay="600">
+                        <div class="text-center text-lg-start">
+                            <a href="#details" class="btn-get-started scrollto d-inline-flex align-items-center justify-content-center align-self-center">
+                                <span>En Savoir Plus</span>
+                                <i class="bi bi-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 hero-img" data-aos="zoom-out" data-aos-delay="200">
+                    <img src="{{ asset('assets/img/Formations/expertise-formation.png') }}" class="img-fluid" alt="Expertise en Formation">
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="about" class="about">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <h2 class="text-center mb-4">Notre Expertise en Formation</h2>
-                    <p>
-                        Avec 27 années d'expérience en tant qu'organisme de formation (Tertiaire 03 et Tertiaire Formation
-                        Conseil) et certifié Qualiopi, Tertio propose des formations spécialisées en informatique,
-                        bureautique, et sur les logiciels de gestion.
-                    </p>
+    <main id="main">
+        <section id="details" class="about">
+            <div class="container" data-aos="fade-up">
+                <div class="row g-4">
+                    <div class="col-lg-12 mb-4">
+                        <h2 class="text-center"><strong>NOTRE EXPERTISE EN FORMATION</strong></h2>
+                    </div>
 
-                    <h3 class="mt-4">Une Équipe Qualifiée</h3>
-                    <p>
-                        Notre équipe de formateurs et conseillers experts, appuyée par un réseau de consultants qualifiés,
-                        garantit des formations adaptées. Nous proposons des formations certifiantes ICDL, anciennement
-                        connue sous le nom de PCIE – Passeport de Compétences Informatique Européen. La certification
-                        ICDL est engagée dans la reconnaissance des compétences numériques depuis 1996.
-                    </p>
+                    <div class="col-lg-12" data-aos="fade-up" data-aos-delay="200">
+                        <div class="card service-card">
+                            <div class="card-body">
+                                <h3 class="card-title"><strong>Notre Expertise en Formation</strong></h3>
+                                <p class="card-text">Avec 27 années d'expérience en tant qu'organisme de formation (Tertiaire 03 et Tertiaire Formation Conseil) et certifié Qualiopi, Tertio propose des formations spécialisées en informatique, bureautique, et sur les logiciels de gestion.</p>
+                            </div>
+                        </div>
+                    </div>
 
-                    <h3 class="mt-4">Des Programmes Personnalisés</h3>
-                    <p>
-                        Nos programmes personnalisés incluent une phase de positionnement, assurant individualisation,
-                        adaptabilité et suivi post-formation.
-                    </p>
+                    <div class="col-lg-8" data-aos="fade-up" data-aos-delay="250">
+                        <div class="card service-card colored-card">
+                            <div class="card-body">
+                                <h3 class="card-title"><strong>Une Équipe Qualifiée</strong></h3>
+                                <p class="card-text">Notre équipe de formateurs et conseillers experts, appuyée par un réseau de consultants qualifiés, garantit des formations adaptées. Nous proposons des formations certifiantes ICDL, anciennement connue sous le nom de PCIE – Passeport de Compétences Informatique Européen. La certification ICDL est engagée dans la reconnaissance des compétences numériques depuis 1996.</p>
+                            </div>
+                        </div>
+                    </div>
 
-                    <h3 class="mt-4">Adaptation Constante</h3>
-                    <p>
-                        Nous avons toujours su adapter nos offres et accompagner nos clients dans les évolutions d'usage
-                        comme le développement du télétravail ces dernières années.
-                    </p>
+                    <div class="col-lg-4" data-aos="fade-up" data-aos-delay="300">
+                        <div class="card service-card">
+                            <div class="card-body">
+                                <h3 class="card-title"><strong>Des Programmes Personnalisés</strong></h3>
+                                <p class="card-text">Nos programmes personnalisés incluent une phase de positionnement, assurant individualisation, adaptabilité et suivi post-formation.</p>
+                            </div>
+                        </div>
+                    </div>
 
-                    <h3 class="mt-4">Ancrage Local et Régional</h3>
-                    <p>
-                        Tertio dispose de nombreuses références locales (Allier) et régionales, témoignant de notre ancrage
-                        et de notre expertise.
-                    </p>
+                    <div class="col-lg-12" data-aos="fade-up" data-aos-delay="350">
+                        <div class="card service-card">
+                            <div class="card-body">
+                                <h3 class="card-title"><strong>Adaptation Constante</strong></h3>
+                                <p class="card-text">Nous avons toujours su adapter nos offres et accompagner nos clients dans les évolutions d'usage comme le développement du télétravail ces dernières années.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-12" data-aos="fade-up" data-aos-delay="500">
+                        <div class="card service-card colored-card">
+                            <div class="card-body">
+                                <h3 class="card-title"><strong>Ancrage Local et Régional</strong></h3>
+                                <p class="card-text">Tertio dispose de nombreuses références locales (Allier) et régionales, témoignant de notre ancrage et de notre expertise.</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
-
+        </section>
+    </main>
 {% endblock content %}

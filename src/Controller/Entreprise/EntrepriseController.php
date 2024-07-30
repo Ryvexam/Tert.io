@@ -20,34 +20,34 @@ class EntrepriseController extends AbstractController
         $teamMembers = [
             [
                 'name' => 'Dominique MAUREL',
-                'position' => 'à définir',
+                'position' => 'Gérant et fondateur de l’entreprise',
                 'image' => 'dominique.jpg',
-                'description' => 'Texte à définir'
+                'description' => 'Dans l’entreprise depuis 1996'
             ],
             [
                 'name' => 'Quentin FOUSE',
-                'position' => 'à définir',
+                'position' => 'Responsable technique, associé',
                 'image' => 'quentin.jpg',
-                'description' => 'Texte à définir'
+                'description' => 'Dans l’entreprise depuis 2014'
             ],
             [
                 'name' => 'Alexandre DRIESSENS',
-                'position' => 'à définir',
+                'position' => 'Technicien de maintenance informatique',
                 'image' => 'alexandre.jpg',
-                'description' => 'Texte à définir'
-            ],
-            [
-                'name' => 'Isabelle DODAT',
-                'position' => 'à définir',
-                'image' => 'isabelle.jpg',
-                'description' => 'Texte à définir'
+                'description' => 'Dans l’entreprise depuis 2022'
             ],
             [
                 'name' => 'Emmanuelle PINEL',
-                'position' => 'à définir',
+                'position' => 'Assistante',
                 'image' => 'emmanuelle.jpg',
-                'description' => 'Texte à définir'
-            ]
+                'description' => 'Dans l’entreprise depuis 2019'
+            ],
+            [
+                'name' => 'Isabelle DODAT',
+                'position' => 'Formatrice et référente sur les logiciels SAGE et EBP',
+                'image' => 'isabelle.jpg',
+                'description' => 'Dans l’entreprise depuis 2021'
+            ],
         ];
 
         return $this->render("Entreprise/equipe.html.twig", [
