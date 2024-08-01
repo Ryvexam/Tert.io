@@ -105,68 +105,104 @@
             </div>
         </section>
 
+        {% set timeline_items = [
+        {year: 1996, color: '#0e385e', title: 'TERTIAIRE 03', subtitle: "Création et début de l'histoire", description: 'Organisme de formation'},
+    {year: 2002, color: '#cc5075', title: 'TERTIAIRE FORMATION CONSEIL', subtitle: 'Evolution en SARL Scop', description: 'Organisme de formation'},
+        {year: 2020, color: '#c85c15', title: 'JOLY INFORMATIQUE', subtitle: "Acquisition de l'activité de JOLY INFORMATIQUE", description: 'SS2i et Organisme de formation'},
+        {year: 2024, color: '#ebba41', title: 'TERTIO', subtitle: 'Nouvelle identité', description: 'SS2i et Organisme de formation'}
+        ] %}
+
         <section id="timeline" class="py-5">
             <div class="container" data-aos="fade-up">
                 <h2 class="text-center mb-5"><strong>NOTRE PARCOURS EN DATES</strong></h2>
                 <div class="row g-4">
-                    <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="200">
-                        <div class="card h-100" style="border: 2px solid #0e385e;">
-                            <div class="card-header text-white" style="background-color: #0e385e;">1996</div>
-                            <div class="card-body">
-                                <h5 class="card-title">TERTIAIRE 03</h5>
-                                <p class="card-text">Fondation et Début de l'aventure</p>
-                                <p class="card-text">Organisme de formations</p>
-                            </div>
+                    {% for item in timeline_items %}
+                    <div class="col-md-6 col-lg-3 timeline-item" data-aos="fade-up" data-aos-delay="{{ loop.index * 100 }}">
+                    <div class="card timeline-card h-100" style="border: 2px solid {{ item.color }};">
+                        <div class="card-header text-white" style="background-color: {{ item.color }};">{{ item.year }}</div>
+                        <div class="card-body">
+                            <h5 class="card-title">{{ item.title }}</h5>
+                            <p class="card-text">{{ item.subtitle }}</p>
+                            <p class="card-text">{{ item.description }}</p>
                         </div>
-                    </div>
-                    <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="300">
-                        <div class="card h-100" style="border: 2px solid #cc5075;">
-                            <div class="card-header text-white" style="background-color: #cc5075;">2002</div>
-                            <div class="card-body">
-                                <h5 class="card-title">TERTIAIRE FORMATION CONSEIL</h5>
-                                <p class="card-text">Evolution de l'offre</p>
-                                <p class="card-text">Organisme de formations et Services Informatique</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="400">
-                        <div class="card h-100" style="border: 2px solid #c85c15;">
-                            <div class="card-header text-white" style="background-color: #c85c15;">2020</div>
-                            <div class="card-body">
-                                <h5 class="card-title">JOLY INFORMATIQUE</h5>
-                                <p class="card-text">Reprise</p>
-                                <p class="card-text">SS2I et Formation</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="500">
-                        <div class="card h-100" style="border: 2px solid #ebba41;">
-                            <div class="card-header text-white" style="background-color: #ebba41;">2024</div>
-                            <div class="card-body">
-                                <h5 class="card-title">TERTIO</h5>
-                                <p class="card-text">Fusion</p>
-                                <p class="card-text">SS2I et Formation</p>
-                            </div>
-                        </div>
+                        {% if not loop.last %}
+                        <div class="timeline-arrow" style="border-left-color: {{ item.color }};"></div>
+                        {% endif %}
                     </div>
                 </div>
+                {% endfor %}
+            </div>
             </div>
         </section>
+
+        <style>
+            .timeline-arrow {
+                position: absolute;
+                top: 50%;
+                right: -15px;
+                transform: translateY(-50%);
+                width: 0;
+                height: 0;
+                border-top: 15px solid transparent;
+                border-bottom: 15px solid transparent;
+                border-left: 15px solid;
+                z-index: 1;
+            }
+            .timeline-item {
+                position: relative;
+            }
+            .timeline-card {
+                transition: all 0.3s ease;
+                height: 100%;
+            }
+            .timeline-card:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+                z-index: 3;
+            }
+            .timeline-card .card-body {
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+            }
+            .timeline-card .card-text {
+                flex-grow: 1;
+            }
+            @media (max-width: 991px) {
+                .timeline-arrow {
+                    display: none;
+                }
+            }
+        </style>
+
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                const timelineItems = document.querySelectorAll('.timeline-item');
+                timelineItems.forEach(item => {
+                    item.addEventListener('mouseenter', () => {
+                        item.style.zIndex = '3';
+                    });
+                    item.addEventListener('mouseleave', () => {
+                        item.style.zIndex = '2';
+                    });
+                });
+            });
+        </script>
 
         <section class="fusion-recap">
             <div class="container" data-aos="fade-up">
                 <div class="row align-items-center">
                     <div class="col-lg-6 text-center">
-                        <img src="{{ asset('assets/img/tertio/tertio slogan.png') }}" alt="Logo Tertio" class="fusion-logo">
+                        <img src="{{ asset('assets/img/tertio/variantes/tertio slogan.png') }}" alt="Logo Tertio" class="fusion-logo">
                     </div>
                     <div class="col-lg-6">
                         <h2 class="mb-4"><strong>La Fusion : Un Nouveau Chapitre</strong></h2>
                         <p>En 2024, Tertiaire Formation Conseil et Joly Informatique fusionnent pour donner Tertio.</p>
                         <h3 class="mt-4 mb-3">"La preuve par trois"</h3>
-                        <p>Notre nouveau slogan incarne notre engagement envers l'excellence :</p>
                     </div>
                 </div>
             </div>
         </section>
     </main>
 {% endblock content %}
+

@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+{% block title %}Tertio Informatique - Digital Citizen : Environnement Windows {% endblock title %}
+{% block content %}
+    <section id="pdf-viewer" class="hero pdf-viewer d-flex align-items-center justify-content-center" style="padding-top: 500px;">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h1 class="text-center mb-4">Digital Citizen : Environnement Windows </h1>
+                    <div class="pdf-container" data-aos="fade-up">
+                        <object data="{{ asset("assets/pdf/formations/debutants/Fiche formation 2024-Environnement numeriques-Digital Citizen.pdf") }}" type="application/pdf" width="100%" height="1000px">
+                            <img src="{{ asset("assets/img/Formations/debutants/Fiche formation 2024-Environnement numeriques-Digital Citizen-1.png") }}" alt="Digital Citizen : Environnement Windows" width="100%">
+                        </object>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock content %}

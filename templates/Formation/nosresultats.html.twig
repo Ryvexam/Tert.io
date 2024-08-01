@@ -1,0 +1,141 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Tertio Informatique - Nos résultats{% endblock title %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <style>
+        .service-card {
+            transition: all 0.3s ease;
+            height: 100%;
+        }
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+        .card-body {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        .card-text {
+            flex-grow: 1;
+        }
+        .colored-card {
+            background-color: rgba(0, 123, 255, 0.1);
+        }
+        .testimonial-card {
+            height: 250px;
+            margin-bottom: 20px;
+            display: flex;
+            flex-direction: column;
+        }
+        .testimonial-card .card-body {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .testimonial {
+            font-style: italic;
+            flex-grow: 1;
+            overflow: auto;
+        }
+        .testimonial-author {
+            font-weight: bold;
+            text-align: right;
+            margin-top: 10px;
+        }
+        .survey-image-container {
+            text-align: center;
+            margin: 20px 0;
+        }
+        .survey-image {
+            max-width: 60%;
+            height: auto;
+        }
+    </style>
+{% endblock %}
+
+{% block content %}
+    <section id="hero" class="hero d-flex align-items-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 d-flex flex-column justify-content-center">
+                    <h1 data-aos="fade-up">Nos résultats</h1>
+                    <h2 data-aos="fade-up" data-aos-delay="400">Découvrez les retours de nos stagiaires et notre engagement pour la qualité</h2>
+                    <div data-aos="fade-up" data-aos-delay="600">
+                        <div class="text-center text-lg-start">
+                            <a href="#details" class="btn-get-started scrollto d-inline-flex align-items-center justify-content-center align-self-center">
+                                <span>En Savoir Plus</span>
+                                <i class="bi bi-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 hero-img" data-aos="zoom-out" data-aos-delay="200">
+                    <img src="{{ asset('assets/img/Formations/Priostagiaire.png') }}" class="img-fluid" alt="Satisfaction">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <main id="main">
+        <section id="details" class="about">
+            <div class="container" data-aos="fade-up">
+                <div class="row g-4">
+                    <div class="col-lg-12 mb-4">
+                        <h2 class="text-center"><strong>NOS RÉSULTATS</strong></h2>
+                    </div>
+
+                    <div class="col-lg-12" data-aos="fade-up" data-aos-delay="200">
+                        <div class="card service-card colored-card">
+                            <div class="card-body">
+                                <h3 class="card-title"><strong>Notre expérience et notre processus d'évaluation</strong></h3>
+                                <p class="card-text">Après plus de 27 ans d'existence, des centaines de stagiaires ont été formés par Tertio Formation. A l'issue de chaque formation, nous remettons à nos stagiaires <strong>une fiche d'évaluation</strong>. Ainsi, toutes les personnes ayant suivi une formation chez nous, sont invitées à noter (sur une échelle de 1 à 5) le module de formation suivi selon <strong>3 thématiques</strong> :</p>
+                                <ul>
+                                    <li><strong>L'environnement de la formation</strong> (l'inscription, l'accueil, le matériel utilisé etc.) ;</li>
+                                    <li><strong>Le cours</strong> (choix des exercices, rythme, supports etc.) ;</li>
+                                    <li><strong>Le consultant</strong> (compétences techniques, capacité d'écoute, méthodes pédagogiques etc.).</li>
+                                </ul>
+                                <p class="card-text">Ces retours nous sont précieux ! En effet, ils nous permettent de détecter <strong>les pistes d'amélioration</strong> et de rester vigilant quant à la <strong>qualité de nos formations</strong>.</p>
+                                <div class="survey-image-container">
+                                    <img src="{{ asset('assets/img/Formations/satisfaction.png') }}" class="survey-image" alt="Enquête de satisfaction">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-12" data-aos="fade-up" data-aos-delay="300">
+                        <h3 class="text-center mb-4"><strong>Les témoignages de nos stagiaires</strong></h3>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="card testimonial-card">
+                                    <div class="card-body">
+                                        <p class="testimonial">Intense mais très bien, très bon rythme, formatrice très à l'écoute avec beaucoup de patience pour les explications.</p>
+                                        <p class="testimonial-author">Delphine M. - Initiation bureautique juin 2022</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="card testimonial-card">
+                                    <div class="card-body">
+                                        <p class="testimonial">Un grand merci au professionnalisme et à la disponibilité de la formatrice, je recommande vos services.</p>
+                                        <p class="testimonial-author">Bernadette V. - Initiation bureautique avril 2022</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="card testimonial-card">
+                                    <div class="card-body">
+                                        <p class="testimonial">Les exercices sont là pour mettre en pratique les cours, le fait d'en faire beaucoup permet de mieux les enregistrer. La formatrice est très à l'écoute, explique et réexplique si besoin.</p>
+                                        <p class="testimonial-author">Anne C. - Perfectionnement informatique janvier 2022</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+{% endblock content %}

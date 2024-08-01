@@ -892,7 +892,7 @@ section {
 
 .services .service-box.informatique {
   border-bottom: 3px solid #C85C1F;
-  border-right: 3px solid #C85C1F;
+  box-shadow: 3px 3px 3px #C85C1F;
 }
 
 .services .service-box.informatique .icon {
@@ -910,8 +910,7 @@ section {
 
 .services .service-box.formation {
   border-bottom: 3px solid #85c1ce;
-  border-right: 3px solid #85c1ce;
-  box-shadow:;
+  box-shadow: 3px 3px 3px #85c1ce;
 }
 
 .services .service-box.formation .icon {
@@ -946,7 +945,8 @@ section {
 }
 
 .services .service-box.cloud {
-  border: 3px solid #ebba41;
+  border-bottom: 3px solid #ebba41;
+  box-shadow: 3px 3px 3px #ebba41;
 }
 
 .services .service-box.cloud .icon {

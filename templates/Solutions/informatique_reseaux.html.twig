@@ -44,7 +44,29 @@
                     </div>
                 </div>
                 <div class="col-lg-6 hero-img" data-aos="zoom-out" data-aos-delay="200">
-                    <img src="{{ asset('assets/img/Solutions/infrastructure-network.png') }}" class="img-fluid" alt="Infrastructures et Réseaux">
+                    <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                            {% set images = [
+                                'assets/img/Solutions/InformatiqueReseaux/InformatiqueReseaux1.jpg',
+                                'assets/img/Solutions/InformatiqueReseaux/InformatiqueReseaux2.jpg',
+                                'assets/img/Solutions/InformatiqueReseaux/InformatiqueReseaux3.jpg',
+                                'assets/img/Solutions/InformatiqueReseaux/InformatiqueReseaux4jpg'
+                            ] %}
+                            {% for image in images %}
+                                <div class="carousel-item {% if loop.first %}active{% endif %}">
+                                    <img src="{{ asset(image) }}" class="d-block w-100" alt="Notre Histoire {{ loop.index }}">
+                                </div>
+                            {% endfor %}
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Précédent</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Suivant</span>
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -122,4 +144,14 @@
             </div>
         </section>
     </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            new bootstrap.Carousel(document.querySelector('#heroCarousel'), {
+                interval: 2000, // Change d'image toutes les 2 secondes
+                wrap: true // Permet au carrousel de boucler
+            });
+        });
+    </script>
 {% endblock content %}
+

@@ -1,7 +1,33 @@
 {% extends 'base.html.twig' %}
-{% block title %}Tertio Informatique{% endblock title %}
-{% block content %}
 
+{% block title %}Tertio Informatique - Taux de réussite ICDL-PCIE{% endblock title %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <style>
+        .service-card {
+            transition: all 0.3s ease;
+            height: 100%;
+        }
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+        .card-body {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        .card-text {
+            flex-grow: 1;
+        }
+        .colored-card {
+            background-color: rgba(0, 123, 255, 0.1);
+        }
+    </style>
+{% endblock %}
+
+{% block content %}
     <section id="hero" class="hero d-flex align-items-center">
         <div class="container">
             <div class="row">
@@ -18,7 +44,7 @@
                     </div>
                 </div>
                 <div class="col-lg-6 hero-img" data-aos="zoom-out" data-aos-delay="200">
-                    <img src="{{ asset('assets/img/Formations/taux-reussite-icdl-pcie-2022.jpg') }}"  class="img-fluid" alt="Taux de réussite ICDL-PCIE 2022">
+                    <img src="{{ asset('assets/img/Formations/taux-de-reussite.png') }}" class="img-fluid" alt="Taux de réussite ICDL-PCIE 2022">
                 </div>
             </div>
         </div>
@@ -27,21 +53,37 @@
     <main id="main">
         <section id="details" class="about">
             <div class="container" data-aos="fade-up">
-                <div class="row gx-0">
-                    <div class="col-lg-12 d-flex flex-column justify-content-center" data-aos="fade-up" data-aos-delay="200">
-                        <div class="content">
-                            <p>La certification ICDL-PCIE est une certification modulaire. En conséquence, aucun des différents modules n’est obligatoire. Le participant choisit le ou les modules qu’il souhaite passer. La certification est obtenue dès le premier module validé.</p>
-                            <p>Tertiaire Formation Conseil est un centre habilité ICDL (anciennement PCIE) depuis 2010.</p>
-                            <h2 class="wp-block-heading">Le taux de réussite à la certification ICDL-PCIE</h2>
-                            <div class="wp-block-image">
-                                <figure class="aligncenter size-large">
-                                    <a href="{{ asset('assets/img/Formations/taux-reussite-icdl-pcie-2022.jpg') }}">
-                                        <img src="{{ asset('assets/img/Formations/taux-reussite-icdl-pcie-2022.jpg') }}" style="width: 512px" alt="Taux de réussite ICDL-PCIE 2022">
-                                    </a>
-                                </figure>
+                <div class="row g-4">
+                    <div class="col-lg-12 mb-4">
+                        <h2 class="text-center"><strong>TAUX DE RÉUSSITE ICDL-PCIE</strong></h2>
+                    </div>
+
+                    <div class="col-lg-12" data-aos="fade-up" data-aos-delay="200">
+                        <div class="card service-card colored-card">
+                            <div class="card-body">
+                                <h3 class="card-title"><strong>Certification ICDL-PCIE</strong></h3>
+                                <p class="card-text">La certification ICDL-PCIE est une certification modulaire. En conséquence, aucun des différents modules n'est obligatoire. Le participant choisit le ou les modules qu'il souhaite passer. La certification est obtenue dès le premier module validé.</p>
+                                <p class="card-text">Tertio est un centre habilité ICDL (anciennement PCIE) depuis 2010.</p>
                             </div>
-                            <p>Le taux de réussite des candidats de Tertiaire Formation Conseil est de <strong>68 %</strong>.</p>
-                            <p>A noter qu’un test échoué peut être repassé en respectant un <strong>délai de 3 jours</strong> entre les passations du test (7 tentatives possibles par module). Dans la grande majorité des parcours de formation réalisé par TFC, un participant prépare plusieurs modules du ICDL-PCIE. Il s’agit principalement des modules concernant la suite Microsoft Office (Word, Excel, Powerpoint, Outlook).</p>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6" data-aos="fade-up" data-aos-delay="300">
+                        <div class="card service-card">
+                            <div class="card-body">
+                                <h3 class="card-title"><strong>Taux de réussite</strong></h3>
+                                <p class="card-text">Le taux de réussite des candidats de Tertio est de <strong>68 %</strong>.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6" data-aos="fade-up" data-aos-delay="400">
+                        <div class="card service-card colored-card">
+                            <div class="card-body">
+                                <h3 class="card-title"><strong>Informations complémentaires</strong></h3>
+                                <p class="card-text">A noter qu'un test échoué peut être repassé en respectant un <strong>délai de 3 jours</strong> entre les passations du test (7 tentatives possibles par module).</p>
+                                <p class="card-text">Dans la grande majorité des parcours de formation réalisé par Tertio, un participant prépare plusieurs modules du ICDL-PCIE. Il s'agit principalement des modules concernant la suite Microsoft Office (Word, Excel, Powerpoint, Outlook).</p>
+                            </div>
                         </div>
                     </div>
                 </div>

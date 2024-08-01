@@ -24,6 +24,11 @@ class FormationController extends AbstractController
     {
         return $this->render("Formation/moyensetmethodes.html.twig");
     }
+    #[Route("/nos-resultats", name: "app_nosresultat")]
+    function resultats()
+    {
+        return $this->render("Formation/nosresultats.html.twig");
+    }
 
 
     // Bureautique
