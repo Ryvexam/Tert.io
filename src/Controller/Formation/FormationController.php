@@ -19,6 +19,12 @@ class FormationController extends AbstractController
     {
         return $this->render("Formation/organisme.html.twig");
     }
+
+    #[Route("/certification", name: "app_certification")]
+    function certification()
+    {
+        return $this->render("Formation/certificationqualiopi.html.twig");
+    }
     #[Route("/moyens-et-methode", name: "app_moyensetmethodes")]
     function moyensetmethode()
     {
