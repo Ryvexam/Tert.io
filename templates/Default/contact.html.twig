@@ -1,71 +1,154 @@
 {% extends 'base.html.twig' %}
-{% block title %}Tertio Informatique{% endblock title %}
+
+{% block title %}Tertio Informatique - Contact{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <style>
+        .form-control { margin-bottom: 15px; }
+        .invalid-feedback {
+            display: none;
+            color: red;
+            font-size: 0.875em;
+            margin-top: -10px;
+            margin-bottom: 10px;
+        }
+        #form-status {
+            padding: 10px;
+            margin-top: 15px;
+            border-radius: 5px;
+            display: none;
+        }
+        #form-status.success {
+            background-color: #d4edda;
+            border-color: #c3e6cb;
+            color: #155724;
+        }
+        #form-status.error {
+            background-color: #f8d7da;
+            border-color: #f5c6cb;
+            color: #721c24;
+        }
+        .formbuilder-required {
+            color: red;
+            margin-left: 2px;
+        }
+    </style>
+{% endblock %}
+
 {% block content %}
     <main id="main">
         <div class="container initial-content-marge">
-            {% block contact_block %}
             <section id="contact" class="contact">
+                <div class="container" data-aos="fade-up">
+                    <header class="section-header">
+                        <h2>Contactez-nous</h2>
+                        <p>Laissez-nous vos coordonnées</p>
+                    </header>
 
-            <div class="container" data-aos="fade-up">
-
-
-                <header class="section-header">
-                    <h2>Contact</h2>
-                    <p>Nos différents moyens de contact</p>
-                </header>
-
-
-                <div class="row gy-4">
-
-                    <div class="col-lg-12">
-
-                        <div class="row gy-4">
-                            <div class="col-md-6">
-                                <div class="info-box">
-                                    <i class="bi bi-geo-alt"></i>
-                                    <h3>Adresse</h3>
-                                    <p>Tertio Informatique<br>28 Rue des Champins<br>03000 Moulins</p>
+                    <div class="row justify-content-center mb-5">
+                        <div class="col-lg-8">
+                            <div class="php-email-form">
+                                {{ form_start(form, {'attr': {'id': 'contact-form', 'class': 'rendered-form'}}) }}
+                                <div class="row">
+                                    <div class="col-md-6 formbuilder-text form-group">
+                                        {{ form_label(form.nom, 'Nom', {'attr_label': {'class': 'formbuilder-text-label'}}) }}
+                                        {{ form_widget(form.nom, {'attr': {'class': 'form-control', 'placeholder': 'Dupont', 'required': 'required', 'aria-required': 'true'}}) }}
+                                        {{ form_errors(form.nom, {'attr': {'class': 'invalid-feedback'}}) }}
+                                    </div>
+                                    <div class="col-md-6 formbuilder-text form-group">
+                                        {{ form_label(form.prenom, 'Prénom', {'attr_label': {'class': 'formbuilder-text-label'}}) }}
+                                        {{ form_widget(form.prenom, {'attr': {'class': 'form-control', 'placeholder': 'Jean', 'required': 'required', 'aria-required': 'true'}}) }}
+                                        {{ form_errors(form.prenom, {'attr': {'class': 'invalid-feedback'}}) }}
+                                    </div>
+                                    <div class="col-md-12 formbuilder-text form-group">
+                                        {{ form_label(form.entreprise, 'Entreprise', {'attr_label': {'class': 'formbuilder-text-label'}}) }}
+                                        {{ form_widget(form.entreprise, {'attr': {'class': 'form-control', 'placeholder': 'Google, Microsoft, etc...'}}) }}
+                                        {{ form_errors(form.entreprise, {'attr': {'class': 'invalid-feedback'}}) }}
+                                    </div>
+                                    <div class="col-md-12 formbuilder-text form-group">
+                                        {{ form_label(form.email, 'Email', {'attr_label': {'class': 'formbuilder-text-label'}}) }}
+                                        {{ form_widget(form.email, {'attr': {'class': 'form-control', 'placeholder': 'jean@dupont.fr', 'required': 'required', 'aria-required': 'true', 'type': 'email'}}) }}
+                                        {{ form_errors(form.email, {'attr': {'class': 'invalid-feedback'}}) }}
+                                    </div>
+                                    <div class="col-md-12 formbuilder-text form-group">
+                                        {{ form_label(form.telephone, 'Téléphone', {'attr_label': {'class': 'formbuilder-text-label'}}) }}
+                                        {{ form_widget(form.telephone, {'attr': {'class': 'form-control', 'placeholder': '0123456789', 'required': 'required', 'aria-required': 'true', 'type': 'tel'}}) }}
+                                        {{ form_errors(form.telephone, {'attr': {'class': 'invalid-feedback'}}) }}
+                                    </div>
+                                    <div class="col-md-12 formbuilder-textarea form-group">
+                                        {{ form_label(form.demande, 'Demande', {'attr_label': {'class': 'formbuilder-textarea-label'}}) }}
+                                        {{ form_widget(form.demande, {'attr': {'class': 'form-control', 'placeholder': 'Ecrivez-ici votre demande', 'required': 'required', 'aria-required': 'true'}}) }}
+                                        {{ form_errors(form.demande, {'attr': {'class': 'invalid-feedback'}}) }}
+                                    </div>
+                                    <div class="col-md-12 form-group">
+                                        {{ form_widget(form.recaptcha) }}
+                                        {{ form_errors(form.recaptcha, {'attr': {'class': 'invalid-feedback'}}) }}
+                                    </div>
+                                    <div class="col-md-12 text-center">
+                                        <button type="submit" class="btn btn-primary">Envoyer</button>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="info-box">
-                                    <i class="bi bi-telephone"></i>
-                                    <h3>Appelez-Nous</h3>
-                                    <p>Téléphone : <a href="tel:0470201088">04 70 20 10 88</a><br><br><br> </p>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="info-box">
-                                    <i class="bi bi-envelope"></i>
-                                    <h3>E-Mail</h3>
-                                    <p><a href="mailto:contact@tert.io">contact@tert.io<br><br></a>
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="info-box">
-                                    <i class="bi bi-clock"></i>
-                                    <h3>Horaires d'ouverture</h3>
-                                    <p>Lundi au Jeudi : 8h30-12h00 et 13h45-17h30</p>
-                                    <p>Vendredi : 8h30-12h00 et 13h45-17h00</p>
-                                </div>
+                                {{ form_end(form) }}
+                                <div id="form-status"></div>
                             </div>
                         </div>
-
-
-                    </div>
-
-                    <div class="col-lg-12 text-center" id="anydesk">
-                        <header class="section-header">
-                            <p>Téléchargez notre solution AnyDesk</p>
-                        </header>
-                        <p><a href="https://my.anydesk.com/v2/api/v2/custom-clients/downloads/public/XRNELHKC7VOX/AnyDesk-Tertio.exe"><img src="https://get.anydesk.com/_static/dl-btn-wr-large.png" height="75px" alt="Download AnyDesk"></a></p>
                     </div>
                 </div>
-            </div>
-        </section>
-            {% endblock contact_block %}
-
+            </section>
         </div>
     </main>
-{% endblock content %}
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.querySelector('form[name="form"]');
+            const messageContainer = document.createElement('div');
+            form.parentNode.insertBefore(messageContainer, form.nextSibling);
+
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+
+                const formData = new FormData(form);
+
+                // Get the reCAPTCHA response
+                const recaptchaResponse = grecaptcha.getResponse();
+                formData.append('g-recaptcha-response', recaptchaResponse);
+
+                fetch('/contact', {
+                    method: 'POST',
+                    body: formData,
+                    headers: {
+                        'X-Requested-With': 'XMLHttpRequest'
+                    }
+                })
+                    .then(response => response.json())
+                    .then(data => {
+                        messageContainer.innerHTML = '';
+                        if (data.status === 'success') {
+                            messageContainer.innerHTML = `<div class="alert alert-success">${data.message}</div>`;
+                            form.reset();
+                            grecaptcha.reset(); // Reset the reCAPTCHA
+                        } else {
+                            messageContainer.innerHTML = `<div class="alert alert-danger">${data.message}</div>`;
+                            if (data.errors) {
+                                const errorList = document.createElement('ul');
+                                data.errors.forEach(error => {
+                                    const li = document.createElement('li');
+                                    li.textContent = error;
+                                    errorList.appendChild(li);
+                                });
+                                messageContainer.appendChild(errorList);
+                            }
+                        }
+                    })
+                    .catch(error => {
+                        console.error('Error:', error);
+                        messageContainer.innerHTML = '<div class="alert alert-danger">Une erreur est survenue. Veuillez réessayer plus tard.</div>';
+                    });
+            });
+        });
+    </script>
+{% endblock %}

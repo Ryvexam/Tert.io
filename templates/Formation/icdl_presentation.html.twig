@@ -23,6 +23,34 @@
         .colored-card {
             background-color: rgba(0, 123, 255, 0.1); /* Couleur bleue avec 10% d'opacité */
         }
+
+        .btn-get-started {
+            margin-top: 30px;
+            line-height: 0;
+            padding: 15px 40px;
+            border-radius: 4px;
+            transition: 0.5s;
+            color: #fff;
+            background: #c85c11;
+            box-shadow: 0px 5px 30px rgb(66, 159, 243);
+        }
+
+        .btn-get-started span {
+            font-family: "Nunito", sans-serif;
+            font-weight: 600;
+            font-size: 16px;
+            letter-spacing: 1px;
+        }
+
+        .btn-get-started i {
+            margin-left: 5px;
+            font-size: 18px;
+            transition: 0.3s;
+        }
+
+        .btn-get-started:hover i {
+            transform: translateX(5px);
+        }
     </style>
 {% endblock %}
 
@@ -43,7 +71,7 @@
                     </div>
                 </div>
                 <div class="col-lg-6 hero-img" data-aos="zoom-out" data-aos-delay="200">
-                    <img src="{{ asset('assets/img/Formations/logo-icdl-officiel-avec-transparence-en-png.png') }}" class="img-fluid" alt="Logo ICDL officiel">
+                    <img src="{{ asset('assets/img/Formations/logo-icdl-officiel-avec-transparence-en-png.png') }}" class="img-fluid" style="height: 90%" alt="Logo ICDL officiel">
                 </div>
             </div>
         </div>
@@ -118,8 +146,12 @@
                         </div>
                     </div>
 
-                    <div class="col-lg-12 mt-4 text-center btn-close ">
-                        <a title="BROCHURE - Présentation de la certification ICDL 2020" href="https://www.icdlfrance.org/" target="_blank" rel="noopener" class="">Consultez la brochure officielle de la certification ICDL</a>
+
+                    <div class="text-center text-lg-start">
+                        <a href="https://www.icdlfrance.org/" target="_blank" rel="noopener" class="btn-get-started scrollto d-inline-flex align-items-center justify-content-center align-self-center"">
+                            <span>Site Officiel ICDL France</span>
+                            <i class="bi bi-arrow-right"></i>
+                        </a>
                     </div>
                 </div>
             </div>

@@ -1,0 +1,51 @@
+{# templates/emails/contact.html.twig #}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Nouvelle demande de contact</title>
+    {% block stylesheets %}
+        {{ encore_entry_link_tags('email') }}
+    {% endblock %}
+</head>
+<body>
+<div class="container mt-4">
+    <h1 class="mb-4 text-primary">Nouvelle demande de contact</h1>
+
+    <div class="mb-3">
+        <strong class="d-block">Nom:</strong>
+        <span>{{ form.nom }}</span>
+    </div>
+
+    <div class="mb-3">
+        <strong class="d-block">Prénom:</strong>
+        <span>{{ form.prenom }}</span>
+    </div>
+
+    <div class="mb-3">
+        <strong class="d-block">Entreprise:</strong>
+        <span>{{ form.entreprise|default('Non spécifié') }}</span>
+    </div>
+
+    <div class="mb-3">
+        <strong class="d-block">Email:</strong>
+        <span>{{ form.email }}</span>
+    </div>
+
+    <div class="mb-3">
+        <strong class="d-block">Téléphone:</strong>
+        <span>{{ form.telephone }}</span>
+    </div>
+
+    <div class="mb-3">
+        <strong class="d-block">Demande:</strong>
+        <div>{{ form.demande|nl2br }}</div>
+    </div>
+</div>
+
+{% block javascripts %}
+    {{ encore_entry_script_tags('email') }}
+{% endblock %}
+</body>
+</html>

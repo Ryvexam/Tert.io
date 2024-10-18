@@ -4,47 +4,51 @@
 {% block stylesheets %}
     {{ parent() }}
     <style>
-        .service-card {
+        body {
+            font-family: 'Arial', sans-serif;
+        }
+        .certification-section {
+            padding: 160px 0 80px;
+            background-color: #ffffff;
+        }
+        .section-header {
+            margin-bottom: 60px;
+        }
+        .qualiopi-logo {
+            max-width: 180px;
+            margin-bottom: 30px;
+        }
+        .certification-card {
             transition: all 0.3s ease;
-            height: 100%;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            background-color: #f8f9fa;
         }
-        .service-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        .certification-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
         }
-        .card-body {
-            height: 100%;
-            display: flex;
-            flex-direction: column;
+        .certification-img {
+            width: 100%;
+            height: auto;
+            border-radius: 20px 20px 0 0;
         }
-        .card-text {
-            flex-grow: 1;
-        }
-        .colored-card {
-            background-color: rgba(0, 123, 255, 0.1); /* Couleur bleue avec 10% d'opacité */
-        }
+
+
     </style>
 {% endblock %}
 
 {% block content %}
-    <section id="hero" class="hero d-flex align-items-center">
+    <section id="certification" class="certification-section">
         <div class="container">
-            <div class="row">
-                <div class="col-lg-6 d-flex flex-column justify-content-center">
-                    <h1>Certification Qualopi</h1>
-{#                    <div data-aos="fade-up" data-aos-delay="600">#}
-{#                        <div class="text-center text-lg-start">#}
-{#                            <a href="#details" class="btn-get-started scrollto d-inline-flex align-items-center justify-content-center align-self-center">#}
-{#                                <span>En Savoir Plus</span>#}
-{#                                <i class="bi bi-arrow-right"></i>#}
-{#                            </a>#}
-{#                        </div>#}
-{#                    </div>#}
+            <div class="row justify-content-center">
+                <div class="col-lg-6 col-md-8">
+                    <div class="certification-card">
+                        <img src="{{ asset('assets/img/Formations/Certificat Qualiopi 2024-2027.png') }}" class="certification-img" alt="Certificat Qualiopi 2024-2027">
+                    </div>
                 </div>
-                <div class="col-lg-6 hero-img" data-aos="zoom-out" data-aos-delay="200">
-                    <img src="{{ asset('assets/img/Formations/certificat-qualiopi.jpg') }}" class="img-fluid" alt="Expertise en Formation" style="width: 75%;">                </div>
             </div>
         </div>
     </section>
-
 {% endblock content %}

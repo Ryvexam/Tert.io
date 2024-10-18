@@ -1,9 +1,15 @@
+parameters:
+    google_recaptcha_site_key: '%env(GOOGLE_RECAPTCHA_SITE_KEY)%'
+    app.sender_mail: '%env(SENDER_MAIL)%'
+    app.contact_mail: '%env(CONTACT_MAIL)%'
+    app.sav_mail: '%env(SAV_MAIL)%'
+
 # This file is the entry point to configure your own services.
 # Files in the packages/ subdirectory configure your dependencies.
 
 # Put parameters here that don't need to change on each machine where the app is deployed
 # https://symfony.com/doc/current/best_practices.html#use-parameters-for-application-configuration
-parameters:
+
 
 services:
     # default configuration for services in *this* file

@@ -57,7 +57,6 @@
                         <h2 class="text-center"><strong>NOTRE EXPERTISE EN FORMATION</strong></h2>
                     </div>
 
-
                     <div class="col-lg-12" data-aos="fade-up" data-aos-delay="250">
                         <div class="card service-card colored-card">
                             <div class="card-body">
@@ -95,6 +94,28 @@
                     </div>
                 </div>
             </div>
+        </section>
+
+        <section id="clients" class="clients">
+
+            <div class="container" data-aos="fade-up">
+
+                <header class="section-header">
+                    <h2>Nos Clients</h2>
+                    <p>Ils nous font confiance :</p>
+                </header>
+
+                <div class="clients-slider swiper">
+                    <div class="swiper-wrapper align-items-center">
+                        {% for client in randomClients %}
+                            <div class="swiper-slide">
+                                <img src="{{ asset(client) }}" class="img-fluid" alt="Client Logo">
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+
         </section>
     </main>
 {% endblock content %}

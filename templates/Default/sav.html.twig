@@ -1,0 +1,234 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Tertio Informatique - Contact{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <style>
+        .form-control { margin-bottom: 15px; }
+        .invalid-feedback {
+            display: none;
+            color: red;
+            font-size: 0.875em;
+            margin-top: -10px;
+            margin-bottom: 10px;
+        }
+        .is-invalid { border-color: red; }
+        .is-valid { border-color: green; }
+        #form-status {
+            padding: 10px;
+            margin-top: 15px;
+            border-radius: 5px;
+            display: none;
+        }
+        #form-status.success {
+            background-color: #d4edda;
+            border-color: #c3e6cb;
+            color: #155724;
+        }
+        #form-status.error {
+            background-color: #f8d7da;
+            border-color: #f5c6cb;
+            color: #721c24;
+        }
+    </style>
+{% endblock %}
+
+{% block content %}
+    <main id="main">
+        <div class="container initial-content-marge">
+            <section id="sav" class="sav">
+                <div class="col-lg-12 text-center" id="anydesk">
+                    <header class="section-header">
+                        <p>Téléchargez notre solution AnyDesk</p>
+                    </header>
+                    <p><a href="https://my.anydesk.com/v2/api/v2/custom-clients/downloads/public/XRNELHKC7VOX/AnyDesk-Tertio.exe"><img src="{{ asset('assets/img/logo_anydesk.png') }}" height="75px" alt="Download AnyDesk"></a></p>
+                </div>
+            </section>
+            <section id="contact" class="contact">
+                <div class="container" data-aos="fade-up">
+                    <header class="section-header">
+                        <h2>Contactez-nous</h2>
+                        <p>Laissez-nous vos coordonnées</p>
+                    </header>
+
+                    <div class="row justify-content-center mb-5">
+                        <div class="col-lg-8">
+                            <div class="php-email-form">
+                                <form id="contact-form" novalidate>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <label for="name">Nom et Prénom</label>
+                                            <input type="text" name="name" id="name" class="form-control" placeholder="Votre Nom et Prénom" required>
+                                            <div class="invalid-feedback" id="name-error"></div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <label for="email">Adresse E-mail</label>
+                                            <input type="email" name="email" id="email" class="form-control" placeholder="Votre Adresse E-mail" required>
+                                            <div class="invalid-feedback" id="email-error"></div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <label for="phone">Numéro de Téléphone</label>
+                                            <input type="tel" name="phone" id="phone" class="form-control phone-input" placeholder="Votre Numéro de Téléphone" maxlength="10">
+                                            <div class="invalid-feedback" id="phone-error"></div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <label for="subject">Sujet</label>
+                                            <select name="subject" id="subject" class="form-control" required>
+                                                <option value="">Sélectionnez un sujet</option>
+                                                <option value="Demande d'assistance">Demande d'assistance</option>
+                                                <option value="Demande de Devis">Demande de Devis</option>
+                                            </select>
+                                            <div class="invalid-feedback" id="subject-error"></div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <label for="message">Votre Message</label>
+                                            <textarea name="message" id="message" class="form-control" rows="6" placeholder="Votre Message" required></textarea>
+                                            <div class="invalid-feedback" id="message-error"></div>
+                                        </div>
+                                        <div class="col-md-12 text-center">
+                                            <button type="submit" class="btn btn-primary">Envoyer</button>
+                                        </div>
+                                    </div>
+                                </form>
+                                <div id="form-status"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row gy-4">
+                        <div class="col-lg-12">
+                            <div class="row gy-4">
+                                <div class="col-md-6">
+                                    <div class="info-box">
+                                        <i class="bi bi-telephone"></i>
+                                        <h3>Hotline clients</h3>
+                                        <p>Téléphone : <a href="tel:0470201088">04 70 20 10 88</a><br> </p>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="info-box">
+                                        <i class="bi bi-clock"></i>
+                                        <h3>Horaires d'assistance téléphonique</h3>
+                                        <p>Lundi au Vendredi : 9h00-12h00 et 13h45-17h00</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var form = document.getElementById('contact-form');
+            var formStatus = document.getElementById('form-status');
+            var inputs = form.querySelectorAll('input, select, textarea');
+
+            function validateEmail(email) {
+                var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+                if (!re.test(email)) return false;
+                var blockedDomains = ['yopmail.com', 'tempmail.com', 'guerrillamail.com', 'mailinator.com'];
+                var domain = email.split('@')[1];
+                return !blockedDomains.includes(domain);
+            }
+
+            function showError(input, message) {
+                input.classList.add('is-invalid');
+                input.classList.remove('is-valid');
+                var errorDiv = input.nextElementSibling;
+                if (errorDiv && errorDiv.classList.contains('invalid-feedback')) {
+                    errorDiv.textContent = message;
+                    errorDiv.style.display = 'block';
+                }
+            }
+
+            function showSuccess(input) {
+                input.classList.remove('is-invalid');
+                input.classList.add('is-valid');
+                var errorDiv = input.nextElementSibling;
+                if (errorDiv && errorDiv.classList.contains('invalid-feedback')) {
+                    errorDiv.style.display = 'none';
+                }
+            }
+
+            function validateField(input) {
+                if (input.type === 'email') {
+                    if (!validateEmail(input.value)) {
+                        showError(input, 'Veuillez entrer une adresse email valide.');
+                        return false;
+                    }
+                } else if (input.name === 'phone') {
+                    if (input.value.length !== 10) {
+                        showError(input, 'Le numéro de téléphone doit contenir exactement 10 chiffres.');
+                        return false;
+                    }
+                } else if (input.value.trim() === '') {
+                    showError(input, 'Ce champ est requis.');
+                    return false;
+                }
+                showSuccess(input);
+                return true;
+            }
+
+            inputs.forEach(function(input) {
+                input.addEventListener('blur', function() {
+                    validateField(this);
+                });
+
+                if (input.name === 'phone') {
+                    input.addEventListener('input', function() {
+                        this.value = this.value.replace(/[^0-9]/g, '');
+                    });
+                }
+            });
+
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                var isValid = true;
+
+                inputs.forEach(function(input) {
+                    if (!validateField(input)) {
+                        isValid = false;
+                    }
+                });
+
+                if (isValid) {
+                    var formData = new FormData(form);
+                    var jsonData = {};
+                    formData.forEach((value, key) => { jsonData[key] = value });
+
+                    fetch('{{ path('submit_contact') }}', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify(jsonData)
+                    })
+                        .then(response => response.json())
+                        .then(data => {
+                            formStatus.textContent = data.message;
+                            formStatus.className = 'success';
+                            formStatus.style.display = 'block';
+                            form.reset();
+                            inputs.forEach(input => input.classList.remove('is-valid'));
+                        })
+                        .catch(error => {
+                            formStatus.textContent = 'Une erreur est survenue. Veuillez réessayer.';
+                            formStatus.className = 'error';
+                            formStatus.style.display = 'block';
+                        });
+                } else {
+                    formStatus.textContent = 'Veuillez corriger les erreurs dans le formulaire.';
+                    formStatus.className = 'error';
+                    formStatus.style.display = 'block';
+                }
+            });
+        });
+    </script>
+{% endblock %}

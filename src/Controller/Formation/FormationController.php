@@ -3,16 +3,32 @@
 namespace App\Controller\Formation;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 #[Route("/formations")]
 class FormationController extends AbstractController
 {
-
     #[Route("/accueil", name: "app_formations")]
-    function formations()
+    public function index(): Response
     {
-        return $this->render("Formation/formations.html.twig");
+        $randomClients = $this->getRandomClients();
+        return $this->render("Formation/formations.html.twig", [
+            'randomClients' => $randomClients
+        ]);
+    }
+
+    private function getRandomClients(): array
+    {
+        $clientsDirectory = $this->getParameter('kernel.project_dir') . '/public/assets/img/formation-clients/';
+        $clientImages = glob($clientsDirectory . '*.png');
+
+        $clientImages = array_map(function($path) {
+            return 'assets/img/formation-clients/' . basename($path);
+        }, $clientImages);
+
+        shuffle($clientImages);
+        return array_slice($clientImages, 0, 10); // Return only 10 random clients
     }
     #[Route("/organisme-formations", name: "app_organisme_formations")]
     function orgaformations()
