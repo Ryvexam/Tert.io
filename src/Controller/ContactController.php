@@ -10,7 +10,6 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Mailer\MailerInterface;
-use Symfony\Component\Mime\Email;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\TelType;
@@ -43,10 +42,13 @@ class ContactController extends AbstractController
             ->add('recaptcha', ReCaptchaType::class)
             ->getForm();
 
-        $form->handleRequest($request);
+        $message = null;
+        $status = 'error';
 
-        if ($form->isSubmitted()) {
-            if ($form->isValid()) {
+        if ($request->isMethod('POST')) {
+            $form->handleRequest($request);
+
+            if ($form->isSubmitted() && $form->isValid()) {
                 $data = $form->getData();
 
                 try {
@@ -59,38 +61,30 @@ class ContactController extends AbstractController
 
                     $mailer->send($email);
 
-                    if ($request->isXmlHttpRequest()) {
-                        return new JsonResponse(['status' => 'success', 'message' => 'Votre message a été envoyé avec succès.']);
-                    }
-
-                    $this->addFlash('success', 'Votre message a été envoyé avec succès.');
-                    return $this->redirectToRoute('app_contact');
+                    $message = 'Votre message a été envoyé avec succès.';
+                    $status = 'success';
                 } catch (\Exception $e) {
                     $this->logger->error('Error sending email: ' . $e->getMessage());
-
-                    if ($request->isXmlHttpRequest()) {
-                        return new JsonResponse(['status' => 'error', 'message' => 'Une erreur est survenue lors de l\'envoi du message.'], 500);
-                    }
-
-                    $this->addFlash('error', 'Une erreur est survenue lors de l\'envoi du message.');
+                    $message = 'Une erreur est survenue lors de l\'envoi du message.';
                 }
             } else {
-                if ($request->isXmlHttpRequest()) {
-                    $errors = [];
-                    foreach ($form->getErrors(true) as $error) {
-                        $errors[] = $error->getMessage();
-                    }
-                    return new JsonResponse([
-                        'status' => 'error',
-                        'message' => 'Le formulaire contient des erreurs.',
-                        'errors' => $errors
-                    ], 400);
-                }
+                $message = 'Le formulaire contient des erreurs.';
             }
         }
 
-        return $this->render("Default/contact.html.twig", [
+        $renderedForm = $this->renderView("Default/contact.html.twig", [
             'form' => $form->createView(),
+            'message' => $message ? ['type' => $status, 'message' => $message] : null,
         ]);
+
+        if ($request->isXmlHttpRequest()) {
+            return new JsonResponse([
+                'status' => $status,
+                'message' => $message,
+                'formHtml' => $renderedForm
+            ]);
+        }
+
+        return new Response($renderedForm);
     }
 }

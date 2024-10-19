@@ -88,9 +88,17 @@
                                     <div class="col-md-12 text-center">
                                         <button type="submit" class="btn btn-primary">Envoyer</button>
                                     </div>
+                                    {% if message is defined and message %}
+                                        <div class="col-md-12 mt-3">
+                                            <div class="alert {% if message.type == 'success' %}alert-success{% else %}alert-danger{% endif %}">
+                                                <p>{{ message.message }}</p>
+                                            </div>
+                                        </div>
+                                    {% endif %}
                                 </div>
+
                                 {{ form_end(form) }}
-                                <div id="form-status"></div>
+                                <div id="form-status" class="mt-3"></div>
                             </div>
                         </div>
                     </div>
@@ -105,8 +113,7 @@
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const form = document.querySelector('form[name="form"]');
-            const messageContainer = document.createElement('div');
-            form.parentNode.insertBefore(messageContainer, form.nextSibling);
+            const formStatus = document.getElementById('form-status');
 
             form.addEventListener('submit', function(e) {
                 e.preventDefault();
@@ -126,13 +133,16 @@
                 })
                     .then(response => response.json())
                     .then(data => {
-                        messageContainer.innerHTML = '';
+                        formStatus.style.display = 'block';
+
                         if (data.status === 'success') {
-                            messageContainer.innerHTML = `<div class="alert alert-success">${data.message}</div>`;
+                            formStatus.className = 'alert alert-success mt-3';
+                            formStatus.textContent = data.message;
                             form.reset();
-                            grecaptcha.reset(); // Reset the reCAPTCHA
+                            grecaptcha.reset();
                         } else {
-                            messageContainer.innerHTML = `<div class="alert alert-danger">${data.message}</div>`;
+                            formStatus.className = 'alert alert-danger mt-3';
+                            formStatus.textContent = data.message;
                             if (data.errors) {
                                 const errorList = document.createElement('ul');
                                 data.errors.forEach(error => {
@@ -140,13 +150,15 @@
                                     li.textContent = error;
                                     errorList.appendChild(li);
                                 });
-                                messageContainer.appendChild(errorList);
+                                formStatus.appendChild(errorList);
                             }
                         }
                     })
                     .catch(error => {
                         console.error('Error:', error);
-                        messageContainer.innerHTML = '<div class="alert alert-danger">Une erreur est survenue. Veuillez réessayer plus tard.</div>';
+                        formStatus.style.display = 'block';
+                        formStatus.className = 'alert alert-danger mt-3';
+                        formStatus.textContent = 'Une erreur est survenue. Veuillez réessayer plus tard.';
                     });
             });
         });
