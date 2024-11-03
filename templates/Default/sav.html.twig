@@ -5,16 +5,6 @@
 {% block stylesheets %}
     {{ parent() }}
     <style>
-        .form-control { margin-bottom: 15px; }
-        .invalid-feedback {
-            display: none;
-            color: red;
-            font-size: 0.875em;
-            margin-top: -10px;
-            margin-bottom: 10px;
-        }
-        .is-invalid { border-color: red; }
-        .is-valid { border-color: green; }
         #form-status {
             padding: 10px;
             margin-top: 15px;
@@ -48,50 +38,63 @@
             <section id="contact" class="contact">
                 <div class="container" data-aos="fade-up">
                     <header class="section-header">
-                        <h2>Contactez-nous</h2>
-                        <p>Laissez-nous vos coordonnées</p>
+                        <h2>Besoin de SAV ?</h2>
+                        <p>Transmettez votre demande</p>
                     </header>
 
                     <div class="row justify-content-center mb-5">
                         <div class="col-lg-8">
                             <div class="php-email-form">
-                                <form id="contact-form" novalidate>
-                                    <div class="row">
-                                        <div class="col-md-12">
-                                            <label for="name">Nom et Prénom</label>
-                                            <input type="text" name="name" id="name" class="form-control" placeholder="Votre Nom et Prénom" required>
-                                            <div class="invalid-feedback" id="name-error"></div>
-                                        </div>
-                                        <div class="col-md-12">
-                                            <label for="email">Adresse E-mail</label>
-                                            <input type="email" name="email" id="email" class="form-control" placeholder="Votre Adresse E-mail" required>
-                                            <div class="invalid-feedback" id="email-error"></div>
-                                        </div>
-                                        <div class="col-md-12">
-                                            <label for="phone">Numéro de Téléphone</label>
-                                            <input type="tel" name="phone" id="phone" class="form-control phone-input" placeholder="Votre Numéro de Téléphone" maxlength="10">
-                                            <div class="invalid-feedback" id="phone-error"></div>
-                                        </div>
-                                        <div class="col-md-12">
-                                            <label for="subject">Sujet</label>
-                                            <select name="subject" id="subject" class="form-control" required>
-                                                <option value="">Sélectionnez un sujet</option>
-                                                <option value="Demande d'assistance">Demande d'assistance</option>
-                                                <option value="Demande de Devis">Demande de Devis</option>
-                                            </select>
-                                            <div class="invalid-feedback" id="subject-error"></div>
-                                        </div>
-                                        <div class="col-md-12">
-                                            <label for="message">Votre Message</label>
-                                            <textarea name="message" id="message" class="form-control" rows="6" placeholder="Votre Message" required></textarea>
-                                            <div class="invalid-feedback" id="message-error"></div>
-                                        </div>
-                                        <div class="col-md-12 text-center">
-                                            <button type="submit" class="btn btn-primary">Envoyer</button>
-                                        </div>
+                                {{ form_start(form, {'attr': {'id': 'contact-form', 'class': 'rendered-form'}}) }}
+                                <div class="row">
+                                    <div class="col-md-6 formbuilder-text form-group">
+                                        {{ form_label(form.nom, 'Nom', {'attr_label': {'class': 'formbuilder-text-label'}}) }}
+                                        {{ form_widget(form.nom, {'attr': {'class': 'form-control', 'placeholder': 'Dupont', 'required': 'required', 'aria-required': 'true'}}) }}
+                                        {{ form_errors(form.nom, {'attr': {'class': 'invalid-feedback'}}) }}
                                     </div>
-                                </form>
-                                <div id="form-status"></div>
+                                    <div class="col-md-6 formbuilder-text form-group">
+                                        {{ form_label(form.prenom, 'Prénom', {'attr_label': {'class': 'formbuilder-text-label'}}) }}
+                                        {{ form_widget(form.prenom, {'attr': {'class': 'form-control', 'placeholder': 'Jean', 'required': 'required', 'aria-required': 'true'}}) }}
+                                        {{ form_errors(form.prenom, {'attr': {'class': 'invalid-feedback'}}) }}
+                                    </div>
+                                    <div class="col-md-12 formbuilder-text form-group">
+                                        {{ form_label(form.entreprise, 'Entreprise', {'attr_label': {'class': 'formbuilder-text-label'}}) }}
+                                        {{ form_widget(form.entreprise, {'attr': {'class': 'form-control', 'placeholder': 'Google, Microsoft, etc...'}}) }}
+                                        {{ form_errors(form.entreprise, {'attr': {'class': 'invalid-feedback'}}) }}
+                                    </div>
+                                    <div class="col-md-12 formbuilder-text form-group">
+                                        {{ form_label(form.email, 'Email', {'attr_label': {'class': 'formbuilder-text-label'}}) }}
+                                        {{ form_widget(form.email, {'attr': {'class': 'form-control', 'placeholder': 'jean@dupont.fr', 'required': 'required', 'aria-required': 'true', 'type': 'email'}}) }}
+                                        {{ form_errors(form.email, {'attr': {'class': 'invalid-feedback'}}) }}
+                                    </div>
+                                    <div class="col-md-12 formbuilder-text form-group">
+                                        {{ form_label(form.telephone, 'Téléphone', {'attr_label': {'class': 'formbuilder-text-label'}}) }}
+                                        {{ form_widget(form.telephone, {'attr': {'class': 'form-control', 'placeholder': '0123456789', 'required': 'required', 'aria-required': 'true', 'type': 'tel'}}) }}
+                                        {{ form_errors(form.telephone, {'attr': {'class': 'invalid-feedback'}}) }}
+                                    </div>
+                                    <div class="col-md-12 formbuilder-textarea form-group">
+                                        {{ form_label(form.demande, 'Demande', {'attr_label': {'class': 'formbuilder-textarea-label'}}) }}
+                                        {{ form_widget(form.demande, {'attr': {'class': 'form-control', 'placeholder': 'Ecrivez-ici votre demande', 'required': 'required', 'aria-required': 'true'}}) }}
+                                        {{ form_errors(form.demande, {'attr': {'class': 'invalid-feedback'}}) }}
+                                    </div>
+                                    <div class="col-md-12 form-group">
+                                        {{ form_widget(form.recaptcha) }}
+                                        {{ form_errors(form.recaptcha, {'attr': {'class': 'invalid-feedback'}}) }}
+                                    </div>
+                                    <div class="col-md-12 text-center">
+                                        <button type="submit" class="btn btn-primary">Envoyer</button>
+                                    </div>
+                                    {% if message is defined and message %}
+                                        <div class="col-md-12 mt-3">
+                                            <div class="alert {% if message.type == 'success' %}alert-success{% else %}alert-danger{% endif %}">
+                                                <p>{{ message.message }}</p>
+                                            </div>
+                                        </div>
+                                    {% endif %}
+                                </div>
+
+                                {{ form_end(form) }}
+                                <div id="form-status" class="mt-3"></div>
                             </div>
                         </div>
                     </div>
@@ -126,108 +129,54 @@
     {{ parent() }}
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            var form = document.getElementById('contact-form');
-            var formStatus = document.getElementById('form-status');
-            var inputs = form.querySelectorAll('input, select, textarea');
-
-            function validateEmail(email) {
-                var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-                if (!re.test(email)) return false;
-                var blockedDomains = ['yopmail.com', 'tempmail.com', 'guerrillamail.com', 'mailinator.com'];
-                var domain = email.split('@')[1];
-                return !blockedDomains.includes(domain);
-            }
-
-            function showError(input, message) {
-                input.classList.add('is-invalid');
-                input.classList.remove('is-valid');
-                var errorDiv = input.nextElementSibling;
-                if (errorDiv && errorDiv.classList.contains('invalid-feedback')) {
-                    errorDiv.textContent = message;
-                    errorDiv.style.display = 'block';
-                }
-            }
-
-            function showSuccess(input) {
-                input.classList.remove('is-invalid');
-                input.classList.add('is-valid');
-                var errorDiv = input.nextElementSibling;
-                if (errorDiv && errorDiv.classList.contains('invalid-feedback')) {
-                    errorDiv.style.display = 'none';
-                }
-            }
-
-            function validateField(input) {
-                if (input.type === 'email') {
-                    if (!validateEmail(input.value)) {
-                        showError(input, 'Veuillez entrer une adresse email valide.');
-                        return false;
-                    }
-                } else if (input.name === 'phone') {
-                    if (input.value.length !== 10) {
-                        showError(input, 'Le numéro de téléphone doit contenir exactement 10 chiffres.');
-                        return false;
-                    }
-                } else if (input.value.trim() === '') {
-                    showError(input, 'Ce champ est requis.');
-                    return false;
-                }
-                showSuccess(input);
-                return true;
-            }
-
-            inputs.forEach(function(input) {
-                input.addEventListener('blur', function() {
-                    validateField(this);
-                });
-
-                if (input.name === 'phone') {
-                    input.addEventListener('input', function() {
-                        this.value = this.value.replace(/[^0-9]/g, '');
-                    });
-                }
-            });
+            const form = document.querySelector('form[name="form"]');
+            const formStatus = document.getElementById('form-status');
 
             form.addEventListener('submit', function(e) {
                 e.preventDefault();
-                var isValid = true;
 
-                inputs.forEach(function(input) {
-                    if (!validateField(input)) {
-                        isValid = false;
+                const formData = new FormData(form);
+
+                // Get the reCAPTCHA response
+                const recaptchaResponse = grecaptcha.getResponse();
+                formData.append('g-recaptcha-response', recaptchaResponse);
+
+                fetch('/contact', {
+                    method: 'POST',
+                    body: formData,
+                    headers: {
+                        'X-Requested-With': 'XMLHttpRequest'
                     }
-                });
+                })
+                    .then(response => response.json())
+                    .then(data => {
+                        formStatus.style.display = 'block';
 
-                if (isValid) {
-                    var formData = new FormData(form);
-                    var jsonData = {};
-                    formData.forEach((value, key) => { jsonData[key] = value });
-
-                    fetch('{{ path('submit_contact') }}', {
-                        method: 'POST',
-                        headers: {
-                            'Content-Type': 'application/json',
-                        },
-                        body: JSON.stringify(jsonData)
-                    })
-                        .then(response => response.json())
-                        .then(data => {
+                        if (data.status === 'success') {
+                            formStatus.className = 'alert alert-success mt-3';
                             formStatus.textContent = data.message;
-                            formStatus.className = 'success';
-                            formStatus.style.display = 'block';
                             form.reset();
-                            inputs.forEach(input => input.classList.remove('is-valid'));
-                        })
-                        .catch(error => {
-                            formStatus.textContent = 'Une erreur est survenue. Veuillez réessayer.';
-                            formStatus.className = 'error';
-                            formStatus.style.display = 'block';
-                        });
-                } else {
-                    formStatus.textContent = 'Veuillez corriger les erreurs dans le formulaire.';
-                    formStatus.className = 'error';
-                    formStatus.style.display = 'block';
-                }
+                            grecaptcha.reset();
+                        } else {
+                            formStatus.className = 'alert alert-danger mt-3';
+                            formStatus.textContent = data.message;
+                            if (data.errors) {
+                                const errorList = document.createElement('ul');
+                                data.errors.forEach(error => {
+                                    const li = document.createElement('li');
+                                    li.textContent = error;
+                                    errorList.appendChild(li);
+                                });
+                                formStatus.appendChild(errorList);
+                            }
+                        }
+                    })
+                    .catch(error => {
+                        console.error('Error:', error);
+                        formStatus.style.display = 'block';
+                        formStatus.className = 'alert alert-danger mt-3';
+                        formStatus.textContent = 'Une erreur est survenue. Veuillez réessayer plus tard.';
+                    });
             });
         });
     </script>

@@ -21,31 +21,31 @@ class EntrepriseController extends AbstractController
             [
                 'name' => 'Dominique MAUREL',
                 'position' => 'Gérant et fondateur de l’entreprise',
-                'image' => 'dominique.jpg',
+                'image' => 'dominique.webp',
                 'description' => 'Dans l’entreprise depuis 1996'
             ],
             [
                 'name' => 'Quentin FOUSE',
                 'position' => 'Responsable technique, associé',
-                'image' => 'quentin.jpg',
+                'image' => 'quentin.webp',
                 'description' => 'Dans l’entreprise depuis 2014'
             ],
             [
                 'name' => 'Alexandre DRIESSENS',
                 'position' => 'Technicien de maintenance informatique',
-                'image' => 'alexandre.jpg',
+                'image' => 'alexandre.webp',
                 'description' => 'Dans l’entreprise depuis 2022'
             ],
             [
                 'name' => 'Emmanuelle PINEL',
                 'position' => 'Assistante',
-                'image' => 'emmanuelle.jpg',
+                'image' => 'emmanuelle.webp',
                 'description' => 'Dans l’entreprise depuis 2019'
             ],
             [
                 'name' => 'Isabelle DODAT',
                 'position' => 'Formatrice et référente sur les logiciels SAGE et EBP',
-                'image' => 'isabelle.jpg',
+                'image' => 'isabelle.webp',
                 'description' => 'Dans l’entreprise depuis 2021'
             ],
         ];

@@ -27,6 +27,10 @@
         <env name="GOOGLE_RECAPTCHA_SITE_KEY" value=""/>
         <env name="GOOGLE_RECAPTCHA_SECRET_KEY" value=""/>
         <!-- ###- victor-prdh/recaptcha-bundle ### -->
+
+        <!-- ###+ setono/google-analytics-bundle ### -->
+        <env name="GOOGLE_ANALYTICS_MEASUREMENT_ID" value="YOUR_GOOGLE_ANALYTICS_MEASUREMENT_ID"/>
+        <!-- ###- setono/google-analytics-bundle ### -->
     </php>
 
     <testsuites>

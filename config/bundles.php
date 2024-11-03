@@ -12,4 +12,6 @@ return [
     Symfony\Bundle\MonologBundle\MonologBundle::class => ['all' => true],
     Symfony\Bundle\MakerBundle\MakerBundle::class => ['dev' => true],
     VictorPrdh\RecaptchaBundle\RecaptchaBundle::class => ['all' => true],
+    Setono\TagBagBundle\SetonoTagBagBundle::class => ['all' => true],
+    Setono\GoogleAnalyticsBundle\SetonoGoogleAnalyticsBundle::class => ['all' => true],
 ];

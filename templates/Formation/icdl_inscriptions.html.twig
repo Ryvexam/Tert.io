@@ -5,39 +5,247 @@
 {% block stylesheets %}
     {{ parent() }}
     <style>
+        /* Timeline container with brand gradient */
+        .inscription-block {
+            background: linear-gradient(135deg, #C85C1F69 0%, #85c1ce69 100%);
+            padding: 3rem 1rem;
+            border-radius: 15px;
+            margin: 2rem auto;
+            max-width: 1200px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        }
+
+        .timeline {
+            position: relative;
+            max-width: 1100px;
+            margin: 50px auto;
+            padding: 20px 0;
+        }
+
+        /* Horizontal line with brand gradient */
+        .timeline::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, #C85C1F, #cc5075, #ebba41, #85c1ce,#00355F);
+            top: 50px;
+            left: 0;
+            z-index: 1;
+        }
+
+        .timeline-container {
+            display: flex;
+            justify-content: space-between;
+            position: relative;
+            margin-top: 20px;
+        }
+
+        .timeline-item {
+            flex: 1;
+            position: relative;
+            text-align: center;
+            padding: 0 15px;
+            max-width: 200px;
+        }
+
+        .timeline-dot {
+            background: #C85C1F;
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin: 30px auto;
+            position: relative;
+            z-index: 2;
+            box-shadow: 0 3px 10px rgba(200,92,31,0.3);
+        }
+
+        /* Different colored dots for each step */
+        .timeline-item:nth-child(2) .timeline-dot {
+            background: #cc5075;
+        }
+        .timeline-item:nth-child(3) .timeline-dot {
+            background: #ebba41;
+        }
+        .timeline-item:nth-child(4) .timeline-dot {
+            background: #85c1ce;
+        }
+        .timeline-item:nth-child(5) .timeline-dot {
+            background: #00355F;
+        }
+
+        .timeline-content {
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            margin-top: 20px;
+            min-height: 150px;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(133,193,206,0.2);
+            box-shadow: 0 4px 15px rgba(133,193,206,0.1);
+        }
+
+        .timeline-content:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(200,92,31,0.1);
+        }
+
+        .timeline-content h3 {
+            font-size: 1.1rem;
+            color: #C85C1F;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        /* Different colored headings for each step */
+        .timeline-item:nth-child(2) .timeline-content h3 {
+            color: #cc5075;
+        }
+        .timeline-item:nth-child(3) .timeline-content h3 {
+            color: #ebba41;
+        }
+        .timeline-item:nth-child(4) .timeline-content h3 {
+            color: #85c1ce;
+        }
+        .timeline-item:nth-child(5) .timeline-content h3 {
+            color: #00355F;
+        }
+
+        .timeline-content p {
+            font-size: 0.9rem;
+            margin: 0;
+            color: #555;
+            line-height: 1.5;
+        }
+
+        .section-title {
+            color: #C85C1F;
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            font-weight: 700;
+        }
+
+        /* Responsive design */
+        @media (max-width: 992px) {
+            .timeline-container {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .timeline-item {
+                min-width: 280px;
+                margin-bottom: 30px;
+            }
+
+            .timeline::before {
+                display: none;
+            }
+        }
+
+        /* Card Styles */
         .service-card {
             transition: all 0.3s ease;
             height: 100%;
             margin-bottom: 20px;
+            border: none;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
         }
+
         .service-card:hover {
             transform: translateY(-10px);
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
         }
+
         .card-body {
             height: 100%;
             display: flex;
             flex-direction: column;
+            padding: 2rem;
         }
+
         .card-text {
             flex-grow: 1;
         }
+
         .colored-card {
             background-color: rgba(0, 123, 255, 0.1);
         }
+
         .section-title {
             font-weight: bold;
             margin-bottom: 1rem;
+            color: #012970;
         }
+
         .full-width-image {
             width: 100%;
             height: auto;
             margin-bottom: 20px;
         }
+
+        /* Button Styles */
+        .btn-get-started {
+            margin-top: 30px;
+            line-height: 0;
+            padding: 15px 40px;
+            border-radius: 4px;
+            transition: 0.5s;
+            color: #fff;
+            background: #4154f1;
+            box-shadow: 0px 5px 30px rgba(65, 84, 241, 0.4);
+            text-decoration: none;
+        }
+
+        .btn-get-started span {
+            font-weight: 600;
+            font-size: 16px;
+            letter-spacing: 1px;
+        }
+
+        .btn-get-started i {
+            margin-left: 5px;
+            font-size: 18px;
+            transition: 0.3s;
+        }
+
+        .btn-get-started:hover i {
+            transform: translateX(5px);
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .hero h1 {
+                font-size: 36px;
+            }
+
+            .hero h2 {
+                font-size: 20px;
+            }
+
+            .timeline-container {
+                flex-wrap: wrap;
+            }
+
+            .timeline-item {
+                min-width: 250px;
+                margin-bottom: 30px;
+            }
+
+            .timeline::before {
+                display: none;
+            }
+        }
     </style>
 {% endblock %}
 
 {% block content %}
+    {# Hero Section #}
     <section id="hero" class="hero d-flex align-items-center">
         <div class="container">
             <div class="row">
@@ -68,10 +276,56 @@
                         <h2 class="text-center"><strong>VOTRE INSCRIPTION</strong></h2>
                     </div>
 
-                    <div class="col-lg-12" data-aos="fade-up" data-aos-delay="100">
-                        <img src="{{ asset('assets/img/Formations/comment-ca-marche-le-certificat-icdl-pcie-1.png') }}" alt="Comment ça marche le certificat ICDL-PCIE" class="full-width-image">
-                    </div>
+                    {# Timeline Section #}
+                    <div class="timeline">
+                        <div class="timeline-container">
+                            {# Step 1 #}
+                            <div class="timeline-item" data-aos="fade-up" data-aos-delay="100">
+                                <div class="timeline-dot">1</div>
+                                <div class="timeline-content">
+                                    <h3>Contactez-nous !</h3>
+                                    <p>Tertio est un centre habilité à faire passer les tests ICDL.</p>
+                                </div>
+                            </div>
 
+                            {# Step 2 #}
+                            <div class="timeline-item" data-aos="fade-up" data-aos-delay="200">
+                                <div class="timeline-dot">2</div>
+                                <div class="timeline-content">
+                                    <h3>Test d'évaluation gratuit</h3>
+                                    <p>Réaliser un diagnostic et vérifier les compétences numériques.</p>
+                                </div>
+                            </div>
+
+                            {# Step 3 #}
+                            <div class="timeline-item" data-aos="fade-up" data-aos-delay="300">
+                                <div class="timeline-dot">3</div>
+                                <div class="timeline-content">
+                                    <h3>Formation adaptée</h3>
+                                    <p>En fonction du diagnostic et des besoins, le candidat sélectionne le ou les modules souhaités et suit la formation appropriée.</p>
+                                </div>
+                            </div>
+
+                            {# Step 4 #}
+                            <div class="timeline-item" data-aos="fade-up" data-aos-delay="400">
+                                <div class="timeline-dot">4</div>
+                                <div class="timeline-content">
+                                    <h3>Test de préparation</h3>
+                                    <p>S'entraîner à la certification avec l'accompagnement de Tertio.</p>
+                                </div>
+                            </div>
+
+                            {# Step 5 #}
+                            <div class="timeline-item" data-aos="fade-up" data-aos-delay="500">
+                                <div class="timeline-dot">5</div>
+                                <div class="timeline-content">
+                                    <h3>Certification ICDL ou ENI</h3>
+                                    <p>Obtenir un certificat certifiant des compétences numériques, reconnu par les entreprises.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {# Financing Options #}
                     <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
                         <div class="card service-card">
                             <div class="card-body">

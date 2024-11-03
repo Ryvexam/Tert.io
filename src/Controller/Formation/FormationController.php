@@ -21,7 +21,7 @@ class FormationController extends AbstractController
     private function getRandomClients(): array
     {
         $clientsDirectory = $this->getParameter('kernel.project_dir') . '/public/assets/img/formation-clients/';
-        $clientImages = glob($clientsDirectory . '*.png');
+        $clientImages = glob($clientsDirectory . '*.webp');
 
         $clientImages = array_map(function($path) {
             return 'assets/img/formation-clients/' . basename($path);

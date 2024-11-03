@@ -3,73 +3,88 @@
 
 namespace App\Controller;
 
+use Symfony\Bridge\Twig\Mime\TemplatedEmail;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Mailer\MailerInterface;
-use Symfony\Component\Mime\Email;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Symfony\Component\Form\Extension\Core\Type\EmailType;
+use Symfony\Component\Form\Extension\Core\Type\TelType;
+use Symfony\Component\Form\Extension\Core\Type\TextareaType;
+use Psr\Log\LoggerInterface;
+use Symfony\Component\DependencyInjection\ParameterBag\ParameterBagInterface;
+use VictorPrdh\RecaptchaBundle\Form\ReCaptchaType;
 
 class SavController extends AbstractController
 {
-    #[Route("/sav", name: "app_sav")]
-    public function index(): Response
+    private $logger;
+    private $params;
+
+    public function __construct(LoggerInterface $logger, ParameterBagInterface $params)
     {
-        return $this->render("Default/sav.html.twig");
+        $this->logger = $logger;
+        $this->params = $params;
     }
 
-    #[Route("/submit-sav", name: "submit_sav", methods: ["POST"])]
-    public function submitContact(Request $request, MailerInterface $mailer): Response
+    #[Route("/sav", name: "app_sav", methods: ["GET", "POST"])]
+    public function index(Request $request, MailerInterface $mailer): Response
     {
-        $data = json_decode($request->getContent(), true);
+        $form = $this->createFormBuilder()
+            ->add('nom', TextType::class)
+            ->add('prenom', TextType::class)
+            ->add('entreprise', TextType::class)
+            ->add('email', EmailType::class)
+            ->add('telephone', TelType::class)
+            ->add('demande', TextareaType::class)
+            ->add('recaptcha', ReCaptchaType::class)
+            ->getForm();
 
-        // Validation côté serveur
-        if (!$this->validateData($data)) {
-            return $this->json(['message' => 'Données invalides'], Response::HTTP_BAD_REQUEST);
-        }
+        $message = null;
+        $status = 'error';
 
-        // Email à maximevery@ryveweb.fr
-        $emailToAdmin = (new Email())
-            ->from('formulaire@ryveweb.fr')
-            ->to('maximevery@ryveweb.fr')
-            ->subject($data['subject'] . ' - ' . $data['name'])
-            ->text($this->renderView('emails/contact.txt.twig', $data))
-            ->html($this->renderView('emails/contact.html.twig', $data));
+        if ($request->isMethod('POST')) {
+            $form->handleRequest($request);
 
-        // Email de confirmation à l'expéditeur
-        $emailToSender = (new Email())
-            ->from('formulaire@ryveweb.fr')
-            ->to($data['email'])
-            ->subject('Confirmation de votre message - ' . $data['subject'])
-            ->text($this->renderView('emails/confirmation.txt.twig', $data))
-            ->html($this->renderView('emails/confirmation.html.twig', $data));
+            if ($form->isSubmitted() && $form->isValid()) {
+                $data = $form->getData();
 
-        try {
-            $mailer->send($emailToAdmin);
-            $mailer->send($emailToSender);
-            return $this->json(['message' => 'Message envoyé avec succès. Un email de confirmation vous a été envoyé.']);
-        } catch (\Exception $e) {
-            return $this->json(['message' => 'Erreur lors de l\'envoi du message'], Response::HTTP_INTERNAL_SERVER_ERROR);
-        }
-    }
+                try {
+                    $email = (new TemplatedEmail())
+                        ->from($this->params->get('app.sender_mail'))
+                        ->to($this->params->get('app.contact_mail'))
+                        ->subject('SAV')
+                        ->htmlTemplate('emails/sav.html.twig')
+                        ->context(['form' => $data]);
 
-    private function validateData(array $data): bool
-    {
-        $requiredFields = ['name', 'email', 'subject', 'message'];
-        foreach ($requiredFields as $field) {
-            if (empty($data[$field])) {
-                return false;
+                    $mailer->send($email);
+
+                    $message = 'Votre message a été envoyé avec succès.';
+                    $status = 'success';
+                } catch (\Exception $e) {
+                    $this->logger->error('Error sending email: ' . $e->getMessage());
+                    $message = 'Une erreur est survenue lors de l\'envoi du message.';
+                }
+            } else {
+                $message = 'Le formulaire contient des erreurs.';
             }
         }
 
-        if (!filter_var($data['email'], FILTER_VALIDATE_EMAIL)) {
-            return false;
+        $renderedForm = $this->renderView("Default/sav.html.twig", [
+            'form' => $form->createView(),
+            'message' => $message ? ['type' => $status, 'message' => $message] : null,
+        ]);
+
+        if ($request->isXmlHttpRequest()) {
+            return new JsonResponse([
+                'status' => $status,
+                'message' => $message,
+                'formHtml' => $renderedForm
+            ]);
         }
 
-        if (!empty($data['phone']) && !preg_match('/^[0-9]{10}$/', $data['phone'])) {
-            return false;
-        }
-
-        return true;
+        return new Response($renderedForm);
     }
 }

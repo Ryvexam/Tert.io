@@ -38,6 +38,18 @@
             "./config/packages/google_recaptcha.yaml"
         ]
     },
+    "php-http/discovery": {
+        "version": "1.20",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "main",
+            "version": "1.18",
+            "ref": "f45b5dd173a27873ab19f5e3180b2f661c21de02"
+        },
+        "files": [
+            "./config/packages/http_discovery.yaml"
+        ]
+    },
     "phpunit/phpunit": {
         "version": "9.6",
         "recipe": {
@@ -54,6 +66,21 @@
     },
     "presta/sitemap-bundle": {
         "version": "v4.1.1"
+    },
+    "setono/google-analytics-bundle": {
+        "version": "1.0",
+        "recipe": {
+            "repo": "github.com/symfony/recipes-contrib",
+            "branch": "main",
+            "version": "1.0",
+            "ref": "7f094361ae83e1a17b50db04082131023ca5443b"
+        },
+        "files": [
+            "./config/packages/setono_google_analytics.yaml"
+        ]
+    },
+    "setono/tag-bag-bundle": {
+        "version": "v3.2.0"
     },
     "symfony/console": {
         "version": "6.3",
