@@ -29,10 +29,7 @@
             border-color: #f5c6cb;
             color: #721c24;
         }
-        .formbuilder-required {
-            color: red;
-            margin-left: 2px;
-        }
+
     </style>
 {% endblock %}
 
@@ -52,32 +49,37 @@
                                 {{ form_start(form, {'attr': {'id': 'contact-form', 'class': 'rendered-form'}}) }}
                                 <div class="row">
                                     <div class="col-md-6 formbuilder-text form-group">
-                                        {{ form_label(form.nom, 'Nom', {'attr_label': {'class': 'formbuilder-text-label'}}) }}
+                                        {{ form_label(form.nom, 'Nom *', {'attr_label': {'class': 'formbuilder-text-label'}}) }}
                                         {{ form_widget(form.nom, {'attr': {'class': 'form-control', 'placeholder': 'Dupont', 'required': 'required', 'aria-required': 'true'}}) }}
                                         {{ form_errors(form.nom, {'attr': {'class': 'invalid-feedback'}}) }}
                                     </div>
+
                                     <div class="col-md-6 formbuilder-text form-group">
-                                        {{ form_label(form.prenom, 'Prénom', {'attr_label': {'class': 'formbuilder-text-label'}}) }}
+                                        {{ form_label(form.prenom, 'Prénom *', {'attr_label': {'class': 'formbuilder-text-label'}}) }}
                                         {{ form_widget(form.prenom, {'attr': {'class': 'form-control', 'placeholder': 'Jean', 'required': 'required', 'aria-required': 'true'}}) }}
                                         {{ form_errors(form.prenom, {'attr': {'class': 'invalid-feedback'}}) }}
                                     </div>
+
                                     <div class="col-md-12 formbuilder-text form-group">
-                                        {{ form_label(form.entreprise, 'Entreprise', {'attr_label': {'class': 'formbuilder-text-label'}}) }}
+                                        {{ form_label(form.entreprise, 'Entreprise (optionnel)', {'attr_label': {'class': 'formbuilder-text-label'}}) }}
                                         {{ form_widget(form.entreprise, {'attr': {'class': 'form-control', 'placeholder': 'Google, Microsoft, etc...'}}) }}
                                         {{ form_errors(form.entreprise, {'attr': {'class': 'invalid-feedback'}}) }}
                                     </div>
+
                                     <div class="col-md-12 formbuilder-text form-group">
-                                        {{ form_label(form.email, 'Email', {'attr_label': {'class': 'formbuilder-text-label'}}) }}
+                                        {{ form_label(form.email, 'Email *', {'attr_label': {'class': 'formbuilder-text-label'}}) }}
                                         {{ form_widget(form.email, {'attr': {'class': 'form-control', 'placeholder': 'jean@dupont.fr', 'required': 'required', 'aria-required': 'true', 'type': 'email'}}) }}
                                         {{ form_errors(form.email, {'attr': {'class': 'invalid-feedback'}}) }}
                                     </div>
+
                                     <div class="col-md-12 formbuilder-text form-group">
-                                        {{ form_label(form.telephone, 'Téléphone', {'attr_label': {'class': 'formbuilder-text-label'}}) }}
+                                        {{ form_label(form.telephone, 'Téléphone *', {'attr_label': {'class': 'formbuilder-text-label'}}) }}
                                         {{ form_widget(form.telephone, {'attr': {'class': 'form-control', 'placeholder': '0123456789', 'required': 'required', 'aria-required': 'true', 'type': 'tel'}}) }}
                                         {{ form_errors(form.telephone, {'attr': {'class': 'invalid-feedback'}}) }}
                                     </div>
-                                    <div class="col-md-12 formbuilder-textarea form-group">
-                                        {{ form_label(form.demande, 'Demande', {'attr_label': {'class': 'formbuilder-textarea-label'}}) }}
+
+                                    <div class="col-md-12 formbuilder-textarea form form-group">
+                                        {{ form_label(form.demande, 'Demande *', {'attr_label': {'class': 'formbuilder-textarea-label'}}) }}
                                         {{ form_widget(form.demande, {'attr': {'class': 'form-control', 'placeholder': 'Ecrivez-ici votre demande', 'required': 'required', 'aria-required': 'true'}}) }}
                                         {{ form_errors(form.demande, {'attr': {'class': 'invalid-feedback'}}) }}
                                     </div>
@@ -96,9 +98,31 @@
                                         </div>
                                     {% endif %}
                                 </div>
+                                <p>* Obligatoire</p>
 
                                 {{ form_end(form) }}
                                 <div id="form-status" class="mt-3"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row gy-4">
+                        <div class="col-lg-12">
+                            <div class="row gy-4">
+                                <div class="col-md-6">
+                                    <div class="info-box">
+                                        <i class="bi bi-telephone"></i>
+                                        <h3>Contact par Téléphone</h3>
+                                        <p>Téléphone : <a href="tel:0470201088">04 70 20 10 88</a><br> </p>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="info-box">
+                                        <i class="bi bi-clock"></i>
+                                        <h3>Horaires d'ouverture</h3>
+                                        <p>Lundi au Vendredi : 9h00-12h00 et 13h45-17h00</p>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>

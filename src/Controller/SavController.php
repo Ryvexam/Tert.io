@@ -35,7 +35,9 @@ class SavController extends AbstractController
         $form = $this->createFormBuilder()
             ->add('nom', TextType::class)
             ->add('prenom', TextType::class)
-            ->add('entreprise', TextType::class)
+            ->add('entreprise', TextType::class, [
+                'required' => false
+            ])
             ->add('email', EmailType::class)
             ->add('telephone', TelType::class)
             ->add('demande', TextareaType::class)

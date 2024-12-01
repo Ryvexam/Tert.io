@@ -8,7 +8,7 @@ use Symfony\Component\Routing\Annotation\Route;
 #[Route("/entreprise")]
 class EntrepriseController extends AbstractController
 {
-    #[Route("/historique", name: "app_historique")]
+    #[Route("/histoire", name: "app_historique")]
     function historique()
     {
         return $this->render("Entreprise/historique.html.twig");
